@@ -1,0 +1,2535 @@
+5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K  Found
+READY
+>load 00810000
+5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0K Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0K Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K Found
+READY
+>load 00810000
+5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0KB
+ Found
+READY
+>cls df
+
+
+
+>ÿ5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K Found
+READY
+>load 0080 19999
+ÿ5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0Kj
+Ü Found
+READY
+>load 00810000
+ÿı5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K Found
+READY
+>xl  cls
+Running cls
+Aqui 0
+Aqui 0.5
+5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0K6K Found
+READY
+>cls
+Running cls
+Aqui 0
+Aqui 0.5
+Aqui 1
+
+
+
+>load 00810000
+Running load 00810000
+Aqui 0
+Aqui 0.5
+Aqui 0.6
+Aqui 1
+Aqui 2
+5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K Found
+READY
+>load 00810000
+Running load 00810000
+û5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0K  Found
+READY
+>load 00810000
+Running load 00810000
+...
+5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0K Found
+READY
+>cls
+Running cls
+
+
+
+>ver
+Running ver
+MMSJ-BIOS v0.1a. Monitor v0.1.
+
+>dump
+Running dump
+
+>ı5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K Found
+READY
+>load 00810000
+...
+ûş5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K Found
+READY
+>loadf
+Unknown Command or File !!!
+
+>load 00810000
+...
+aaa
+
+>ÿ5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K  Found
+READY
+>load 00810000
+...
+aaa
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0K6K  Found
+READY
+>load 00810000
+...
+aaa
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0K6K  Found
+READY
+>load 00810000
+...
+aaa
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K Found
+READY
+>load 00810000
+...
+Starting... aaa
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K Found
+READY
+>load 00810000
+...
+Starting... Saving at aaa
+`b`b`b`b5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K Found
+READY
+>load 00810000
+...
+Starting... Saving at aaa
+`b`b`b`büÿ5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K]A¢.UTÈ" Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0K6K]A¢.UTÈ Found
+READY
+>load 00810000
+...
+Starting... Saving at aaa
+ÿÿ5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K  Found
+READY
+>ver
+5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K Found
+READY
+>load 00810000
+...
+Starting...
+5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0KKK Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0KKK Found
+READY
+>load 00810000
+...
+Starting...
+ÿ5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 64K"]A¢.UTÈ" Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0KK"]A¢.UTÈ Found
+READY
+>load 00810000
+...
+Starting...
+Fÿ5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K  Found
+READY
+>load 00810000
+...
+Starting...
+File loaded in to memory successfuly.
+
+>cls
+ÿş5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K Found
+READY
+>load 00810000
+...
+Starting...
+File loaded in to memory successfuly.
+
+>dump 00810000
+IDE68K v
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>cls
+şÿÿ5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K Found
+READY
+>load 00810000
+...
+Starting...
+File loaded in to memory successfuly.
+
+>dump 000
+49444536384b2076657273696f6e2032
+2e312070726f6a6563742066696c6520
+2d20446f206e6f742065646974207468
+69732066696c65202d0d0a3236373535
+352022222022222022220d0a22443a5c
+50726f6a65746f735c4d4d534a333030
+5c6d6d736a5f62696f732e613638220d
+0a22443a5c50726f6a65746f735c4d4d
+49444536384b2076657273696f6e2032
+2e312070726f6a6563742066696c6520
+2d20446f206e6f742065646974207468
+69732066696c65202d0d0a3236373535
+352022222022222022220d0a22443a5c
+50726f6a65746f735c4d4d534a333030
+5c6d6d736a5f62696f732e613638220d
+0a22443a5c50726f6a65746f735c4d4d
+49444536384b2076657273696f6e2032
+2e312070726f6a6563742066696c6520
+2d20446f206e6f742065646974207468
+69732066696c65202d0d0a3236373535
+352022222022222022220d0a22443a5c
+50726f6a65746f735c4d4d534a333030
+5c6d6d736a5f62696f732e613638220d
+0a22443a5c50726f6a65746f735c4d4d
+49444536384b2076657273696f6e2032
+2e312070726f6a6563742066696c6520
+2d20446f206e6f742065646974207468
+69732066696c65202d0d0a3236373535
+352022222022222022220d0a22443a5c
+50726f6a65746f735c4d4d534a333030
+5c6d6d736a5f62696f732e613638220d
+0a22443a5c50726f6a65746f735c4d4d
+49444536384b2076657273696f6e2032
+2e312070726f6a6563742066696c6520
+2d20446f206e6f742065646974207468
+69732066696c65202d0d0a3236373535
+352022222022222022220d0a22443a5c
+50726f6a65746f735c4d4d534a333030
+5c6d6d736a5f62696f732e613638220d
+0a22443a5c50726f6a65746f735c4d4d
+49444536384b2076657273696f6e2032
+2e312070726f6a6563742066696c6520
+2d20446f206e6f742065646974207468
+69732066696c65202d0d0a3236373535
+352022222022222022220d0a22443a5c
+50726f6a65746f735c4d4d534a333030
+5c6d6d736a5f62696f732e613638220d
+0a22443a5c50726f6a65746f735c4d4d
+49444536384b2076657273696f6e2032
+2e312070726f6a6563742066696c6520
+2d20446f206e6f742065646974207468
+69732066696c65202d0d0a3236373535
+352022222022222022220d0a22443a5c
+50726f6a65746f735c4d4d534a333030
+5c6d6d736a5f62696f732e613638220d
+0a22443a5c50726f6a65746f735c4d4d
+49444536384b2076657273696f6e2032
+2e312070726f6a6563742066696c6520
+2d20446f206e6f742065646974207468
+69732066696c65202d0d0a3236373535
+352022222022222022220d0a22443a5c
+50726f6a65746f735c4d4d534a333030
+5c6d6d736a5f62696f732e613638220d
+0a22443a5c50726f6a65746f735c4d4d
+49444536384b2076657273696f6e2032
+2e312070726f6a6563742066696c6520
+2d20446f206e6f742065646974207468
+69732066696c65202d0d0a3236373535
+352022222022222022220d0a22443a5c
+50726f6a65746f735c4d4d534a333030
+5c6d6d736a5f62696f732e613638220d
+0a22443a5c50726f6a65746f735c4d4d
+49444536384b2076657273696f6e2032
+2e312070726f6a6563742066696c6520
+2d20446f206e6f742065646974207468
+69732066696c65202d0d0a3236373535
+352022222022222022220d0a22443a5c
+50726f6a65746f735c4d4d534a333030
+5c6d6d736a5f62696f732e613638220d
+0a22443a5c50726f6a65746f735c4d4d
+534a3330305c6d6d736a5f62696f732e
+63220d0a22443a5c50726f6a65746f73
+5c4d4d534a3330305c6d6d736a5f6269
+6f732e68220d0a22433a5c4964653638
+6b5c4c69625c73746436386b2e6c6962
+220d0a1a1a1a1a1a1a1a1a1a1a1a1a1a
+1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a
+1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002400ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff000000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002200ff00ff002000ff00ff002000
+ff00ff002000bf00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff0020007f00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00f7002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00fe002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+bf00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff00ff002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+2000ff00ff002000ff007f002000ff00
+ff002000ff00ff002000ff00ff002000
+ff00ff002000ff00ff002000ff00ff00
+
+>
+>cls
+5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 64KK Found
+READY
+>load 00810000
+...
+Starting...
+File loaded in to memory successfuly.
+
+>dump 000
+49444536384b2076657273696f6e2032 | IDE68K version 2
+2e312070726f6a6563742066696c6520 | .1 project file 
+2d20446f206e6f742065646974207468 | - Do not edit th
+69732066696c65202d0d0a3236373535 | is file -""26755
+352022222022222022220d0a22443a5c | 5 "" "" """""D:\
+50726f6a65746f735c4d4d534a333030 | Projetos\MMSJ300
+5c6d6d736a5f62696f732e613638220d | \mmsj_bios.a68""
+0a22443a5c50726f6a65746f735c4d4d | ""D:\Projetos\MM
+49444536384b2076657273696f6e2032 | IDE68K version 2
+2e312070726f6a6563742066696c6520 | .1 project file 
+2d20446f206e6f742065646974207468 | - Do not edit th
+69732066696c65202d0d0a3236373535 | is file -""26755
+352022222022222022220d0a22443a5c | 5 "" "" """""D:\
+50726f6a65746f735c4d4d534a333030 | Projetos\MMSJ300
+5c6d6d736a5f62696f732e613638220d | \mmsj_bios.a68""
+0a22443a5c50726f6a65746f735c4d4d | ""D:\Projetos\MM
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 64KK Found
+READY
+>dump 000
+5a 4c 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | ZLE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" """D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68"
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | "D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 22 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is"file -26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" """D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 0d 53 4a 33 30 30  | Projetos\MSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68"
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | "D:\Projetos\MM
+
+>dump 000
+5a 4c 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | ZLE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" """D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68"
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | "D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 22 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is"file -26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" """D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 0d 53 4a 33 30 30  | Projetos\MSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68"
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | "D:\Projetos\MM
+
+>load 00810000
+...
+Starting...
+File loaded in to memory successfuly.
+
+>dump 000
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" """D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68"
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | "D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" """D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68"
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | "D:\Projetos\MM
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 64KK Found
+READY
+>dump 000
+5a 4c 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | ZLE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 22 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is"file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 0d 53 4a 33 30 30  | Projetos\M.SJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 53 5c 4d 4d 53 4a 33 30 30  | ProjetoS\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 76 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Pvojetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 75 20  | .1 project filu 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0KKK Found
+READY
+>load 00810000
+...
+Starting...
+File loaded in to memory successfuly.
+
+>dump 0000
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+
+>ÿÿÿÿÿÿıÿ5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K]A¢.uTÊ¢ Found
+READY
+>lo  dump 000
+5a 4c 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | ZL.. ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 22 04 00 00 00 00 20 04 00 00 00 00 20 04  | .."..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 01 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 04 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 10 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+
+>load 00810000
+...
+Starting...
+File loaded in to memory successfuly.
+
+>dump 000
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 64KK]A¢.uTÊ Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0KKK]A¢.uTÊ Found
+READY
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>load 00810000
+...
+Starting...
+File loaded in to memory successfuly.
+
+>dump 000
+88 88 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | ˆˆE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 64KK]A¢.uTÊ Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0KKK]A¢.uTÊ Found
+READY
+>load 00810000
+...
+Starting...
+File loaded in to memory successfuly.
+
+>dump 00
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69 6f 73 2e  | SJ300\mmsj_bios.
+63 22 0d 0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73  | c".."D:\Projetos
+5c 4d 4d 53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69  | \MMSJ300\mmsj_bi
+6f 73 2e 68 22 0d 0a 22 43 3a 5c 49 64 65 36 38  | os.h".."C:\Ide68
+6b 5c 4c 69 62 5c 73 74 64 36 38 6b 2e 6c 69 62  | k\Lib\std68k.lib
+22 0d 0a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | "...............
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69 6f 73 2e  | SJ300\mmsj_bios.
+63 22 0d 0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73  | c".."D:\Projetos
+5c 4d 4d 53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69  | \MMSJ300\mmsj_bi
+6f 73 2e 68 22 0d 0a 22 43 3a 5c 49 64 65 36 38  | os.h".."C:\Ide68
+6b 5c 4c 69 62 5c 73 74 64 36 38 6b 2e 6c 69 62  | k\Lib\std68k.lib
+22 0d 0a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | "...............
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+88 88 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | ˆˆ ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 80 00  |  ..... ..... .€.
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 40 00 00 00 20 04 00 00 00 00 20 04  | .. .@... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 64K"]A¢.uTÊ" Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K Found
+READY
+>load 00810000
+...
+Starting...
+File loaded in to memory successfuly.
+
+>dump 000
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 22 22  | ."D:\Projetos\""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 22 22  | ."D:\Projetos\""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 22 22  | ."D:\Projetos\""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 22 22  | ."D:\Projetos\""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 22 22  | ."D:\Projetos\""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 22 22  | ."D:\Projetos\""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 22 22  | ."D:\Projetos\""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 22 22  | ."D:\Projetos\""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 22 22  | ."D:\Projetos\""
+53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69 6f 73 2e  | SJ300\mmsj_bios.
+63 22 0d 0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73  | c".."D:\Projetos
+5c 4d 4d 53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69  | \MMSJ300\mmsj_bi
+6f 73 2e 68 22 0d 0a 22 43 3a 5c 49 64 65 36 38  | os.h".."C:\Ide68
+6b 5c 4c 69 62 5c 73 74 64 36 38 6b 2e 6c 69 62  | k\Lib\std68k.lib
+22 0d 0a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | "...............
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 88 88  | ..............ˆˆ
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 64KK Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0KªK] Found
+READY
+>
+>
+>load 00810000
+...
+Starting...
+File loaded in to memory successfuly.
+
+>dump 00
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 01 01 fe 22 22  | ."D:\Projet..ş""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 01 01 fe 22 22  | ."D:\Projet..ş""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 01 01 fe 22 22  | ."D:\Projet..ş""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 01 01 fe 22 22  | ."D:\Projet..ş""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 01 01 fe 22 22  | ."D:\Projet..ş""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 01 01 fe 22 22  | ."D:\Projet..ş""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 01 01 fe 22 22  | ."D:\Projet..ş""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 01 01 fe 22 22  | ."D:\Projet..ş""
+53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69 6f 73 2e  | SJ300\mmsj_bios.
+63 22 0d 0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73  | c".."D:\Projetos
+5c 4d 4d 53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69  | \MMSJ300\mmsj_bi
+6f 73 2e 68 22 0d 0a 22 43 3a 5c 49 64 65 36 38  | os.h".."C:\Ide68
+6b 5c 4c 69 62 5c 73 74 64 36 38 6b 2e 6c 69 62  | k\Lib\std68k.lib
+22 0d 0a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | "...............
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 01 02 fd 88 88  | .............ıˆˆ
+53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69 6f 73 2e  | SJ300\mmsj_bios.
+63 22 0d 0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73  | c".."D:\Projetos
+5c 4d 4d 53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69  | \MMSJ300\mmsj_bi
+6f 73 2e 68 22 0d 0a 22 43 3a 5c 49 64 65 36 38  | os.h".."C:\Ide68
+6b 5c 4c 69 62 5c 73 74 64 36 38 6b 2e 6c 69 62  | k\Lib\std68k.lib
+22 0d 0a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | "...............
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 88 88  | ..............ˆˆ
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 a0 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 64KK] Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0Kª"]A¢.UTÈ" Found
+READY
+>
+>load 00810000
+...
+Starting...
+iÿ5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 64K"]A¢.UTÈ¢ Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0KK"]A¢.UTÈ Found
+READY
+>load 00810000
+...
+Starting...
+File loaded in to memory successfuly.
+
+>dump 0000
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 01 01 fe 22 22  | ."D:\Projet..ş""
+53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69 6f 73 2e  | SJ300\mmsj_bios.
+63 22 0d 0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73  | c".."D:\Projetos
+5c 4d 4d 53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69  | \MMSJ300\mmsj_bi
+6f 73 2e 68 22 0d 0a 22 43 3a 5c 49 64 65 36 38  | os.h".."C:\Ide68
+6b 5c 4c 69 62 5c 73 74 64 36 38 6b 2e 6c 69 62  | k\Lib\std68k.lib
+22 0d 0a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | "...............
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 01 02 fd 88 88  | .............ıˆˆ
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 53 5c 4d 4d 53 4a 33 30 30  | ProjetoS\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 01 01 fe 22 22  | ."D:\Projet..ş""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 01 01 fe 22 22  | ."D:\Projet..ş""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 01 01 fe 22 22  | ."D:\Projet..ş""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 01 01 fe 22 22  | ."D:\Projet..ş""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 75 20  | .1 project filu 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 01 01 fe 22 22  | ."D:\Projet..ş""
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 01 01 fe 22 22  | ."D:\Projet..ş""
+53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69 6f 73 2e  | SJ300\mmsj_bios.
+63 22 0d 0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73  | c".."D:\Projetos
+5c 4d 4d 53 4a 33 30 30 5c 6d 6d 73 6a 5f e2 69  | \MMSJ300\mmsj_âi
+6f 73 2e 68 22 0d 0a 22 43 3a 5c 49 64 65 36 38  | os.h".."C:\Ide68
+6b 5c 4c 69 62 5c 73 74 64 36 38 6b 2e 6c 69 62  | k\Lib\std68k.lib
+22 0d 0a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | "...............
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 01 02 fd 88 88  | .............ıˆˆ
+53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69 6f 73 2e  | SJ300\mmsj_bios.
+63 22 0d 0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73  | c".."D:\Projetos
+5c 4d 4d 53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69  | \MMSJ300\mmsj_bi
+6f 73 2e 68 22 0d 0a 22 43 3a 5c 49 64 65 36 38  | os.h".."C:\Ide68
+6b 5c 4c 69 62 5c 73 74 64 36 38 6b 2e 6c 69 62  | k\Lib\std68k.lib
+22 0d 0a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | "...............
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 88 88  | ..............ˆˆ
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 a0 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+
+>cls
+
+
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 64K"]A¢.UTÈ Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0KK"]A¢.UTÈ Found
+READY
+>load 00810000
+...
+Starting...
+5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K Found
+READY
+>load 00810000
+...
+Loading...
+File loaded in to memory successfuly.
+
+>dump 00
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69 6f 73 2e  | SJ300\mmsj_bios.
+63 22 0d 0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73  | c".."D:\Projetos
+5c 4d 4d 53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69  | \MMSJ300\mmsj_bi
+6f 73 2e 68 22 0d 0a 22 43 3a 5c 49 64 65 36 38  | os.h".."C:\Ide68
+6b 5c 4c 69 62 5c 73 74 64 36 38 6b 2e 6c 69 62  | k\Lib\std68k.lib
+22 0d 0a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | "...............
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 30 04  | .. ..... .....0.
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+
+>
+>
+>cls
+
+
+
+>ver
+MMSJ-BIOS v0.1a. Monitor v0.1.
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 64KK Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0KKK Found
+READY
+>load 00810000
+...
+Loading...
+File loaded in to memory successfuly.
+
+>dump 00
+5a 4c 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | ZLE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69 6f 73 2e  | SJ300\mmsj_bios.
+63 22 0d 0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73  | c".."D:\Projetos
+5c 4d 4d 53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69  | \MMSJ300\mmsj_bi
+6f 73 2e 68 22 0d 0a 22 43 3a 5c 49 64 65 36 38  | os.h".."C:\Ide68
+6b 5c 4c 69 62 5c 73 74 64 36 38 6b 2e 6c 69 62  | k\Lib\std68k.lib
+22 0d 0a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | "...............
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+
+>load 0x00810000
+...
+Loading...
+File loaded in to memory successfuly.
+
+>dump 00
+5a 4c 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | ZLE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69 6f 73 2e  | SJ300\mmsj_bios.
+63 22 0d 0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73  | c".."D:\Projetos
+5c 4d 4d 53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69  | \MMSJ300\mmsj_bi
+6f 73 2e 68 22 0d 0a 22 43 3a 5c 49 64 65 36 38  | os.h".."C:\Ide68
+6b 5c 4c 69 62 5c 73 74 64 36 38 6b 2e 6c 69 62  | k\Lib\std68k.lib
+22 0d 0a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | "...............
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0KKK Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0Kª"]A¢.UTÈ¢ Found
+READY
+>load 00810000
+...
+5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0Kª"]A¢.UTÈ Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0Kª"]A¢.UTÈ Found
+READY
+>load 00810000
+...
+Loading...
+File loaded in to memory successfuly.
+
+>dump 00
+5a 4c 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | ZLE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69 6f 73 2e  | SJ300\mmsj_bios.
+63 22 0d 0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73  | c".."D:\Projetos
+5c 4d 4d 53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69  | \MMSJ300\mmsj_bi
+6f 73 2e 68 22 0d 0a 22 43 3a 5c 49 64 65 36 38  | os.h".."C:\Ide68
+6b 5c 4c 69 62 5c 73 74 64 36 38 6b 2e 6c 69 62  | k\Lib\std68k.lib
+22 0d 0a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | "...............
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0Kª"]A¢.UTÈ Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0Kª"]A¢.UTÈ" Found
+READY
+>load 00810000
+...
+Loading...
+File loaded in to memory successfuly.
+
+>dump 00
+5a 4c 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | ZLE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69 6f 73 2e  | SJ300\mmsj_bios.
+63 22 0d 0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73  | c".."D:\Projetos
+5c 4d 4d 53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69  | \MMSJ300\mmsj_bi
+6f 73 2e 68 22 0d 0a 22 43 3a 5c 49 64 65 36 38  | os.h".."C:\Ide68
+6b 5c 4c 69 62 5c 73 74 64 36 38 6b 2e 6c 69 62  | k\Lib\std68k.lib
+22 0d 0a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | "...............
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+
+>ğ5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256KUQª*UUªªÿÿ{ Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K  Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0K6K  Found
+READY
+>load 00810000
+...
+Loading...
+File loaded in to memory successfuly.
+
+>dump 00
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69 6f 73 2e  | SJ300\mmsj_bios.
+63 22 0d 0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73  | c".."D:\Projetos
+5c 4d 4d 53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69  | \MMSJ300\mmsj_bi
+6f 73 2e 68 22 0d 0a 22 43 3a 5c 49 64 65 36 38  | os.h".."C:\Ide68
+6b 5c 4c 69 62 5c 73 74 64 36 38 6b 2e 6c 69 62  | k\Lib\std68k.lib
+22 0d 0a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | "...............
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 64KK  Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0KKK  Found
+READY
+>load 00810000
+...
+Loading...
+File loaded in to memory successfuly.
+
+>dump 00810000
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69 6f 73 2e  | SJ300\mmsj_bios.
+63 22 0d 0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73  | c".."D:\Projetos
+5c 4d 4d 53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69  | \MMSJ300\mmsj_bi
+6f 73 2e 68 22 0d 0a 22 43 3a 5c 49 64 65 36 38  | os.h".."C:\Ide68
+6b 5c 4c 69 62 5c 73 74 64 36 38 6b 2e 6c 69 62  | k\Lib\std68k.lib
+22 0d 0a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | "...............
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+
+>dump 00810000 512
+49 44 45 36 38 4b 20 76 65 72 73 69 6f 6e 20 32  | IDE68K version 2
+2e 31 20 70 72 6f 6a 65 63 74 20 66 69 6c 65 20  | .1 project file 
+2d 20 44 6f 20 6e 6f 74 20 65 64 69 74 20 74 68  | - Do not edit th
+69 73 20 66 69 6c 65 20 2d 0d 0a 32 36 37 35 35  | is file -..26755
+35 20 22 22 20 22 22 20 22 22 0d 0a 22 44 3a 5c  | 5 "" "" "".."D:\
+50 72 6f 6a 65 74 6f 73 5c 4d 4d 53 4a 33 30 30  | Projetos\MMSJ300
+5c 6d 6d 73 6a 5f 62 69 6f 73 2e 61 36 38 22 0d  | \mmsj_bios.a68".
+0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73 5c 4d 4d  | ."D:\Projetos\MM
+53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69 6f 73 2e  | SJ300\mmsj_bios.
+63 22 0d 0a 22 44 3a 5c 50 72 6f 6a 65 74 6f 73  | c".."D:\Projetos
+5c 4d 4d 53 4a 33 30 30 5c 6d 6d 73 6a 5f 62 69  | \MMSJ300\mmsj_bi
+6f 73 2e 68 22 0d 0a 22 43 3a 5c 49 64 65 36 38  | os.h".."C:\Ide68
+6b 5c 4c 69 62 5c 73 74 64 36 38 6b 2e 6c 69 62  | k\Lib\std68k.lib
+22 0d 0a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | "...............
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a 1a  | ................
+00 00 20 00 00 00 00 00 20 00 02 00 00 00 20 00  | .. ..... ..... .
+00 00 00 00 00 00 00 00 00 00 20 00 00 00 00 00  | .......... .....
+20 00 00 00 00 00 20 00 00 00 00 00 20 00 00 00  |  ..... ..... ...
+00 00 20 00 01 00 00 00 20 00 00 00 00 00 20 00  | .. ..... ..... .
+00 00 00 00 20 00 00 00 00 00 20 00 00 00 00 00  | .... ..... .....
+20 00 00 00 00 00 20 00 00 00 00 00 20 00 00 00  |  ..... ..... ...
+00 00 20 00 00 00 00 00 20 00 00 00 00 00 20 00  | .. ..... ..... .
+00 00 00 00 20 00 00 00 00 00 20 00 00 00 00 00  | .... ..... .....
+20 00 00 00 00 00 20 00 00 00 00 00 20 00 00 00  |  ..... ..... ...
+00 00 20 00 00 00 00 00 20 00 00 00 00 00 20 00  | .. ..... ..... .
+00 00 00 00 20 00 00 00 00 00 20 00 00 00 00 00  | .... ..... .....
+20 00 00 00 00 00 20 00 00 00 00 00 20 00 00 00  |  ..... ..... ...
+00 00 20 00 00 00 00 00 20 00 00 00 00 00 20 00  | .. ..... ..... .
+00 00 00 00 20 00 00 00 00 00 20 00 00 00 00 00  | .... ..... .....
+20 00 00 00 00 00 20 00 00 00 00 00 20 00 00 00  |  ..... ..... ...
+00 00 20 00 00 00 00 00 20 00 00 00 00 00 20 00  | .. ..... ..... .
+
+>dump 00900000
+5a 4c 00 00 20 00 00 00 00 00 20 00 00 00 00 00  | ZL.. ..... .....
+20 00 00 00 00 00 20 00 00 00 00 00 20 00 00 00  |  ..... ..... ...
+00 00 20 00 00 00 00 00 20 00 00 00 01 00 20 00  | .. ..... ..... .
+00 00 00 00 20 00 00 00 00 00 20 00 00 00 00 00  | .... ..... .....
+20 00 02 00 00 00 20 80 00 00 00 00 20 00 00 00  |  ..... €.... ...
+00 00 20 00 00 00 00 00 20 00 00 00 00 00 20 00  | .. ..... ..... .
+00 00 00 00 20 00 00 00 00 00 20 00 00 00 00 00  | .... ..... .....
+20 00 00 00 00 00 20 00 00 00 00 00 20 00 00 00  |  ..... ..... ...
+00 00 20 00 00 00 00 00 20 00 00 00 00 00 20 00  | .. ..... ..... .
+00 00 00 00 20 00 00 00 00 00 20 00 00 00 00 00  | .... ..... .....
+20 00 00 00 00 00 20 00 00 00 00 00 20 00 00 00  |  ..... ..... ...
+00 00 20 00 00 00 00 00 20 00 00 00 00 00 20 00  | .. ..... ..... .
+00 00 00 00 20 00 00 00 00 00 20 00 00 00 00 00  | .... ..... .....
+20 00 00 00 00 00 20 00 04 00 00 00 20 00 00 00  |  ..... ..... ...
+00 00 20 00 00 00 00 00 20 00 00 00 00 00 20 00  | .. ..... ..... .
+00 00 00 00 20 00 00 00 00 00 20 00 00 00 00 00  | .... ..... .....
+
+>cls
+
+
+
+>ver
+MMSJ-BIOS v0.1a. Monitor v0.1.
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 64KK  Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 256K Found
+READY
+>load
+...
+Loading...
+5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0K6K Found
+READY
+>dump
+00 20 04 00 00 00 00 20 04 00 00 00 00 20 04 00  | . ..... ..... ..
+00 00 00 20 04 00 00 00 00 20 04 00 00 00 00 20  | ... ..... ..... 
+04 00 00 00 00 20 04 00 00 00 00 20 04 00 00 00  | ..... ..... ....
+00 20 04 00 00 00 00 20 04 00 00 00 00 20 04 00  | . ..... ..... ..
+00 00 00 20 04 00 00 00 00 20 04 00 00 00 00 20  | ... ..... ..... 
+04 00 00 00 00 20 04 00 00 00 00 20 04 00 00 00  | ..... ..... ....
+00 20 04 00 00 00 00 20 04 00 00 00 00 20 04 00  | . ..... ..... ..
+00 00 00 20 04 00 00 00 00 20 04 00 00 00 00 20  | ... ..... ..... 
+04 00 00 00 00 20 04 00 00 00 00 20 04 00 00 00  | ..... ..... ....
+00 20 04 00 00 00 00 20 04 00 00 00 00 20 04 00  | . ..... ..... ..
+00 00 00 20 04 00 00 00 00 20 04 00 00 00 00 20  | ... ..... ..... 
+04 00 00 00 00 20 04 00 00 00 00 20 04 00 00 00  | ..... ..... ....
+00 20 04 00 00 00 00 20 04 00 00 00 00 20 04 00  | . ..... ..... ..
+00 00 00 20 04 00 00 00 00 20 04 00 00 00 00 20  | ... ..... ..... 
+04 00 00 00 00 20 04 00 00 00 00 20 04 00 00 00  | ..... ..... ....
+00 20 04 00 00 00 00 20 04 00 00 00 00 20 04 00  | . ..... ..... ..
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0K6K Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0K6K Found
+READY
+>load
+...
+usage: load <ender initial to save>
+       <ender initial to save>      : need to be >= 00800000h
+
+>dump
+usage: dump <ender initial> [qtd (default 256)]
+
+>dump 0  
+00 00 ff ff fe 00 00 04 00 00 00 04 00 00 00 00  | ..ÿÿş...........
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0f  | ................
+92 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ’...............
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+00 00 00 0f 92 00 00 0f 92 00 00 0f 92 00 00 0f  | ....’...’...’...
+92 00 00 0f 92 00 00 0f 92 00 00 0f 92 00 00 0f  | ’...’...’...’...
+92 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ’...............
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0f  | ................
+84 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | „...............
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+
+>load 00810000
+...
+Loading...
+5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0K6K Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0K6K Found
+READY
+>dump 0
+0h : 00 ff ff fe 00 00 04 00 00 00 04 00 00 00 00 00  | .ÿÿş............
+10h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+20h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+30h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0f b2  | ...............²
+40h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+50h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+60h : 00 00 0f b2 00 00 0f b2 00 00 0f b2 00 00 0f b2  | ...²...²...²...²
+70h : 00 00 0f b2 00 00 0f b2 00 00 0f b2 00 00 0f b2  | ...²...²...²...²
+80h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+90h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+a0h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+b0h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0f a4  | ...............¤
+c0h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+d0h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+e0h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+f0h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+
+>dump 00810000
+810000h : 5a 4c 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | ZL.. ..... .....
+810010h : 20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+810020h : 00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+810030h : 00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+810040h : 20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+810050h : 00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+810060h : 00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+810070h : 20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+810080h : 00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+810090h : 00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+8100a0h : 20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+8100b0h : 00 00 22 04 00 00 00 00 20 04 00 00 00 00 20 04  | .."..... ..... .
+8100c0h : 00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+8100d0h : 20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+8100e0h : 00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+8100f0h : 00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0K6K Found
+READY
+>5
+
+MMSJ-BIOS v0.1b
+Monitor v0.1
+(c) 2014-2022 Utility Inf. Ltda
+MC68HC000 Processor at 10MHz
+Memory Test: 0K6K Found
+READY
+>dump 0
+00000000h : 00 ff ff fe 00 00 04 00 00 00 04 00 00 00 00 00  | .ÿÿş............
+00000010h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+00000020h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+00000030h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0f fc  | ...............ü
+00000040h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+00000050h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+00000060h : 00 00 0f fc 00 00 0f fc 00 00 0f fc 00 00 0f fc  | ...ü...ü...ü...ü
+00000070h : 00 00 0f fc 00 00 0f fc 00 00 0f fc 00 00 0f fc  | ...ü...ü...ü...ü
+00000080h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+00000090h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+000000a0h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+000000b0h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0f ee  | ...............î
+000000c0h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+000000d0h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+000000e0h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+000000f0h : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  | ................
+
+>dump 00810000
+00810000h : 5a 4c 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | ZL.. ..... .....
+00810010h : 20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00810020h : 00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00810030h : 00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+00810040h : 20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00810050h : 00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00810060h : 00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+00810070h : 20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+00810080h : 00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+00810090h : 00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+008100a0h : 20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+008100b0h : 00 00 22 04 00 00 00 00 20 04 00 00 00 00 20 04  | .."..... ..... .
+008100c0h : 00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+008100d0h : 20 04 00 00 00 00 20 04 00 00 00 00 20 04 00 00  |  ..... ..... ...
+008100e0h : 00 00 20 04 00 00 00 00 20 04 00 00 00 00 20 04  | .. ..... ..... .
+008100f0h : 00 00 00 00 20 04 00 00 00 00 20 04 00 00 00 00  | .... ..... .....
+
+>cls
+
+
+
+>
+-------> Aqui 3665 - vTemp=[]
+-------> Aqui 3665 - vTemp=[œ]
+
+Syntax Error !
+
+READY
+>run
+-------> Aqui 4555 - *vParenteses=[1]
+-------> Aqui 3942.12 - vTemp=[bb$]
+-------> Aqui 3942.12 - vTemp=["41"]
+-------> Aqui 3942.12 - pRetInf->tString=[("41"]
+-------> Aqui 3665 - vTemp=[("41")]
+-------> Aqui 3665.1 - vTemp[iy]=["]
+-------> Aqui 3665.1 - vAscii=[41]
+-------> Aqui 4555 - *vParenteses=[1]
+-------> Aqui 4555 - *vParenteses=[1]
+-------> Aqui 4555.1
+-------> Aqui 4555.21 - vTemp=[(œ)]
+-------> Aqui 4555.3
+-------> Aqui 4555.4
+-------> Aqui 4555.5
+-------> Aqui 4555.6 - vAscii=[œ]
+Unknow Error at 20 !
+
+READY
+>
