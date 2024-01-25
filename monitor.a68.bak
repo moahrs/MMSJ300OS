@@ -1,0 +1,55 @@
+            org     $0
+            dc.l    $00FFFFFE           ; Stack Pointer Inicial
+            dc.l    $00000400           ; Endereço Inicial do Programa
+
+            org     $8
+            dc.l    $00000400           ; Bus Error
+
+            org     $3C
+;            dc.l    _intSpuriousInt     ; Vector 15 - Initialized Interrupt
+
+            org     $60
+;            dc.l    _intSpuriousInt     ; Vector 24 - Spurious Interrupt
+
+            org     $64
+;            dc.l    _intSpuriousInt     ; AutoVector 1 - Multitask Interrupt
+;            dc.l    _intSpuriousInt     ; AutoVector 2 - Pic Interrupt
+;            dc.l    _intSpuriousInt     ; AutoVector 3 - USB/Serial Interrupt
+;            dc.l    _intSpuriousInt     ; AutoVector 4 - Video Interrupt
+;            dc.l    _intSpuriousInt     ; AutoVector 5 - Mouse Interrupt
+;            dc.l    _intSpuriousInt     ; AutoVector 6 - Keyboard Interrupt
+;            dc.l    _intSpuriousInt     ; AutoVector 7 - NMI (A Definir)
+
+            org     $80
+            dc.l    $00000000           ; Trap 0
+            dc.l    $00000000           ; Trap 1
+            dc.l    $00000000           ; Trap 2
+            dc.l    $00000000           ; Trap 3
+            dc.l    $00000000           ; Trap 4
+            dc.l    $00000000           ; Trap 5
+            dc.l    $00000000           ; Trap 6
+            dc.l    $00000000           ; Trap 7
+            dc.l    $00000000           ; Trap 8
+            dc.l    $00000000           ; Trap 9
+            dc.l    $00000000           ; Trap 10
+            dc.l    $00000000           ; Trap 11
+            dc.l    $00000000           ; Trap 12
+            dc.l    $00000000           ; Trap 13
+            dc.l    $00000000           ; Trap 14
+;            dc.l    _trapFuncs          ; Trap 15 - Basic Bios Functions
+
+            org     $100                ; 110 / 001 - nivel 6 - Nivel geral de todas as interrupcoes
+                                        ; 111 / 000 - nivel 7 - NMI (A Definir)
+;            dc.l    _intMultiTask       ; Vector 64 - Multitask Interrupt
+;            dc.l    _intPIC             ; Vector 65 - PIC Interrupt
+;            dc.l    _intUsbSerial       ; Vector 66 - USB/Serial Interrupt
+;            dc.l    _intVideo           ; Vector 67 - Video Interrupt
+;            dc.l    _intMouse           ; Vector 68 - Mouse Interrupt
+;            dc.l    _intKeyboard        ; Vector 69 - Keyboard Interrupt
+            dc.l    $00000000           ; Vector 70 - NMI (A Definir)
+
+            org     $400
+;   not use this         move    #$2700,SR           ; aceita somente as interrupcoes do level 7
+;            move.l  _intpos.L,A1        ; zerar posicao do local do multitask, enquanto estiver 0 nao chama a rotina
+;            move.l  #0,(A1)             ; quem preenche isso é o OS (SE USAR)
+            bra _main

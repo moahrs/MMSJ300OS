@@ -1,0 +1,182 @@
+; OS Functions
+_processCmd:
+            jmp 0x00000420
+_clearScr:
+            jmp 0x00000426
+_printText:
+            jmp 0x0000042C
+_printChar:
+            jmp 0x00000432
+_delayms:
+            jmp 0x00000438
+_loadSerialToMem:
+            jmp 0x0000043E
+_readChar:
+            jmp 0x00000444
+_hideCursor:
+            jmp 0x0000044A
+_showCursor:
+            jmp 0x00000450
+_inputLine:
+            jmp 0x00000456
+_modeVideo:
+            jmp 0x0000045C
+_vdp_init:
+            jmp 0x00000462
+_vdp_colorize:
+            jmp 0x00000468
+_vdp_plot_hires:
+            jmp 0x0000046E
+_vdp_plot_color:
+            jmp 0x00000474
+_vdp_set_bdcolor:
+            jmp 0x0000047A
+_vdp_set_pattern_color:
+            jmp 0x00000480
+_vdp_set_cursor:
+            jmp 0x00000486
+_vdp_set_cursor_pos:
+            jmp 0x0000048C
+_vdp_textcolor:
+            jmp 0x00000492
+_vdp_write:
+            jmp 0x00000498
+_vdp_set_sprite_pattern:
+            jmp 0x0000049E
+_vdp_sprite_color:
+            jmp 0x000004A4
+_vdp_sprite_get_attributes:
+            jmp 0x000004AA
+_vdp_sprite_get_position:
+            jmp 0x000004B0
+_vdp_sprite_init:
+            jmp 0x000004B6
+_vdp_sprite_set_position:
+            jmp 0x000004BC
+_writeLongSerial:
+            jmp 0x000004C2
+_writeSerial:
+            jmp 0x000004C8
+_FP_TO_STR:  
+            movem.l   D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5,-(A7)
+            MOVE.l (#$008FEF9E),D7
+            MOVE.w  #0,-(SP)         ; Push string terminator NUL onto stack
+            jsr FFPFPA
+            MOVE #7,D0               ; 15 digits to read (7 words + null word terminator)
+            MOVE.l (#$008FEFA6),A0
+  MMSJLOOP: MOVE.w (SP)+,(A0)+
+            DBRA D0,MMSJLOOP         ; until all digits copied to buffer (A0)
+            movem.l   (A7)+,D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5
+            rts
+_STR_TO_FP:  
+            movem.l   D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5,-(A7)
+            MOVE.l (#$008FEFA6),A0
+            jsr FFPAFP
+            MOVE.l D7,(#$008FEF9E)
+            movem.l   (A7)+,D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5
+            rts
+_FPP_SUM:  
+            movem.l   D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5,-(A7)
+            MOVE.l (#$008FEF9E),D7
+            MOVE.l (#$008FEF96),D6
+            jsr FFPADD
+            MOVE.l D7,(#$008FEF9E)
+            movem.l   (A7)+,D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5
+            rts
+_FPP_SUB:  
+            movem.l   D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5,-(A7)
+            MOVE.l (#$008FEF9E),D7
+            MOVE.l (#$008FEF96),D6
+            jsr FFPSUB
+            MOVE.l D7,(#$008FEF9E)
+            movem.l   (A7)+,D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5
+            rts
+_FPP_MUL:  
+            movem.l   D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5,-(A7)
+            MOVE.l (#$008FEF9E),D7
+            MOVE.l (#$008FEF96),D6
+            jsr FFPMUL2
+            MOVE.l D7,(#$008FEF9E)
+            movem.l   (A7)+,D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5
+            rts
+_FPP_DIV:  
+            movem.l   D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5,-(A7)
+            MOVE.l (#$008FEF9E),D7
+            MOVE.l (#$008FEF96),D6
+            jsr FFPDIV
+            MOVE.l D7,(#$008FEF9E)
+            movem.l   (A7)+,D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5
+            rts
+_FPP_PWR:  
+            movem.l   D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5,-(A7)
+            MOVE.l (#$008FEF9E),D7
+            MOVE.l (#$008FEF96),D6
+            jsr FFPPWR
+            MOVE.l D7,(#$008FEF9E)
+            movem.l   (A7)+,D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5
+            rts
+_FPP_CMP:  
+            movem.l   D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5,-(A7)
+            MOVE.l (#$008FEF9E),D7
+            MOVE.l (#$008FEF96),D6
+            jsr FFPCMP
+            MOVE.b CCR,D7               ; retorno pelo CCR (comparar ele e verificar pelo estado)
+            MOVE.b D7,(#$008FEF9E)
+            movem.l   (A7)+,D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5
+            rts
+_FPP_INT:  
+            movem.l   D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5,-(A7)
+            MOVE.l (#$008FEF9E),D7
+            jsr FFPFPI
+            MOVE.b D7,(#$008FEF9E)
+            movem.l   (A7)+,D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5
+            rts
+_FPP_FPP:  
+            movem.l   D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5,-(A7)
+            MOVE.l (#$008FEF9E),D7
+            jsr FFPIFP
+            MOVE.b D7,(#$008FEF9E)
+            movem.l   (A7)+,D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5
+            rts
+_FPP_SIN:  
+            movem.l   D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5,-(A7)
+            MOVE.l (#$008FEF9E),D7
+            jsr FFPSIN
+            MOVE.b D7,(#$008FEF9E)
+            movem.l   (A7)+,D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5
+            rts
+_FPP_COS:  
+            movem.l   D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5,-(A7)
+            MOVE.l (#$008FEF9E),D7
+            jsr FFPCOS
+            MOVE.b D7,(#$008FEF9E)
+            movem.l   (A7)+,D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5
+            rts
+_FPP_TAN:  
+            movem.l   D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5,-(A7)
+            MOVE.l (#$008FEF9E),D7
+            jsr FFPTAN
+            MOVE.b D7,(#$008FEF9E)
+            movem.l   (A7)+,D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5
+            rts
+_FPP_SINH:  
+            movem.l   D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5,-(A7)
+            MOVE.l (#$008FEF9E),D7
+            jsr FFPSINH
+            MOVE.b D7,(#$008FEF9E)
+            movem.l   (A7)+,D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5
+            rts
+_FPP_COSH:  
+            movem.l   D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5,-(A7)
+            MOVE.l (#$008FEF9E),D7
+            jsr FFPCOSH
+            MOVE.b D7,(#$008FEF9E)
+            movem.l   (A7)+,D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5
+            rts
+_FPP_TANH:  
+            movem.l   D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5,-(A7)
+            MOVE.l (#$008FEF9E),D7
+            jsr FFPTANH
+            MOVE.b D7,(#$008FEF9E)
+            movem.l   (A7)+,D0/D1/D2/D3/D4/D5/D6/D7/A0/A1/A2/A3/A4/A5
+            rts
