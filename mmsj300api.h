@@ -40,6 +40,8 @@ unsigned char *sprite_size_sel = 0x00611840;
 unsigned char *vdpMaxCols = 0x00611842; // max col number
 unsigned char *sprite_pattern_table = 0x00611844;
 unsigned char *vdpMaxRows = 0x00611846;
+unsigned char *fgcolorAnt = 0x00611848; // Cor Anterior de Frente
+unsigned char *bgcolorAnt = 0x0061184A; // Cor Anterior de Fundo
 
 unsigned char *kbdKeyPntr = 0x00609B1B; // Contador do ponteiro das teclas colocadas no buffer
 unsigned char *kbdKeyBuffer = 0x00609B1C;   // 16 buffer char

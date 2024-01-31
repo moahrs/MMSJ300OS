@@ -83,6 +83,8 @@ void main(void)
     *traceOn = 0;
     *lastHgrX = 0;
     *lastHgrY = 0;
+    *fgcolorAnt = *fgcolor;
+    *bgcolorAnt = *bgcolor;
 
     while (*pProcess)
     {
@@ -347,6 +349,7 @@ void tokenizeLine(unsigned char *pTokenized)
     char vFirstComp = 0;
     char isToken;
     char vTemRem = 0;
+//    unsigned char sqtdtam[20];
 
     // Separar linha entre comando e argumento
     vLinhaArg[0] = '\0';
@@ -382,6 +385,7 @@ void tokenizeLine(unsigned char *pTokenized)
                 if (ix < 2)
                 {
                     blin++;
+
                     continue;
                 }
 
@@ -391,6 +395,13 @@ void tokenizeLine(unsigned char *pTokenized)
             if (vLido[0])
             {
                 vToken = 0;
+/*writeLongSerial("Aqui 332.666.2-[");
+itoa(ix,sqtdtam,10);
+writeLongSerial(sqtdtam);
+writeLongSerial("]-[");
+itoa(*blin,sqtdtam,16);
+writeLongSerial(sqtdtam);
+writeLongSerial("]\r\n");*/
 
                 if (ix > 1)
                 {
@@ -715,8 +726,11 @@ void listProg(unsigned char *pArg, unsigned short pPause)
                 {
                     // Apenas inclui na listagem
                     //if (strchr("+-*^/=;:><", *vTempPointer) || *vTempPointer >= 0xF0)
-
                     vLinhaList[ix++] = vToken;
+
+                    // Se nao for aspas e o proximo for um token, inclui um espaço
+                    if (vToken == 0x22 && *vStartList >=0x80)
+                        vLinhaList[ix++] = 0x20;
 
                     /*if (isdigitus(vToken) && *vStartList!=')' && *vStartList!='.' && *vStartList!='"' && !isdigitus(*vStartList))
                         vLinhaList[ix++] = 0x20;*/
@@ -934,7 +948,7 @@ void editLine(unsigned char *pNumber)
     vNextList = (*(vStartList) << 16) | (*(vStartList + 1) << 8) | *(vStartList + 2);
 	ix = 0;
     ivv = 0;
-	
+
     if (vNextList)
     {
         // Pega numero da linha
@@ -994,7 +1008,10 @@ void editLine(unsigned char *pNumber)
             else
             {
                 vbuf[ix++] = vToken;
-            }
+
+                // Se nao for aspas e o proximo for um token, inclui um espaço
+                if (vToken == 0x22 && *vStartList >=0x80)
+                    vbuf[ix++] = 0x20;            }
         }
     }
 
@@ -1307,11 +1324,20 @@ int executeToken(unsigned char pToken)
         case 0x8C:  // REM - Ignora todas a linha depois dele
             vReta = 0;
             break;
+        case 0x8D:  // INVERSE
+            vReta = basInverse();
+            break;
+        case 0x8E:  // NORMAL
+            vReta = basNormal();
+            break;
         case 0x8F:  // DIM
             vReta = basDim();
             break;
         case 0x90:  // Nao fax nada, soh teste, pode ser retirado
             vReta = 0;
+            break;
+        case 0x91:  // DIM
+            vReta = basOnVar();
             break;
         case 0x92:  // Input
             vReta = basInputGet(250);
@@ -1328,7 +1354,7 @@ int executeToken(unsigned char pToken)
         case 0x96:  // Home
             clearScr();
             break;
-        case 0x97:  // Clear - Clear all variables
+        case 0x97:  // CLEAR - Clear all variables
             for (ix = 0; ix < 0x2000; ix++)
                 *(pStartSimpVar + ix) = 0x00;
 
@@ -1800,9 +1826,9 @@ long findVariable(unsigned char* pVariable)
     unsigned short iDim = 0;
 
     // Verifica se eh array (tem parenteses logo depois do nome da variavel)
-/*writeLongSerial("Aqui 444.666.0-[");
+writeLongSerial("Aqui 444.666.0-[");
 writeLongSerial(pVariable);
-writeLongSerial("]\r\n");*/
+writeLongSerial("]\r\n");
     vTempPointer = *pointerRunProg;
     if (*vTempPointer == 0x28)
     {
@@ -1885,7 +1911,7 @@ writeLongSerial("]\r\n");*/
 
     while(1)
     {
-/*writeLongSerial("Aqui 444.666.1-[");
+writeLongSerial("Aqui 444.666.1-[");
 itoa(*(vLista + 3),sqtdtam,16);
 writeLongSerial(sqtdtam);
 writeLongSerial("]-[");
@@ -1897,14 +1923,14 @@ writeLongSerial(sqtdtam);
 writeLongSerial("]-[");
 itoa(*(vLista + 6),sqtdtam,16);
 writeLongSerial(sqtdtam);
-writeLongSerial("]\r\n");*/
+writeLongSerial("]\r\n");
         vPosNextVar  = (((unsigned long)*(vLista + 3) << 24) & 0xFF000000);
         vPosNextVar |= (((unsigned long)*(vLista + 4) << 16) & 0x00FF0000);
         vPosNextVar |= (((unsigned long)*(vLista + 5) << 8) & 0x0000FF00);
         vPosNextVar |= ((unsigned long)*(vLista + 6) & 0x000000FF);
         *value_type = *vLista;
 
-/*writeLongSerial("Aqui 444.666.2-[");
+writeLongSerial("Aqui 444.666.2-[");
 itoa(vLista,sqtdtam,16);
 writeLongSerial(sqtdtam);
 writeLongSerial("]-[");
@@ -1916,10 +1942,10 @@ writeLongSerial(sqtdtam);
 writeLongSerial("]-[");
 itoa(pVariable[1],sqtdtam,16);
 writeLongSerial(sqtdtam);
-writeLongSerial("]\r\n");*/
+writeLongSerial("]\r\n");
         if (*(vLista + 1) == pVariable[0] && *(vLista + 2) ==  pVariable[1])
         {
-/*writeLongSerial("Aqui 444.666.3-[");
+writeLongSerial("Aqui 444.666.3-[");
 itoa(*(vLista + 1),sqtdtam,16);
 writeLongSerial(sqtdtam);
 writeLongSerial("]-[");
@@ -1928,7 +1954,7 @@ writeLongSerial(sqtdtam);
 writeLongSerial("]-[");
 itoa(ixDim,sqtdtam,16);
 writeLongSerial(sqtdtam);
-writeLongSerial("]\r\n");*/
+writeLongSerial("]\r\n");
             // Pega endereco da variavel pra delvover
             if (vArray)
             {
@@ -1961,7 +1987,7 @@ writeLongSerial("]\r\n");*/
                         vPosValueVar = vPosValueVar * vDim[ix];
                 }
 
-/*writeLongSerial("Aqui 444.666.4-[");
+writeLongSerial("Aqui 444.666.4-[");
 itoa(vLista,sqtdtam,16);
 writeLongSerial(sqtdtam);
 writeLongSerial("]-[");
@@ -1970,7 +1996,7 @@ writeLongSerial(sqtdtam);
 writeLongSerial("]-[");
 itoa(vPosValueVar,sqtdtam,16);
 writeLongSerial(sqtdtam);
-writeLongSerial("]\r\n");*/
+writeLongSerial("]\r\n");
                 vPosValueVar = vLista + 8 + (ixDim * 2) + vPosValueVar;
                 vEnder = vPosValueVar;
             }
@@ -2067,6 +2093,17 @@ char updateVariable(unsigned long* pVariable, unsigned char* pValor, char pType,
     vNextSimpVar = pVariable;
     *atuVarAddr = pVariable;
 
+writeLongSerial("Aqui 333.666.0-[");
+itoa(pVariable,sqtdtam,16);
+writeLongSerial(sqtdtam);
+writeLongSerial("]-[");
+itoa(pValor,sqtdtam,16);
+writeLongSerial(sqtdtam);
+writeLongSerial("]-[");
+itoa(pType,sqtdtam,16);
+writeLongSerial(sqtdtam);
+writeLongSerial("]\r\n");
+
     if (pType == '#' || pType == '%')   // Real ou Inteiro
     {
         if (vNextSimpVar < 0x00802000)
@@ -2098,6 +2135,17 @@ char updateVariable(unsigned long* pVariable, unsigned char* pValor, char pType,
         {
             *vNextString++ = pValor[ix];
         }
+
+writeLongSerial("Aqui 333.666.1-[");
+itoa(nextAddrString,sqtdtam,16);
+writeLongSerial(sqtdtam);
+writeLongSerial("]-[");
+itoa(vNextString,sqtdtam,16);
+writeLongSerial(sqtdtam);
+writeLongSerial("]-[");
+itoa(vNumVal,sqtdtam,16);
+writeLongSerial(sqtdtam);
+writeLongSerial("]\r\n");
 
         if (*vNextSimpVar > iz || !pOper)
             *nextAddrString = vNextString;
@@ -4685,13 +4733,21 @@ int basInputGet(unsigned char pSize)
                 answer[3]=(char)(iVal & 0x000000FF);
             }
 
-            // assign the value
-            vRetFV = findVariable(varName);
-            // Se nao existe variavel e inicio sentenca, cria variavel e atribui o valor
-            if (!vRetFV)
-                createVariable(varName, answer, varTipo);
-            else // se ja existe, altera
-                updateVariable((vRetFV + 3), answer, varTipo, 1);
+            if (*pointerRunProg != 0x28)  // se eh array, tem parenteses
+            {
+                // assign the value
+                vRetFV = findVariable(varName);
+                // Se nao existe variavel e inicio sentenca, cria variavel e atribui o valor
+                if (!vRetFV)
+                    createVariable(varName, answer, varTipo);
+                else // se ja existe, altera
+                    updateVariable((vRetFV + 3), answer, varTipo, 1);
+            }
+            else
+            {
+                updateVariable(vRetFV, answer, varTipo, 1);
+            }
+
             vTemTexto=2;
             nextToken();
             if (*vErroProc) return 0;
@@ -4997,6 +5053,157 @@ writeLongSerial("]\r\n");*/
 
     if (vRetVar < 0)
         forPush(i);  // otherwise, restore the info
+
+    return 0;
+}
+
+//--------------------------------------------------------------------------------------
+// Salta para uma linha se erro
+// Syntaxe:
+//          ON <VAR> GOSUB <num.linha 1>,<num.linha 2>,...,,<num.linha n>
+//          ON <VAR> GOTO <num.linha 1>,<num.linha 2>,...,<num.linha n>
+//--------------------------------------------------------------------------------------
+int basOnVar(void)
+{
+    unsigned char* vNextAddrGoto;
+    unsigned int vNumLin = 0;
+    unsigned char *vTempPointer;
+    unsigned int vSalto;
+    unsigned int iSalto = 0;
+    unsigned int ix;
+
+    vTempPointer = *pointerRunProg;
+    if (isalphas(*vTempPointer))
+    {
+        // procura pela variavel no forStack
+        nextToken();
+        if (*vErroProc) return 0;
+
+        if (*token_type != VARIABLE)
+        {
+            *vErroProc = 4;
+            return 0;
+        }
+
+        putback();
+
+        getExp(&iSalto);
+        if (*vErroProc) return 0;
+
+        if (*value_type != '%')
+        {
+            *vErroProc = 16;
+            return 0;
+        }
+
+        if (iSalto == 0 || iSalto > 255)
+        {
+            *vErroProc = 5;
+            return 0;
+        }
+    }
+    else
+    {
+        *vErroProc = 4;
+        return 0;
+    }
+
+    vTempPointer = *pointerRunProg;
+
+    // Se nao for goto ou gosub, erro
+    if (*vTempPointer != 0x89 && *vTempPointer != 0x8A)
+    {
+        *vErroProc = 14;
+        return 0;
+    }
+
+    vSalto = *vTempPointer;
+    ix = 0;
+    *pointerRunProg = *pointerRunProg + 1;
+
+    while (1)
+    {
+        getExp(&vNumLin); // get target value
+
+        if (*value_type == '$' || *value_type == '#') {
+            *vErroProc = 16;
+            return 0;
+        }
+
+        ix++;
+
+        if (ix == iSalto)
+            break;
+
+        nextToken();
+        if (*vErroProc) return 0;
+
+        // Deve ser uma virgula
+        if (*token!=',')
+        {
+            *vErroProc = 18;
+            return 0;
+        }
+
+        nextToken();
+        if (*vErroProc) return 0;
+
+        putback();
+    }
+
+    if (ix == 0 || ix > iSalto)
+    {
+        *vErroProc = 14;
+        return 0;
+    }
+
+    vNextAddrGoto = findNumberLine(vNumLin, 0, 0);
+
+    if (vSalto == 0x89)
+    {
+        // GOTO
+        if (vNextAddrGoto > 0)
+        {
+            if ((unsigned int)(((unsigned int)*(vNextAddrGoto + 3) << 8) | *(vNextAddrGoto + 4)) == vNumLin)
+            {
+                *changedPointer = vNextAddrGoto;
+                return 0;
+            }
+            else
+            {
+                *vErroProc = 7;
+                return 0;
+            }
+        }
+        else
+        {
+            *vErroProc = 7;
+            return 0;
+        }
+    }
+    else
+    {
+        // GOSUB
+        if (vNextAddrGoto > 0)
+        {
+            if ((unsigned int)(((unsigned int)*(vNextAddrGoto + 3) << 8) | *(vNextAddrGoto + 4)) == vNumLin)
+            {
+                gosubPush(*nextAddr);
+                *changedPointer = vNextAddrGoto;
+                return 0;
+            }
+            else
+            {
+                *vErroProc = 7;
+                return 0;
+            }
+        }
+        else
+        {
+            *vErroProc = 7;
+            return 0;
+        }
+    }
 
     return 0;
 }
@@ -5639,11 +5846,10 @@ int basText(void)
 //--------------------------------------------------------------------------------------
 // Low Resolution Screen Mode (64x48)
 // Syntaxe:
-//          TEXT
+//          GR
 //--------------------------------------------------------------------------------------
 int basGr(void)
 {
-    unsigned char sqtdtam[10];
     vdp_init(VDP_MODE_MULTICOLOR, 0, 0, 0);
     return 0;
 }
@@ -5651,12 +5857,53 @@ int basGr(void)
 //--------------------------------------------------------------------------------------
 // High Resolution Screen Mode (256x192)
 // Syntaxe:
-//          TEXT
+//          HGR
 //--------------------------------------------------------------------------------------
 int basHgr(void)
 {
     vdp_init(VDP_MODE_G2, 0x0, 1, 0);
     vdp_set_bdcolor(VDP_BLACK);
+    return 0;
+}
+
+//--------------------------------------------------------------------------------------
+// Inverte as Cores de tela (COR FRENTE <> COR NORMAL)
+// Syntaxe:
+//          INVERSE
+//
+//    **********************************************************************************
+//    ** SOMENTE PARA COMPATIBILIDADE, NO TMS91xx E TMS99xx NAO FUNCIONA COR POR CHAR **
+//    **********************************************************************************
+//--------------------------------------------------------------------------------------
+int basInverse(void)
+{
+/*    unsigned char vTempCor;
+
+    *fgcolorAnt = *fgcolor;
+    *bgcolorAnt = *bgcolor;
+    vTempCor = *fgcolor;
+    *fgcolor = *bgcolor;
+    *bgcolor = vTempCor;
+    vdp_textcolor(*fgcolor,*bgcolor);*/
+
+    return 0;
+}
+
+//--------------------------------------------------------------------------------------
+// Volta as cores de tela as cores iniciais
+// Syntaxe:
+//          NORMAL
+//
+//    **********************************************************************************
+//    ** SOMENTE PARA COMPATIBILIDADE, NO TMS91xx E TMS99xx NAO FUNCIONA COR POR CHAR **
+//    **********************************************************************************
+//--------------------------------------------------------------------------------------
+int basNormal(void)
+{
+/*    *fgcolor = *fgcolorAnt;
+    *bgcolor = *bgcolorAnt;
+    vdp_textcolor(*fgcolor,*bgcolor);*/
+
     return 0;
 }
 

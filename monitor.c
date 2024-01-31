@@ -341,11 +341,11 @@ unsigned char inputLine(unsigned int pQtdInput, unsigned char pTipo)
 {
     unsigned char *vbufptr = vbuf;
     unsigned char vtec, vtecant;
-    int vRetProcCmd, iw;
+    int vRetProcCmd, iw, ix;
     int countCursor = 0;
-    char pEdit = 0;
+    char pEdit = 0, pIns = 0, vbuftemp, vbuftemp2;
     int iPos, iz;
-//    unsigned char sqtdtam[20];
+    unsigned short vantX, vantY;
 
     if (pQtdInput == 0)
         pQtdInput = 512;
@@ -365,6 +365,7 @@ unsigned char inputLine(unsigned int pQtdInput, unsigned char pTipo)
         *videoCursorPosColX = 0;
         pEdit = 1;
         iPos = 0;
+        pIns = 0xFF;
 
         vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY);
     }
@@ -406,7 +407,7 @@ unsigned char inputLine(unsigned int pQtdInput, unsigned char pTipo)
         if (pTipo != '$' && pTipo != 'S' && pTipo != '@' && vtec != '.' && vtec > 0x1F && (vtec < 0x30 || vtec > 0x39))
             vtec = 0;
 
-        // Só aceita ponto de for numero real (# ou R) ou string ($ ou S) ou tudo (@)
+        // So aceita ponto de for numero real (# ou R) ou string ($ ou S) ou tudo (@)
         if (vtec == '.' && pTipo != '#' && pTipo != '$' &&  pTipo != 'R' && pTipo != 'S' && pTipo != '@')
             vtec = 0;
 
@@ -414,7 +415,10 @@ unsigned char inputLine(unsigned int pQtdInput, unsigned char pTipo)
         {
             // Prevenir sujeira no buffer ou repeticao
             if (vtec == vtecant)
-                continue;
+            {
+                if (countCursor % 300 != 0)
+                    continue;
+            }
 
             if (pTipo != '@')
             {
@@ -426,22 +430,80 @@ unsigned char inputLine(unsigned int pQtdInput, unsigned char pTipo)
 
             vtecant = vtec;
 
-            if (vtec >= 0x20)   // Caracter Printavel
+            if (vtec >= 0x20 && vtec != 0x7F)   // Caracter Printavel menos o DELete
             {
-                // Limite 32 bytes na linha digitada
-                if (vbufptr > vbuf + pQtdInput)
+                if (!pEdit)
                 {
-                    *vbufptr--;
+                    // Digitcao Normal
+                    if (vbufptr > vbuf + pQtdInput)
+                    {
+                        *vbufptr--;
+
+                        if (pTipo != '@')
+                            printChar(0x08, 1);
+                    }
 
                     if (pTipo != '@')
-                        printChar(0x08, 1);
+                        printChar(vtec, 1);
+
+                    *vbufptr++ = vtec;
+                    *vbufptr = '\0';
                 }
+                else
+                {
+                    iw = strlen(vbuf);
 
-                if (pTipo != '@')
-                    printChar(vtec, 1);
+                    // Edicao de Linha
+                    if (!pIns)
+                    {
+                        // Sem insercao de caracteres
+                        if (iw < pQtdInput)
+                        {
+                            if (vbuf[iPos] == 0x00)
+                                vbuf[iPos + 1] = 0x00;
 
-                *vbufptr++ = vtec;
-                *vbufptr = '\0';
+                            vbuf[iPos] = vtec;
+
+                            printChar(vbuf[iPos],0);
+                        }
+                    }
+                    else
+                    {
+                        // Com insercao de caracteres
+                        if ((iw + 1) <= pQtdInput)
+                        {
+                            // Copia todos os caracteres mais 1 pro final
+                            vbuftemp2 = vbuf[iPos];
+                            vbuftemp = vbuf[iPos + 1];
+                            vantX = *videoCursorPosColX;
+                            vantY = *videoCursorPosRowY;
+
+                            printChar(vtec,1);
+
+                            for (ix = iPos; ix <= iw ; ix++)
+                            {
+                                vbuf[ix + 1] = vbuftemp2;
+                                vbuftemp2 = vbuftemp;
+                                vbuftemp = vbuf[ix + 2];
+                                printChar(vbuf[ix + 1],1);
+                            }
+
+                            vbuf[iw + 1] = 0x00;
+                            vbuf[iPos] = vtec;
+
+                            *videoCursorPosColX = vantX;
+                            *videoCursorPosRowY = vantY;
+                            vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY);
+                        }
+                    }
+
+                    if (iw <= pQtdInput)
+                    {
+                        iPos++;
+                        *videoCursorPosColX = *videoCursorPosColX + 1;
+                        vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY);
+                    }
+                }
             }
             /*else if (pEdit && vtec == 0x11)    // UpArrow (17)
             {
@@ -453,10 +515,6 @@ unsigned char inputLine(unsigned int pQtdInput, unsigned char pTipo)
             }*/
             else if (pEdit && vtec == 0x12)    // LeftArrow (18)
             {
-/*writeLongSerial("Aqui 332.666.0-[");
-itoa(iPos,sqtdtam,10);
-writeLongSerial(sqtdtam);
-writeLongSerial("]\r\n");                */
                 if (iPos > 0)
                 {
                     printChar(vbuf[iPos],0);
@@ -478,8 +536,17 @@ writeLongSerial("]\r\n");                */
                     vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY);
                 }
             }
-            else if (vtec == 0x08)  // Backspace
+            else if (vtec == 0x15)  // Insert
             {
+                pIns = ~pIns;
+/*writeLongSerial("Aqui 332.666.1-[");
+itoa(pIns,sqtdtam,16);
+writeLongSerial(sqtdtam);
+writeLongSerial("]\r\n");*/
+            }
+            else if (vtec == 0x08 && !pEdit)  // Backspace
+            {
+                // Digitcao Normal
                 if (vbufptr > vbuf)
                 {
                     *vbufptr--;
@@ -487,6 +554,39 @@ writeLongSerial("]\r\n");                */
 
                     if (pTipo != '@')
                         printChar(0x08, 1);
+                }
+            }
+            else if ((vtec == 0x08 || vtec == 0x7F) && pEdit)  // Backspace
+            {
+                iw = strlen(vbuf);
+
+                if ((vtec == 0x08 && iPos > 0) || vtec == 0x7F)
+                {
+                    if (vtec == 0x08)
+                    {
+                        iPos--;
+                    
+                        if (*videoCursorPosColX == 0)
+                            *videoCursorPosColX = 255;
+                        else
+                            *videoCursorPosColX = *videoCursorPosColX - 1;
+                        vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY);
+                    }
+                    
+                    vantX = *videoCursorPosColX;
+                    vantY = *videoCursorPosRowY;
+
+                    for (ix = iPos; ix < iw ; ix++)
+                    {
+                        vbuf[ix] = vbuf[ix + 1];
+                        printChar(vbuf[ix],1);
+                    }
+
+                    vbuf[ix] = 0x00;
+
+                    *videoCursorPosColX = vantX;
+                    *videoCursorPosRowY = vantY;
+                    vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY);
                 }
             }
             else if (vtec == 0x1B)   // ESC
@@ -731,7 +831,8 @@ void printChar(unsigned char pchr, unsigned char pmove)
             if (pmove)
             {
                 vdp_set_cursor_pos(VDP_CSR_RIGHT);
-                if (*videoCursorPosRowY == 24)
+
+                if (*vdp_mode == VDP_MODE_TEXT && *videoCursorPosRowY == 24)
                 {
                     *videoCursorPosRowY = 23;
                     geraScroll();
@@ -881,6 +982,8 @@ int vdp_init(unsigned char mode, unsigned char color, unsigned char big_sprites,
             *name_table = 0x3800;
             *sprite_attribute_table = 0x3B00;
             *color_table_size = 0x1800;
+            *vdpMaxCols = 255;
+            *vdpMaxRows = 191;
             setWriteAddress(*name_table);
             for (i = 0; i < 768; i++)  // era 768
                 *vvdgd = (unsigned char)(i & 0xFF);
@@ -896,6 +999,8 @@ int vdp_init(unsigned char mode, unsigned char color, unsigned char big_sprites,
             setRegister(6, 0x03); // Sprites Pattern Table at 0x0
             *pattern_table = 0x800;
             *name_table = 0x1400;
+            *vdpMaxCols = 63;
+            *vdpMaxRows = 47;
             setWriteAddress(*name_table); // Init name table
             for (j = 0; j < 24; j++)
                 for (i = 0; i < 32; i++)
@@ -911,6 +1016,7 @@ int vdp_init(unsigned char mode, unsigned char color, unsigned char big_sprites,
             *pattern_table = 0x00;
             *name_table = 0x800;
             *vdpMaxCols = 39;
+            *vdpMaxRows = 23;
             setWriteAddress(*pattern_table + 0x100);
             for (i = 0; i < 1784; i++)  // era 768
             {
@@ -1184,20 +1290,25 @@ void vdp_set_cursor(unsigned char pcol, unsigned char prow)
 //-----------------------------------------------------------------------------
 void vdp_set_cursor_pos(unsigned char direction)
 {
+    unsigned char pMoveId = 1;
+
+    if (*vdp_mode == VDP_MODE_MULTICOLOR)
+        pMoveId = 8;
+
     switch (direction)
     {
-    case VDP_CSR_UP:
-        vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY - 1);
-        break;
-    case VDP_CSR_DOWN:
-        vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY + 1);
-        break;
-    case VDP_CSR_LEFT:
-        vdp_set_cursor(*videoCursorPosColX - 1, *videoCursorPosRowY);
-        break;
-    case VDP_CSR_RIGHT:
-        vdp_set_cursor(*videoCursorPosColX + 1, *videoCursorPosRowY);
-        break;
+        case VDP_CSR_UP:
+            vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY - pMoveId);
+            break;
+        case VDP_CSR_DOWN:
+            vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY + pMoveId);
+            break;
+        case VDP_CSR_LEFT:
+            vdp_set_cursor(*videoCursorPosColX - pMoveId, *videoCursorPosRowY);
+            break;
+        case VDP_CSR_RIGHT:
+            vdp_set_cursor(*videoCursorPosColX + pMoveId, *videoCursorPosRowY);
+            break;
     }
 }
 
@@ -1206,18 +1317,44 @@ void vdp_write(unsigned char chr)
 {
     unsigned int name_offset = *videoCursorPosRowY * (*vdpMaxCols + 1) + *videoCursorPosColX; // Position in name table
     unsigned int pattern_offset = name_offset << 3;                    // Offset of pattern in pattern table
-    unsigned char i;
+    char i, ix;
+    unsigned short vAntX, vAntY;
     unsigned char *tempFontes = videoFontes;
+    unsigned long vEndFont, vEndPart;
 
     if (*vdp_mode == VDP_MODE_G2)
     {
         setWriteAddress(*pattern_table + pattern_offset);
         for (i = 0; i < 8; i++)
         {
-            // writeByteToVRAM(patterns[((chr - 32) << 3) + i]);
-            tempFontes = *videoFontes + (((chr - 32) << 3) + i);
+            vEndFont = *videoFontes;
+            vEndPart = chr - 32;
+            vEndPart = vEndPart << 3;
+            vEndFont += vEndPart + i;
+            tempFontes = vEndFont;
             *vvdgd = *tempFontes;
         }
+    }
+    else if (*vdp_mode == VDP_MODE_MULTICOLOR)
+    {
+        vAntY = *videoCursorPosRowY;
+        for (i = 0; i < 8; i++)
+        {
+            vEndFont = *videoFontes;
+            vEndPart = chr - 32;
+            vEndPart = vEndPart << 3;
+            vEndFont += vEndPart + i;
+            tempFontes = vEndFont;
+            vAntX = *videoCursorPosColX;
+            for (ix = 7; ix >=0; ix--)
+            {
+                vdp_plot_color(*videoCursorPosColX, *videoCursorPosRowY, ((*tempFontes >> ix) & 0x01) ? *fgcolor : *bgcolor);
+                *videoCursorPosColX = *videoCursorPosColX + 1;
+            }
+            *videoCursorPosColX = vAntX;
+            *videoCursorPosRowY = *videoCursorPosRowY + 1;
+        }
+        *videoCursorPosRowY = vAntY;
     }
     else // G1 and text mode
     {
@@ -1282,7 +1419,12 @@ char vdp_read_color_pixel(unsigned char x, unsigned char y)
         addr = *pattern_table + 8 * (x / 2) + y % 8 + 256 * (y / 8);
 
         setReadAddress(addr);
-        vRetColor = *vvdgd;
+        setReadAddress(addr);
+
+        if (x & 1) // Odd columns
+            vRetColor = (*vvdgd & 0x0f);
+        else
+            vRetColor = (*vvdgd >> 4);        
     }
 
     return vRetColor;

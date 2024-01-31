@@ -74,7 +74,7 @@ unsigned char *token_type           = 0x008FEE52;
 unsigned char *value_type           = 0x008FEE50;
 unsigned long *onErrGoto            = 0x008FEE4A;
 
-const keywords_count = 64;
+const keywords_count = 67;
 
 // -------------------------------------------------------------------------------
 // Mensagens de Erro
@@ -129,7 +129,10 @@ static const struct keyword_token keywords[] =
   {"GOSUB", 	0x8A},   // .. .. ok
   {"RETURN", 	0x8B},   // .. .. ok
   {"REM", 		0x8C},   // .. .. ok
+  {"INVERSE", 0x8D},   // .. .. ok
+  {"NORMAL",  0x8E},   // .. .. ok
   {"DIM", 		0x8F},   // .. .. ok
+  {"ON",      0x91},   // .. .. ok
   {"INPUT", 	0x92},   // .. ok ok
   {"GET",     0x93},   // .. ok ok
   {"VTAB",    0x94},   // .. .. ok
@@ -152,7 +155,6 @@ static const struct keyword_token keywords[] =
   {"HPLOT",   0xB9},   // .. .. ok
   {"AT",      0xBA},   // .. .. ok
   {"ONERR",   0xBB},   // .. .. ok
-
   {"ASC",     0xC4},   // .. .. ok
   {"PEEK",    0xCD},   // .. .. ok
   {"POKE",    0xCE},   // .. .. ok
@@ -176,7 +178,6 @@ static const struct keyword_token keywords[] =
   {"LEFT$",   0xED},   // .. .. ok
   {"INT",     0xEE},   // .. .. ok
   {"ABS",     0xEF},   // .. .. ok
-
   {"AND",     0xF3},   // ok ok ok
   {"OR",      0xF4},   // ok ok ok
   {">=",      0xF5},   // ok ok ok
@@ -303,6 +304,9 @@ int basInt(void);
 int basAbs(void);
 int basPeekPoke(char pTipo);
 int basDim(void);
+int basInverse(void);
+int basNormal(void);
+int basOnVar(void);
 int basText(void);
 int basGr(void);
 int basHgr(void);

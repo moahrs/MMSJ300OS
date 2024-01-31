@@ -678,24 +678,25 @@ main_48:
 ; {
        xdef      _inputLine
 _inputLine:
-       link      A6,#-16
+       link      A6,#-24
        movem.l   D2/D3/D4/D5/D6/D7/A2/A3/A4/A5,-(A7)
+       lea       _vbuf.L,A2
        move.b    15(A6),D3
        and.l     #255,D3
-       lea       _vbuf.L,A2
-       lea       _printChar.L,A3
-       lea       _videoCursorPosColX.L,A4
-       lea       _hideCursor.L,A5
+       lea       _videoCursorPosColX.L,A3
+       lea       _printChar.L,A4
+       lea       _videoCursorPosRowY.L,A5
 ; unsigned char *vbufptr = vbuf;
-       move.l    (A2),D4
+       move.l    (A2),D6
 ; unsigned char vtec, vtecant;
-; int vRetProcCmd, iw;
+; int vRetProcCmd, iw, ix;
 ; int countCursor = 0;
-       clr.l     -8(A6)
-; char pEdit = 0;
-       clr.b     D6
+       clr.l     -16(A6)
+; char pEdit = 0, pIns = 0, vbuftemp, vbuftemp2;
+       clr.b     -12(A6)
+       clr.b     -11(A6)
 ; int iPos, iz;
-; //    unsigned char sqtdtam[20];
+; unsigned short vantX, vantY;
 ; if (pQtdInput == 0)
        move.l    8(A6),D0
        bne.s     inputLine_1
@@ -703,9 +704,9 @@ _inputLine:
        move.l    #512,8(A6)
 inputLine_1:
 ; vtecant = 0x00;
-       moveq     #0,D7
+       clr.b     -21(A6)
 ; vbufptr = vbuf;
-       move.l    (A2),D4
+       move.l    (A2),D6
 ; // Se for Linha editavel apresenta a linha na tela
 ; if (pTipo == 'S' || pTipo == 'I' || pTipo == 'R')
        cmp.b     #83,D3
@@ -726,28 +727,29 @@ inputLine_5:
        jsr       LDIV
        move.l    (A7),D0
        addq.w    #8,A7
-       move.l    D0,-12(A6)
+       move.l    D0,D7
 ; printText(vbuf);
        move.l    (A2),-(A7)
        jsr       _printText
        addq.w    #4,A7
 ; *videoCursorPosRowY -= iw;
-       move.l    _videoCursorPosRowY.L,A0
-       move.l    -12(A6),D0
-       sub.w     D0,(A0)
+       move.l    (A5),A0
+       sub.w     D7,(A0)
 ; *videoCursorPosColX = 0;
-       move.l    (A4),A0
+       move.l    (A3),A0
        clr.w     (A0)
 ; pEdit = 1;
-       moveq     #1,D6
+       move.b    #1,-12(A6)
 ; iPos = 0;
-       clr.l     D5
+       clr.l     D4
+; pIns = 0xFF;
+       move.b    #255,-11(A6)
 ; vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY);
-       move.l    _videoCursorPosRowY.L,A0
+       move.l    (A5),A0
        move.w    (A0),D1
        and.l     #255,D1
        move.l    D1,-(A7)
-       move.l    (A4),A0
+       move.l    (A3),A0
        move.w    (A0),D1
        and.l     #255,D1
        move.l    D1,-(A7)
@@ -774,7 +776,7 @@ inputLine_8:
        beq       inputLine_11
 ; {
 ; switch (countCursor)
-       move.l    -8(A6),D0
+       move.l    -16(A6),D0
        cmp.l     #12000,D0
        beq.s     inputLine_16
        bgt       inputLine_14
@@ -785,17 +787,17 @@ inputLine_15:
 ; {
 ; case 6000:
 ; hideCursor();
-       jsr       (A5)
+       jsr       _hideCursor
 ; if (pEdit)
-       tst.b     D6
+       tst.b     -12(A6)
        beq.s     inputLine_17
 ; printChar(vbuf[iPos],0);
        clr.l     -(A7)
        move.l    (A2),A0
-       move.b    0(A0,D5.L),D1
+       move.b    0(A0,D4.L),D1
        and.l     #255,D1
        move.l    D1,-(A7)
-       jsr       (A3)
+       jsr       (A4)
        addq.w    #8,A7
 inputLine_17:
 ; break;
@@ -805,12 +807,12 @@ inputLine_16:
 ; showCursor();
        jsr       _showCursor
 ; countCursor = 0;
-       clr.l     -8(A6)
+       clr.l     -16(A6)
 ; break;
 inputLine_14:
 ; }
 ; countCursor++;
-       addq.l    #1,-8(A6)
+       addq.l    #1,-16(A6)
 inputLine_11:
 ; }
 ; // Inicia leitura
@@ -849,7 +851,7 @@ inputLine_24:
 ; vtec = 0;
        clr.b     D2
 inputLine_22:
-; // Só aceita ponto de for numero real (# ou R) ou string ($ ou S) ou tudo (@)
+; // So aceita ponto de for numero real (# ou R) ou string ($ ou S) ou tudo (@)
 ; if (vtec == '.' && pTipo != '#' && pTipo != '$' &&  pTipo != 'R' && pTipo != 'S' && pTipo != '@')
        cmp.b     #46,D2
        bne.s     inputLine_25
@@ -872,75 +874,244 @@ inputLine_25:
 ; {
 ; // Prevenir sujeira no buffer ou repeticao
 ; if (vtec == vtecant)
-       cmp.b     D7,D2
-       bne.s     inputLine_29
+       cmp.b     -21(A6),D2
+       bne.s     inputLine_31
+; {
+; if (countCursor % 300 != 0)
+       move.l    -16(A6),-(A7)
+       pea       300
+       jsr       LDIV
+       move.l    4(A7),D0
+       addq.w    #8,A7
+       tst.l     D0
+       beq.s     inputLine_31
 ; continue;
        bra       inputLine_28
-inputLine_29:
+inputLine_31:
+; }
 ; if (pTipo != '@')
        cmp.b     #64,D3
-       beq.s     inputLine_33
+       beq.s     inputLine_35
 ; {
 ; hideCursor();
-       jsr       (A5)
+       jsr       _hideCursor
 ; if (pEdit)
-       tst.b     D6
-       beq.s     inputLine_33
+       tst.b     -12(A6)
+       beq.s     inputLine_35
 ; printChar(vbuf[iPos],0);
        clr.l     -(A7)
        move.l    (A2),A0
-       move.b    0(A0,D5.L),D1
+       move.b    0(A0,D4.L),D1
        and.l     #255,D1
        move.l    D1,-(A7)
-       jsr       (A3)
+       jsr       (A4)
        addq.w    #8,A7
-inputLine_33:
+inputLine_35:
 ; }
 ; vtecant = vtec;
-       move.b    D2,D7
-; if (vtec >= 0x20)   // Caracter Printavel
+       move.b    D2,-21(A6)
+; if (vtec >= 0x20 && vtec != 0x7F)   // Caracter Printavel menos o DELete
        cmp.b     #32,D2
-       blo       inputLine_35
+       blo       inputLine_37
+       cmp.b     #127,D2
+       beq       inputLine_37
 ; {
-; // Limite 32 bytes na linha digitada
+; if (!pEdit)
+       tst.b     -12(A6)
+       bne       inputLine_39
+; {
+; // Digitcao Normal
 ; if (vbufptr > vbuf + pQtdInput)
        move.l    (A2),D0
        add.l     8(A6),D0
-       cmp.l     D0,D4
-       bls.s     inputLine_39
+       cmp.l     D0,D6
+       bls.s     inputLine_43
 ; {
 ; *vbufptr--;
-       move.l    D4,A0
-       subq.l    #1,D4
+       move.l    D6,A0
+       subq.l    #1,D6
 ; if (pTipo != '@')
        cmp.b     #64,D3
-       beq.s     inputLine_39
+       beq.s     inputLine_43
 ; printChar(0x08, 1);
        pea       1
        pea       8
-       jsr       (A3)
+       jsr       (A4)
        addq.w    #8,A7
-inputLine_39:
+inputLine_43:
 ; }
 ; if (pTipo != '@')
        cmp.b     #64,D3
-       beq.s     inputLine_41
+       beq.s     inputLine_45
 ; printChar(vtec, 1);
        pea       1
        and.l     #255,D2
        move.l    D2,-(A7)
-       jsr       (A3)
+       jsr       (A4)
        addq.w    #8,A7
-inputLine_41:
+inputLine_45:
 ; *vbufptr++ = vtec;
-       move.l    D4,A0
-       addq.l    #1,D4
+       move.l    D6,A0
+       addq.l    #1,D6
        move.b    D2,(A0)
 ; *vbufptr = '\0';
-       move.l    D4,A0
+       move.l    D6,A0
        clr.b     (A0)
-       bra       inputLine_70
-inputLine_35:
+       bra       inputLine_58
+inputLine_39:
+; }
+; else
+; {
+; iw = strlen(vbuf);
+       move.l    (A2),-(A7)
+       jsr       _strlen
+       addq.w    #4,A7
+       move.l    D0,D7
+; // Edicao de Linha
+; if (!pIns)
+       tst.b     -11(A6)
+       bne       inputLine_47
+; {
+; // Sem insercao de caracteres
+; if (iw < pQtdInput)
+       cmp.l     8(A6),D7
+       bhs.s     inputLine_49
+; {
+; if (vbuf[iPos] == 0x00)
+       move.l    (A2),A0
+       move.b    0(A0,D4.L),D0
+       bne.s     inputLine_51
+; vbuf[iPos + 1] = 0x00;
+       move.l    (A2),A0
+       move.l    D4,A1
+       clr.b     1(A1,A0.L)
+inputLine_51:
+; vbuf[iPos] = vtec;
+       move.l    (A2),A0
+       move.b    D2,0(A0,D4.L)
+; printChar(vbuf[iPos],0);
+       clr.l     -(A7)
+       move.l    (A2),A0
+       move.b    0(A0,D4.L),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       (A4)
+       addq.w    #8,A7
+inputLine_49:
+       bra       inputLine_53
+inputLine_47:
+; }
+; }
+; else
+; {
+; // Com insercao de caracteres
+; if ((iw + 1) <= pQtdInput)
+       move.l    D7,D0
+       addq.l    #1,D0
+       cmp.l     8(A6),D0
+       bhi       inputLine_53
+; {
+; // Copia todos os caracteres mais 1 pro final
+; vbuftemp2 = vbuf[iPos];
+       move.l    (A2),A0
+       move.b    0(A0,D4.L),-9(A6)
+; vbuftemp = vbuf[iPos + 1];
+       move.l    (A2),A0
+       move.l    D4,A1
+       move.b    1(A1,A0.L),-10(A6)
+; vantX = *videoCursorPosColX;
+       move.l    (A3),A0
+       move.w    (A0),-4(A6)
+; vantY = *videoCursorPosRowY;
+       move.l    (A5),A0
+       move.w    (A0),-2(A6)
+; printChar(vtec,1);
+       pea       1
+       and.l     #255,D2
+       move.l    D2,-(A7)
+       jsr       (A4)
+       addq.w    #8,A7
+; for (ix = iPos; ix <= iw ; ix++)
+       move.l    D4,D5
+inputLine_55:
+       cmp.l     D7,D5
+       bgt       inputLine_57
+; {
+; vbuf[ix + 1] = vbuftemp2;
+       move.l    (A2),A0
+       move.l    D5,A1
+       move.b    -9(A6),1(A1,A0.L)
+; vbuftemp2 = vbuftemp;
+       move.b    -10(A6),-9(A6)
+; vbuftemp = vbuf[ix + 2];
+       move.l    (A2),A0
+       move.l    D5,A1
+       move.b    2(A1,A0.L),-10(A6)
+; printChar(vbuf[ix + 1],1);
+       pea       1
+       move.l    (A2),A0
+       move.l    D5,A1
+       move.b    1(A1,A0.L),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       (A4)
+       addq.w    #8,A7
+       addq.l    #1,D5
+       bra       inputLine_55
+inputLine_57:
+; }
+; vbuf[iw + 1] = 0x00;
+       move.l    (A2),A0
+       move.l    D7,A1
+       clr.b     1(A1,A0.L)
+; vbuf[iPos] = vtec;
+       move.l    (A2),A0
+       move.b    D2,0(A0,D4.L)
+; *videoCursorPosColX = vantX;
+       move.l    (A3),A0
+       move.w    -4(A6),(A0)
+; *videoCursorPosRowY = vantY;
+       move.l    (A5),A0
+       move.w    -2(A6),(A0)
+; vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY);
+       move.l    (A5),A0
+       move.w    (A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       move.l    (A3),A0
+       move.w    (A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       _vdp_set_cursor
+       addq.w    #8,A7
+inputLine_53:
+; }
+; }
+; if (iw <= pQtdInput)
+       cmp.l     8(A6),D7
+       bhi.s     inputLine_58
+; {
+; iPos++;
+       addq.l    #1,D4
+; *videoCursorPosColX = *videoCursorPosColX + 1;
+       move.l    (A3),A0
+       addq.w    #1,(A0)
+; vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY);
+       move.l    (A5),A0
+       move.w    (A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       move.l    (A3),A0
+       move.w    (A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       _vdp_set_cursor
+       addq.w    #8,A7
+inputLine_58:
+       bra       inputLine_105
+inputLine_37:
+; }
+; }
 ; }
 ; /*else if (pEdit && vtec == 0x11)    // UpArrow (17)
 ; {
@@ -951,204 +1122,345 @@ inputLine_35:
 ; // TBD
 ; }*/
 ; else if (pEdit && vtec == 0x12)    // LeftArrow (18)
-       ext.w     D6
-       ext.l     D6
-       tst.l     D6
-       beq       inputLine_43
+       move.b    -12(A6),D0
+       ext.w     D0
+       ext.l     D0
+       tst.l     D0
+       beq       inputLine_60
        cmp.b     #18,D2
-       bne       inputLine_43
+       bne       inputLine_60
 ; {
-; /*writeLongSerial("Aqui 332.666.0-[");
-; itoa(iPos,sqtdtam,10);
-; writeLongSerial(sqtdtam);
-; writeLongSerial("]\r\n");                */
 ; if (iPos > 0)
-       cmp.l     #0,D5
-       ble       inputLine_45
+       cmp.l     #0,D4
+       ble       inputLine_62
 ; {
 ; printChar(vbuf[iPos],0);
        clr.l     -(A7)
        move.l    (A2),A0
-       move.b    0(A0,D5.L),D1
+       move.b    0(A0,D4.L),D1
        and.l     #255,D1
        move.l    D1,-(A7)
-       jsr       (A3)
+       jsr       (A4)
        addq.w    #8,A7
 ; iPos--;
-       subq.l    #1,D5
+       subq.l    #1,D4
 ; if (*videoCursorPosColX == 0)
-       move.l    (A4),A0
+       move.l    (A3),A0
        move.w    (A0),D0
-       bne.s     inputLine_47
+       bne.s     inputLine_64
 ; *videoCursorPosColX = 255;
-       move.l    (A4),A0
+       move.l    (A3),A0
        move.w    #255,(A0)
-       bra.s     inputLine_48
-inputLine_47:
+       bra.s     inputLine_65
+inputLine_64:
 ; else
 ; *videoCursorPosColX = *videoCursorPosColX - 1;
-       move.l    (A4),A0
+       move.l    (A3),A0
        subq.w    #1,(A0)
-inputLine_48:
+inputLine_65:
 ; vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY);
-       move.l    _videoCursorPosRowY.L,A0
+       move.l    (A5),A0
        move.w    (A0),D1
        and.l     #255,D1
        move.l    D1,-(A7)
-       move.l    (A4),A0
+       move.l    (A3),A0
        move.w    (A0),D1
        and.l     #255,D1
        move.l    D1,-(A7)
        jsr       _vdp_set_cursor
        addq.w    #8,A7
-inputLine_45:
-       bra       inputLine_70
-inputLine_43:
+inputLine_62:
+       bra       inputLine_105
+inputLine_60:
 ; }
 ; }
 ; else if (pEdit && vtec == 0x14)    // RightArrow (20)
-       ext.w     D6
-       ext.l     D6
-       tst.l     D6
-       beq       inputLine_49
+       move.b    -12(A6),D0
+       ext.w     D0
+       ext.l     D0
+       tst.l     D0
+       beq       inputLine_66
        cmp.b     #20,D2
-       bne       inputLine_49
+       bne       inputLine_66
 ; {
 ; if (iPos < strlen(vbuf))
        move.l    (A2),-(A7)
        jsr       _strlen
        addq.w    #4,A7
-       cmp.l     D0,D5
-       bge       inputLine_51
+       cmp.l     D0,D4
+       bge       inputLine_68
 ; {
 ; printChar(vbuf[iPos],0);
        clr.l     -(A7)
        move.l    (A2),A0
-       move.b    0(A0,D5.L),D1
+       move.b    0(A0,D4.L),D1
        and.l     #255,D1
        move.l    D1,-(A7)
-       jsr       (A3)
+       jsr       (A4)
        addq.w    #8,A7
 ; iPos++;
-       addq.l    #1,D5
+       addq.l    #1,D4
 ; *videoCursorPosColX = *videoCursorPosColX + 1;
-       move.l    (A4),A0
+       move.l    (A3),A0
        addq.w    #1,(A0)
 ; vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY);
-       move.l    _videoCursorPosRowY.L,A0
+       move.l    (A5),A0
        move.w    (A0),D1
        and.l     #255,D1
        move.l    D1,-(A7)
-       move.l    (A4),A0
+       move.l    (A3),A0
        move.w    (A0),D1
        and.l     #255,D1
        move.l    D1,-(A7)
        jsr       _vdp_set_cursor
        addq.w    #8,A7
-inputLine_51:
-       bra       inputLine_70
-inputLine_49:
+inputLine_68:
+       bra       inputLine_105
+inputLine_66:
 ; }
 ; }
-; else if (vtec == 0x08)  // Backspace
-       cmp.b     #8,D2
-       bne.s     inputLine_53
+; else if (vtec == 0x15)  // Insert
+       cmp.b     #21,D2
+       bne.s     inputLine_70
 ; {
+; pIns = ~pIns;
+       move.b    -11(A6),D0
+       not.b     D0
+       move.b    D0,-11(A6)
+       bra       inputLine_105
+inputLine_70:
+; /*writeLongSerial("Aqui 332.666.1-[");
+; itoa(pIns,sqtdtam,16);
+; writeLongSerial(sqtdtam);
+; writeLongSerial("]\r\n");*/
+; }
+; else if (vtec == 0x08 && !pEdit)  // Backspace
+       cmp.b     #8,D2
+       bne       inputLine_72
+       tst.b     -12(A6)
+       bne.s     inputLine_74
+       moveq     #1,D0
+       bra.s     inputLine_75
+inputLine_74:
+       clr.l     D0
+inputLine_75:
+       ext.w     D0
+       ext.l     D0
+       tst.l     D0
+       beq.s     inputLine_72
+; {
+; // Digitcao Normal
 ; if (vbufptr > vbuf)
-       cmp.l     (A2),D4
-       bls.s     inputLine_57
+       cmp.l     (A2),D6
+       bls.s     inputLine_78
 ; {
 ; *vbufptr--;
-       move.l    D4,A0
-       subq.l    #1,D4
+       move.l    D6,A0
+       subq.l    #1,D6
 ; *vbufptr = 0x00;
-       move.l    D4,A0
+       move.l    D6,A0
        clr.b     (A0)
 ; if (pTipo != '@')
        cmp.b     #64,D3
-       beq.s     inputLine_57
+       beq.s     inputLine_78
 ; printChar(0x08, 1);
        pea       1
        pea       8
-       jsr       (A3)
+       jsr       (A4)
        addq.w    #8,A7
-inputLine_57:
-       bra       inputLine_70
-inputLine_53:
+inputLine_78:
+       bra       inputLine_105
+inputLine_72:
+; }
+; }
+; else if ((vtec == 0x08 || vtec == 0x7F) && pEdit)  // Backspace
+       cmp.b     #8,D2
+       beq.s     inputLine_82
+       cmp.b     #127,D2
+       bne       inputLine_80
+inputLine_82:
+       move.b    -12(A6),D0
+       ext.w     D0
+       ext.l     D0
+       tst.l     D0
+       beq       inputLine_80
+; {
+; iw = strlen(vbuf);
+       move.l    (A2),-(A7)
+       jsr       _strlen
+       addq.w    #4,A7
+       move.l    D0,D7
+; if ((vtec == 0x08 && iPos > 0) || vtec == 0x7F)
+       cmp.b     #8,D2
+       bne.s     inputLine_86
+       cmp.l     #0,D4
+       bgt.s     inputLine_85
+inputLine_86:
+       cmp.b     #127,D2
+       bne       inputLine_83
+inputLine_85:
+; {
+; if (vtec == 0x08)
+       cmp.b     #8,D2
+       bne       inputLine_87
+; {
+; iPos--;
+       subq.l    #1,D4
+; if (*videoCursorPosColX == 0)
+       move.l    (A3),A0
+       move.w    (A0),D0
+       bne.s     inputLine_89
+; *videoCursorPosColX = 255;
+       move.l    (A3),A0
+       move.w    #255,(A0)
+       bra.s     inputLine_90
+inputLine_89:
+; else
+; *videoCursorPosColX = *videoCursorPosColX - 1;
+       move.l    (A3),A0
+       subq.w    #1,(A0)
+inputLine_90:
+; vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY);
+       move.l    (A5),A0
+       move.w    (A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       move.l    (A3),A0
+       move.w    (A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       _vdp_set_cursor
+       addq.w    #8,A7
+inputLine_87:
+; }
+; vantX = *videoCursorPosColX;
+       move.l    (A3),A0
+       move.w    (A0),-4(A6)
+; vantY = *videoCursorPosRowY;
+       move.l    (A5),A0
+       move.w    (A0),-2(A6)
+; for (ix = iPos; ix < iw ; ix++)
+       move.l    D4,D5
+inputLine_91:
+       cmp.l     D7,D5
+       bge.s     inputLine_93
+; {
+; vbuf[ix] = vbuf[ix + 1];
+       move.l    (A2),A0
+       move.l    D5,A1
+       move.l    A0,-(A7)
+       move.l    (A2),A0
+       move.b    1(A1,A0.L),0(A0,D5.L)
+       move.l    (A7)+,A0
+; printChar(vbuf[ix],1);
+       pea       1
+       move.l    (A2),A0
+       move.b    0(A0,D5.L),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       (A4)
+       addq.w    #8,A7
+       addq.l    #1,D5
+       bra       inputLine_91
+inputLine_93:
+; }
+; vbuf[ix] = 0x00;
+       move.l    (A2),A0
+       clr.b     0(A0,D5.L)
+; *videoCursorPosColX = vantX;
+       move.l    (A3),A0
+       move.w    -4(A6),(A0)
+; *videoCursorPosRowY = vantY;
+       move.l    (A5),A0
+       move.w    -2(A6),(A0)
+; vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY);
+       move.l    (A5),A0
+       move.w    (A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       move.l    (A3),A0
+       move.w    (A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       _vdp_set_cursor
+       addq.w    #8,A7
+inputLine_83:
+       bra       inputLine_105
+inputLine_80:
 ; }
 ; }
 ; else if (vtec == 0x1B)   // ESC
        cmp.b     #27,D2
-       bne       inputLine_59
+       bne       inputLine_94
 ; {
 ; // Limpa a linha, esvazia o buffer e retorna tecla
 ; while (vbufptr > vbuf)
-inputLine_61:
-       cmp.l     (A2),D4
-       bls       inputLine_63
+inputLine_96:
+       cmp.l     (A2),D6
+       bls       inputLine_98
 ; {
 ; *vbufptr--;
-       move.l    D4,A0
-       subq.l    #1,D4
+       move.l    D6,A0
+       subq.l    #1,D6
 ; *vbufptr = 0x00;
-       move.l    D4,A0
+       move.l    D6,A0
        clr.b     (A0)
 ; if (pTipo != '@')
        cmp.b     #64,D3
-       beq.s     inputLine_64
+       beq.s     inputLine_99
 ; hideCursor();
-       jsr       (A5)
-inputLine_64:
+       jsr       _hideCursor
+inputLine_99:
 ; if (pTipo != '@')
        cmp.b     #64,D3
-       beq.s     inputLine_66
+       beq.s     inputLine_101
 ; printChar(0x08, 1);
        pea       1
        pea       8
-       jsr       (A3)
+       jsr       (A4)
        addq.w    #8,A7
-inputLine_66:
+inputLine_101:
 ; if (pTipo != '@')
        cmp.b     #64,D3
-       beq.s     inputLine_68
+       beq.s     inputLine_103
 ; showCursor();
        jsr       _showCursor
-inputLine_68:
-       bra       inputLine_61
-inputLine_63:
+inputLine_103:
+       bra       inputLine_96
+inputLine_98:
 ; }
 ; hideCursor();
-       jsr       (A5)
+       jsr       _hideCursor
 ; return vtec;
        move.b    D2,D0
        bra.s     inputLine_21
-inputLine_59:
+inputLine_94:
 ; }
 ; else if (vtec == 0x0D || vtec == 0x0A ) // CR ou LF
        cmp.b     #13,D2
-       beq.s     inputLine_72
+       beq.s     inputLine_107
        cmp.b     #10,D2
-       bne.s     inputLine_70
-inputLine_72:
+       bne.s     inputLine_105
+inputLine_107:
 ; {
 ; return vtec;
        move.b    D2,D0
        bra.s     inputLine_21
-inputLine_70:
+inputLine_105:
 ; }
 ; if (pTipo != '@')
        cmp.b     #64,D3
-       beq.s     inputLine_73
+       beq.s     inputLine_108
 ; showCursor();
        jsr       _showCursor
-inputLine_73:
+inputLine_108:
        bra.s     inputLine_28
 inputLine_27:
 ; }
 ; else
 ; {
 ; vtecant = 0x00;
-       moveq     #0,D7
+       clr.b     -21(A6)
 inputLine_28:
        bra       inputLine_8
 inputLine_21:
@@ -1750,7 +2062,11 @@ printChar_1:
        pea       3
        jsr       _vdp_set_cursor_pos
        addq.w    #4,A7
-; if (*videoCursorPosRowY == 24)
+; if (*vdp_mode == VDP_MODE_TEXT && *videoCursorPosRowY == 24)
+       move.l    _vdp_mode.L,A0
+       move.b    (A0),D0
+       cmp.b     #3,D0
+       bne.s     printChar_17
        move.l    (A2),A0
        move.w    (A0),D0
        cmp.w     #24,D0
@@ -2167,6 +2483,12 @@ vdp_init_8:
 ; *color_table_size = 0x1800;
        move.l    _color_table_size.L,A0
        clr.b     (A0)
+; *vdpMaxCols = 255;
+       move.l    _vdpMaxCols.L,A0
+       move.b    #255,(A0)
+; *vdpMaxRows = 191;
+       move.l    _vdpMaxRows.L,A0
+       move.b    #191,(A0)
 ; setWriteAddress(*name_table);
        move.l    (A3),A0
        move.l    (A0),-(A7)
@@ -2236,6 +2558,12 @@ vdp_init_9:
 ; *name_table = 0x1400;
        move.l    (A3),A0
        move.l    #5120,(A0)
+; *vdpMaxCols = 63;
+       move.l    _vdpMaxCols.L,A0
+       move.b    #63,(A0)
+; *vdpMaxRows = 47;
+       move.l    _vdpMaxRows.L,A0
+       move.b    #47,(A0)
 ; setWriteAddress(*name_table); // Init name table
        move.l    (A3),A0
        move.l    (A0),-(A7)
@@ -2305,6 +2633,9 @@ vdp_init_10:
 ; *vdpMaxCols = 39;
        move.l    _vdpMaxCols.L,A0
        move.b    #39,(A0)
+; *vdpMaxRows = 23;
+       move.l    _vdpMaxRows.L,A0
+       move.b    #23,(A0)
 ; setWriteAddress(*pattern_table + 0x100);
        move.l    (A4),A0
        move.l    (A0),D1
@@ -3208,30 +3539,41 @@ vdp_set_cursor_7:
        xdef      _vdp_set_cursor_pos
 _vdp_set_cursor_pos:
        link      A6,#0
-       movem.l   A2/A3/A4,-(A7)
+       movem.l   D2/A2/A3/A4,-(A7)
        lea       _videoCursorPosColX.L,A2
        lea       _videoCursorPosRowY.L,A3
        lea       _vdp_set_cursor.L,A4
+; unsigned char pMoveId = 1;
+       moveq     #1,D2
+; if (*vdp_mode == VDP_MODE_MULTICOLOR)
+       move.l    _vdp_mode.L,A0
+       move.b    (A0),D0
+       cmp.b     #2,D0
+       bne.s     vdp_set_cursor_pos_1
+; pMoveId = 8;
+       moveq     #8,D2
+vdp_set_cursor_pos_1:
 ; switch (direction)
        move.b    11(A6),D0
        and.l     #255,D0
        cmp.l     #4,D0
-       bhs       vdp_set_cursor_pos_2
+       bhs       vdp_set_cursor_pos_4
        asl.l     #1,D0
-       move.w    vdp_set_cursor_pos_3(PC,D0.L),D0
-       jmp       vdp_set_cursor_pos_3(PC,D0.W)
-vdp_set_cursor_pos_3:
-       dc.w      vdp_set_cursor_pos_4-vdp_set_cursor_pos_3
-       dc.w      vdp_set_cursor_pos_5-vdp_set_cursor_pos_3
-       dc.w      vdp_set_cursor_pos_6-vdp_set_cursor_pos_3
-       dc.w      vdp_set_cursor_pos_7-vdp_set_cursor_pos_3
-vdp_set_cursor_pos_4:
+       move.w    vdp_set_cursor_pos_5(PC,D0.L),D0
+       jmp       vdp_set_cursor_pos_5(PC,D0.W)
+vdp_set_cursor_pos_5:
+       dc.w      vdp_set_cursor_pos_6-vdp_set_cursor_pos_5
+       dc.w      vdp_set_cursor_pos_7-vdp_set_cursor_pos_5
+       dc.w      vdp_set_cursor_pos_8-vdp_set_cursor_pos_5
+       dc.w      vdp_set_cursor_pos_9-vdp_set_cursor_pos_5
+vdp_set_cursor_pos_6:
 ; {
 ; case VDP_CSR_UP:
-; vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY - 1);
+; vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY - pMoveId);
        move.l    (A3),A0
        move.w    (A0),D1
-       subq.w    #1,D1
+       and.w     #255,D2
+       sub.w     D2,D1
        and.l     #255,D1
        move.l    D1,-(A7)
        move.l    (A2),A0
@@ -3241,56 +3583,59 @@ vdp_set_cursor_pos_4:
        jsr       (A4)
        addq.w    #8,A7
 ; break;
-       bra       vdp_set_cursor_pos_2
-vdp_set_cursor_pos_5:
-; case VDP_CSR_DOWN:
-; vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY + 1);
-       move.l    (A3),A0
-       move.w    (A0),D1
-       addq.w    #1,D1
-       and.l     #255,D1
-       move.l    D1,-(A7)
-       move.l    (A2),A0
-       move.w    (A0),D1
-       and.l     #255,D1
-       move.l    D1,-(A7)
-       jsr       (A4)
-       addq.w    #8,A7
-; break;
-       bra       vdp_set_cursor_pos_2
-vdp_set_cursor_pos_6:
-; case VDP_CSR_LEFT:
-; vdp_set_cursor(*videoCursorPosColX - 1, *videoCursorPosRowY);
-       move.l    (A3),A0
-       move.w    (A0),D1
-       and.l     #255,D1
-       move.l    D1,-(A7)
-       move.l    (A2),A0
-       move.w    (A0),D1
-       subq.w    #1,D1
-       and.l     #255,D1
-       move.l    D1,-(A7)
-       jsr       (A4)
-       addq.w    #8,A7
-; break;
-       bra.s     vdp_set_cursor_pos_2
+       bra       vdp_set_cursor_pos_4
 vdp_set_cursor_pos_7:
-; case VDP_CSR_RIGHT:
-; vdp_set_cursor(*videoCursorPosColX + 1, *videoCursorPosRowY);
+; case VDP_CSR_DOWN:
+; vdp_set_cursor(*videoCursorPosColX, *videoCursorPosRowY + pMoveId);
+       move.l    (A3),A0
+       move.w    (A0),D1
+       and.w     #255,D2
+       add.w     D2,D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       move.l    (A2),A0
+       move.w    (A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       (A4)
+       addq.w    #8,A7
+; break;
+       bra       vdp_set_cursor_pos_4
+vdp_set_cursor_pos_8:
+; case VDP_CSR_LEFT:
+; vdp_set_cursor(*videoCursorPosColX - pMoveId, *videoCursorPosRowY);
        move.l    (A3),A0
        move.w    (A0),D1
        and.l     #255,D1
        move.l    D1,-(A7)
        move.l    (A2),A0
        move.w    (A0),D1
-       addq.w    #1,D1
+       and.w     #255,D2
+       sub.w     D2,D1
        and.l     #255,D1
        move.l    D1,-(A7)
        jsr       (A4)
        addq.w    #8,A7
 ; break;
-vdp_set_cursor_pos_2:
-       movem.l   (A7)+,A2/A3/A4
+       bra.s     vdp_set_cursor_pos_4
+vdp_set_cursor_pos_9:
+; case VDP_CSR_RIGHT:
+; vdp_set_cursor(*videoCursorPosColX + pMoveId, *videoCursorPosRowY);
+       move.l    (A3),A0
+       move.w    (A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       move.l    (A2),A0
+       move.w    (A0),D1
+       and.w     #255,D2
+       add.w     D2,D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       (A4)
+       addq.w    #8,A7
+; break;
+vdp_set_cursor_pos_4:
+       movem.l   (A7)+,D2/A2/A3/A4
        unlk      A6
        rts
 ; }
@@ -3300,10 +3645,15 @@ vdp_set_cursor_pos_2:
 ; {
        xdef      _vdp_write
 _vdp_write:
-       link      A6,#-4
-       movem.l   D2/D3/D4,-(A7)
+       link      A6,#-8
+       movem.l   D2/D3/D4/D5/D6/D7/A2/A3/A4/A5,-(A7)
+       lea       _videoCursorPosColX.L,A2
+       lea       _videoCursorPosRowY.L,A3
+       move.b    11(A6),D7
+       and.l     #255,D7
+       lea       _videoFontes.L,A4
 ; unsigned int name_offset = *videoCursorPosRowY * (*vdpMaxCols + 1) + *videoCursorPosColX; // Position in name table
-       move.l    _videoCursorPosRowY.L,A0
+       move.l    (A3),A0
        move.w    (A0),D0
        move.l    _vdpMaxCols.L,A0
        move.b    (A0),D1
@@ -3311,18 +3661,20 @@ _vdp_write:
        and.w     #255,D1
        mulu.w    D1,D0
        and.l     #65535,D0
-       move.l    _videoCursorPosColX.L,A0
+       move.l    (A2),A0
        move.w    (A0),D1
        and.l     #65535,D1
        add.l     D1,D0
-       move.l    D0,D4
+       move.l    D0,A5
 ; unsigned int pattern_offset = name_offset << 3;                    // Offset of pattern in pattern table
-       move.l    D4,D0
+       move.l    A5,D0
        lsl.l     #3,D0
-       move.l    D0,-4(A6)
-; unsigned char i;
+       move.l    D0,-8(A6)
+; char i, ix;
+; unsigned short vAntX, vAntY;
 ; unsigned char *tempFontes = videoFontes;
-       move.l    _videoFontes.L,D3
+       move.l    (A4),D5
+; unsigned long vEndFont, vEndPart;
 ; if (*vdp_mode == VDP_MODE_G2)
        move.l    _vdp_mode.L,A0
        move.b    (A0),D0
@@ -3332,7 +3684,7 @@ _vdp_write:
 ; setWriteAddress(*pattern_table + pattern_offset);
        move.l    _pattern_table.L,A0
        move.l    (A0),D1
-       add.l     -4(A6),D1
+       add.l     -8(A6),D1
        move.l    D1,-(A7)
        jsr       _setWriteAddress
        addq.w    #4,A7
@@ -3340,44 +3692,141 @@ _vdp_write:
        clr.b     D2
 vdp_write_3:
        cmp.b     #8,D2
-       bhs.s     vdp_write_5
+       bge       vdp_write_5
 ; {
-; // writeByteToVRAM(patterns[((chr - 32) << 3) + i]);
-; tempFontes = *videoFontes + (((chr - 32) << 3) + i);
-       move.l    _videoFontes.L,A0
-       move.l    (A0),D0
-       move.b    11(A6),D1
-       sub.b     #32,D1
-       lsl.b     #3,D1
-       add.b     D2,D1
-       and.l     #255,D1
-       add.l     D1,D0
+; vEndFont = *videoFontes;
+       move.l    (A4),A0
+       move.l    (A0),D4
+; vEndPart = chr - 32;
+       and.l     #255,D7
+       move.l    D7,D0
+       sub.l     #32,D0
        move.l    D0,D3
+; vEndPart = vEndPart << 3;
+       lsl.l     #3,D3
+; vEndFont += vEndPart + i;
+       move.l    D3,D0
+       ext.w     D2
+       ext.l     D2
+       add.l     D2,D0
+       add.l     D0,D4
+; tempFontes = vEndFont;
+       move.l    D4,D5
 ; *vvdgd = *tempFontes;
-       move.l    D3,A0
+       move.l    D5,A0
        move.l    _vvdgd.L,A1
        move.b    (A0),(A1)
        addq.b    #1,D2
        bra       vdp_write_3
 vdp_write_5:
-       bra.s     vdp_write_2
+       bra       vdp_write_7
 vdp_write_1:
 ; }
+; }
+; else if (*vdp_mode == VDP_MODE_MULTICOLOR)
+       move.l    _vdp_mode.L,A0
+       move.b    (A0),D0
+       cmp.b     #2,D0
+       bne       vdp_write_6
+; {
+; vAntY = *videoCursorPosRowY;
+       move.l    (A3),A0
+       move.w    (A0),-2(A6)
+; for (i = 0; i < 8; i++)
+       clr.b     D2
+vdp_write_8:
+       cmp.b     #8,D2
+       bge       vdp_write_10
+; {
+; vEndFont = *videoFontes;
+       move.l    (A4),A0
+       move.l    (A0),D4
+; vEndPart = chr - 32;
+       and.l     #255,D7
+       move.l    D7,D0
+       sub.l     #32,D0
+       move.l    D0,D3
+; vEndPart = vEndPart << 3;
+       lsl.l     #3,D3
+; vEndFont += vEndPart + i;
+       move.l    D3,D0
+       ext.w     D2
+       ext.l     D2
+       add.l     D2,D0
+       add.l     D0,D4
+; tempFontes = vEndFont;
+       move.l    D4,D5
+; vAntX = *videoCursorPosColX;
+       move.l    (A2),A0
+       move.w    (A0),-4(A6)
+; for (ix = 7; ix >=0; ix--)
+       moveq     #7,D6
+vdp_write_11:
+       cmp.b     #0,D6
+       blt       vdp_write_13
+; {
+; vdp_plot_color(*videoCursorPosColX, *videoCursorPosRowY, ((*tempFontes >> ix) & 0x01) ? *fgcolor : *bgcolor);
+       move.l    D5,A0
+       move.b    (A0),D1
+       lsr.b     D6,D1
+       and.b     #1,D1
+       beq.s     vdp_write_14
+       move.l    _fgcolor.L,A0
+       move.b    (A0),D1
+       bra.s     vdp_write_15
+vdp_write_14:
+       move.l    _bgcolor.L,A0
+       move.b    (A0),D1
+vdp_write_15:
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       move.l    (A3),A0
+       move.w    (A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       move.l    (A2),A0
+       move.w    (A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       _vdp_plot_color
+       add.w     #12,A7
+; *videoCursorPosColX = *videoCursorPosColX + 1;
+       move.l    (A2),A0
+       addq.w    #1,(A0)
+       subq.b    #1,D6
+       bra       vdp_write_11
+vdp_write_13:
+; }
+; *videoCursorPosColX = vAntX;
+       move.l    (A2),A0
+       move.w    -4(A6),(A0)
+; *videoCursorPosRowY = *videoCursorPosRowY + 1;
+       move.l    (A3),A0
+       addq.w    #1,(A0)
+       addq.b    #1,D2
+       bra       vdp_write_8
+vdp_write_10:
+; }
+; *videoCursorPosRowY = vAntY;
+       move.l    (A3),A0
+       move.w    -2(A6),(A0)
+       bra.s     vdp_write_7
+vdp_write_6:
 ; }
 ; else // G1 and text mode
 ; {
 ; setWriteAddress(*name_table + name_offset);
        move.l    _name_table.L,A0
        move.l    (A0),D1
-       add.l     D4,D1
+       add.l     A5,D1
        move.l    D1,-(A7)
        jsr       _setWriteAddress
        addq.w    #4,A7
 ; *vvdgd = (chr);
        move.l    _vvdgd.L,A0
-       move.b    11(A6),(A0)
-vdp_write_2:
-       movem.l   (A7)+,D2/D3/D4
+       move.b    D7,(A0)
+vdp_write_7:
+       movem.l   (A7)+,D2/D3/D4/D5/D6/D7/A2/A3/A4/A5
        unlk      A6
        rts
 ; }
@@ -3543,7 +3992,7 @@ _vdp_read_color_pixel:
        move.l    _vdp_mode.L,A0
        move.b    (A0),D0
        cmp.b     #2,D0
-       bne       vdp_read_color_pixel_1
+       bne       vdp_read_color_pixel_4
 ; {
 ; addr = *pattern_table + 8 * (x / 2) + y % 8 + 256 * (y / 8);
        move.l    _pattern_table.L,A0
@@ -3573,10 +4022,28 @@ _vdp_read_color_pixel:
        move.l    D2,-(A7)
        jsr       _setReadAddress
        addq.w    #4,A7
-; vRetColor = *vvdgd;
+; setReadAddress(addr);
+       move.l    D2,-(A7)
+       jsr       _setReadAddress
+       addq.w    #4,A7
+; if (x & 1) // Odd columns
+       move.b    11(A6),D0
+       and.b     #1,D0
+       beq.s     vdp_read_color_pixel_3
+; vRetColor = (*vvdgd & 0x0f);
        move.l    _vvdgd.L,A0
-       move.b    (A0),D3
-vdp_read_color_pixel_1:
+       move.b    (A0),D0
+       and.b     #15,D0
+       move.b    D0,D3
+       bra.s     vdp_read_color_pixel_4
+vdp_read_color_pixel_3:
+; else
+; vRetColor = (*vvdgd >> 4);        
+       move.l    _vvdgd.L,A0
+       move.b    (A0),D0
+       lsr.b     #4,D0
+       move.b    D0,D3
+vdp_read_color_pixel_4:
 ; }
 ; return vRetColor;
        move.b    D3,D0

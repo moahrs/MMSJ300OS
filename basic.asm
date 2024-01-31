@@ -83,11 +83,11 @@ _main:
        jsr       _clearScr
 main_1:
 ; printText("MMSJ-BASIC v"versionBasic);
-       pea       @basic_92.L
+       pea       @basic_95.L
        jsr       (A2)
        addq.w    #4,A7
 ; printText("\r\n\0");
-       pea       @basic_93.L
+       pea       @basic_96.L
        jsr       (A2)
        addq.w    #4,A7
 ; if (!*startBasic)
@@ -95,12 +95,12 @@ main_1:
        tst.w     (A0)
        bne.s     main_3
 ; printText("Utility (c) 2022-2024\r\n\0");
-       pea       @basic_94.L
+       pea       @basic_97.L
        jsr       (A2)
        addq.w    #4,A7
 main_3:
 ; printText("OK\r\n\0");
-       pea       @basic_95.L
+       pea       @basic_98.L
        jsr       (A2)
        addq.w    #4,A7
 ; *vBufReceived = 0x00;
@@ -133,6 +133,14 @@ main_3:
 ; *lastHgrY = 0;
        move.l    _lastHgrY.L,A0
        clr.b     (A0)
+; *fgcolorAnt = *fgcolor;
+       move.l    _fgcolor.L,A0
+       move.l    _fgcolorAnt.L,A1
+       move.b    (A0),(A1)
+; *bgcolorAnt = *bgcolor;
+       move.l    _bgcolor.L,A0
+       move.l    _bgcolorAnt.L,A1
+       move.b    (A0),(A1)
 ; while (*pProcess)
 main_5:
        move.l    (A3),A0
@@ -156,7 +164,7 @@ main_5:
 main_10:
 ; {
 ; printText("\r\n\0");
-       pea       @basic_93.L
+       pea       @basic_96.L
        jsr       (A2)
        addq.w    #4,A7
 ; processLine();
@@ -169,7 +177,7 @@ main_10:
        tst.b     (A0)
        beq.s     main_11
 ; printText("\r\nOK\0");
-       pea       @basic_96.L
+       pea       @basic_99.L
        jsr       (A2)
        addq.w    #4,A7
 main_11:
@@ -187,7 +195,7 @@ main_11:
        tst.b     (A0)
        beq.s     main_13
 ; printText("\r\n\0");   // printText("\r\n>\0");
-       pea       @basic_93.L
+       pea       @basic_96.L
        jsr       (A2)
        addq.w    #4,A7
 main_13:
@@ -199,7 +207,7 @@ main_8:
        beq.s     main_15
 ; {
 ; printText("\r\n\0");
-       pea       @basic_93.L
+       pea       @basic_96.L
        jsr       (A2)
        addq.w    #4,A7
 main_15:
@@ -208,7 +216,7 @@ main_7:
 ; }
 ; }
 ; printText("\r\n\0");
-       pea       @basic_93.L
+       pea       @basic_96.L
        jsr       (A2)
        addq.w    #4,A7
        movem.l   (A7)+,D2/A2/A3/A4/A5
@@ -413,7 +421,7 @@ processLine_18:
 processLine_20:
 ; // Comando Direto
 ; if (!strcmp(linhacomando,"HOME") && iy == 4)
-       pea       @basic_45.L
+       pea       @basic_48.L
        move.l    A2,-(A7)
        jsr       (A5)
        addq.w    #8,A7
@@ -428,7 +436,7 @@ processLine_20:
 processLine_21:
 ; }
 ; else if (!strcmp(linhacomando,"NEW") && iy == 3)
-       pea       @basic_97.L
+       pea       @basic_100.L
        move.l    A2,-(A7)
        jsr       (A5)
        addq.w    #8,A7
@@ -459,7 +467,7 @@ processLine_21:
 processLine_23:
 ; }
 ; else if (!strcmp(linhacomando,"EDIT") && iy == 4)
-       pea       @basic_98.L
+       pea       @basic_101.L
        move.l    A2,-(A7)
        jsr       (A5)
        addq.w    #8,A7
@@ -476,7 +484,7 @@ processLine_23:
 processLine_25:
 ; }
 ; else if (!strcmp(linhacomando,"LIST") && iy == 4)
-       pea       @basic_99.L
+       pea       @basic_102.L
        move.l    A2,-(A7)
        jsr       (A5)
        addq.w    #8,A7
@@ -494,7 +502,7 @@ processLine_25:
 processLine_27:
 ; }
 ; else if (!strcmp(linhacomando,"LISTP") && iy == 5)
-       pea       @basic_100.L
+       pea       @basic_103.L
        move.l    A2,-(A7)
        jsr       (A5)
        addq.w    #8,A7
@@ -512,7 +520,7 @@ processLine_27:
 processLine_29:
 ; }
 ; else if (!strcmp(linhacomando,"RUN") && iy == 3)
-       pea       @basic_101.L
+       pea       @basic_104.L
        move.l    A2,-(A7)
        jsr       (A5)
        addq.w    #8,A7
@@ -529,7 +537,7 @@ processLine_29:
 processLine_31:
 ; }
 ; else if (!strcmp(linhacomando,"DEL") && iy == 3)
-       pea       @basic_102.L
+       pea       @basic_105.L
        move.l    A2,-(A7)
        jsr       (A5)
        addq.w    #8,A7
@@ -546,7 +554,7 @@ processLine_31:
 processLine_33:
 ; }
 ; else if (!strcmp(linhacomando,"XLOAD") && iy == 5)
-       pea       @basic_103.L
+       pea       @basic_106.L
        move.l    A2,-(A7)
        jsr       (A5)
        addq.w    #8,A7
@@ -561,7 +569,7 @@ processLine_33:
 processLine_35:
 ; }
 ; else if (!strcmp(linhacomando,"TIMER") && iy == 5)
-       pea       @basic_104.L
+       pea       @basic_107.L
        move.l    A2,-(A7)
        jsr       (A5)
        addq.w    #8,A7
@@ -586,7 +594,7 @@ processLine_35:
        jsr       _itoa
        add.w     #12,A7
 ; printText("Timer: ");
-       pea       @basic_105.L
+       pea       @basic_108.L
        jsr       _printText
        addq.w    #4,A7
 ; printText(vBuffer);
@@ -594,14 +602,14 @@ processLine_35:
        jsr       _printText
        addq.w    #4,A7
 ; printText("ms\r\n\0");
-       pea       @basic_106.L
+       pea       @basic_109.L
        jsr       _printText
        addq.w    #4,A7
        bra       processLine_54
 processLine_37:
 ; }
 ; else if (!strcmp(linhacomando,"TRACE") && iy == 5)
-       pea       @basic_107.L
+       pea       @basic_110.L
        move.l    A2,-(A7)
        jsr       (A5)
        addq.w    #8,A7
@@ -617,7 +625,7 @@ processLine_37:
 processLine_39:
 ; }
 ; else if (!strcmp(linhacomando,"NOTRACE") && iy == 7)
-       pea       @basic_108.L
+       pea       @basic_111.L
        move.l    A2,-(A7)
        jsr       (A5)
        addq.w    #8,A7
@@ -636,7 +644,7 @@ processLine_41:
 ; // ESSE COMANDO NAO VAI EXISTIR QUANDO FOR PRA BIOS
 ; // *************************************************
 ; else if (!strcmp(linhacomando,"QUIT") && iy == 4)
-       pea       @basic_109.L
+       pea       @basic_112.L
        move.l    A2,-(A7)
        jsr       (A5)
        addq.w    #8,A7
@@ -667,7 +675,7 @@ processLine_43:
        tst.b     -297(A6)
        beq.s     processLine_45
 ; strcat(vRetInf.tString, " ");
-       pea       @basic_110.L
+       pea       @basic_113.L
        lea       -292(A6),A0
        move.l    A0,-(A7)
        jsr       _strcat
@@ -905,6 +913,7 @@ _tokenizeLine:
 ; char isToken;
 ; char vTemRem = 0;
        clr.b     -1(A6)
+; //    unsigned char sqtdtam[20];
 ; // Separar linha entre comando e argumento
 ; vLinhaArg[0] = '\0';
        clr.b     (A3)
@@ -954,7 +963,7 @@ tokenizeLine_13:
        move.b    (A0),D1
        and.l     #255,D1
        move.l    D1,-(A7)
-       pea       @basic_111.L
+       pea       @basic_114.L
        jsr       _strchr
        addq.w    #8,A7
        tst.l     D0
@@ -1074,6 +1083,13 @@ tokenizeLine_16:
 ; {
 ; vToken = 0;
        clr.b     D6
+; /*writeLongSerial("Aqui 332.666.2-[");
+; itoa(ix,sqtdtam,10);
+; writeLongSerial(sqtdtam);
+; writeLongSerial("]-[");
+; itoa(*blin,sqtdtam,16);
+; writeLongSerial(sqtdtam);
+; writeLongSerial("]\r\n");*/
 ; if (ix > 1)
        cmp.w     #1,D4
        bls       tokenizeLine_41
@@ -1475,7 +1491,7 @@ saveLine_1:
        bne.s     saveLine_5
 ; {
 ; printText("Line number already exists\r\n\0");
-       pea       @basic_112.L
+       pea       @basic_115.L
        jsr       _printText
        addq.w    #4,A7
 ; return;
@@ -1812,7 +1828,7 @@ listProg_11:
        bne.s     listProg_13
 ; {
 ; printText("Non-existent line number\r\n\0");
-       pea       @basic_113.L
+       pea       @basic_116.L
        jsr       _printText
        addq.w    #4,A7
 ; return;
@@ -2012,7 +2028,7 @@ listProg_41:
        addq.l    #1,D2
        move.b    #32,0(A2,D0.L)
 listProg_39:
-       bra.s     listProg_30
+       bra.s     listProg_42
 listProg_29:
 ; /*                    if (*vStartList != 0x28)
 ; vLinhaList[ix++] = 0x20;*/
@@ -2025,7 +2041,20 @@ listProg_29:
        move.l    D2,D0
        addq.l    #1,D2
        move.b    D6,0(A2,D0.L)
-listProg_30:
+; // Se nao for aspas e o proximo for um token, inclui um espaço
+; if (vToken == 0x22 && *vStartList >=0x80)
+       cmp.b     #34,D6
+       bne.s     listProg_42
+       move.l    D3,A0
+       move.b    (A0),D0
+       and.w     #255,D0
+       cmp.w     #128,D0
+       blo.s     listProg_42
+; vLinhaList[ix++] = 0x20;
+       move.l    D2,D0
+       addq.l    #1,D2
+       move.b    #32,0(A2,D0.L)
+listProg_42:
        bra       listProg_26
 listProg_28:
 ; /*if (isdigitus(vToken) && *vStartList!=')' && *vStartList!='.' && *vStartList!='"' && !isdigitus(*vStartList))
@@ -2084,20 +2113,20 @@ listProg_28:
 ; if (pPause && vPauseRowCounter >= *vdpMaxRows)
        move.w    14(A6),D0
        and.l     #65535,D0
-       beq       listProg_44
+       beq       listProg_46
        move.l    _vdpMaxRows.L,A0
        move.b    (A0),D0
        and.l     #255,D0
        move.l    A4,D1
        cmp.l     D0,D1
-       blo       listProg_44
+       blo       listProg_46
 ; {
 ; printText("press any key to continue\0");
-       pea       @basic_114.L
+       pea       @basic_117.L
        jsr       _printText
        addq.w    #4,A7
 ; vtec = inputLine(1,"@");
-       pea       @basic_115.L
+       pea       @basic_118.L
        pea       1
        jsr       _inputLine
        addq.w    #8,A7
@@ -2105,16 +2134,16 @@ listProg_28:
 ; vPauseRowCounter = 0;
        move.w    #0,A4
 ; printText("\r\n\0");
-       pea       @basic_93.L
+       pea       @basic_96.L
        jsr       _printText
        addq.w    #4,A7
 ; if (vtec == 0x1B)   // ESC
        move.b    -271(A6),D0
        cmp.b     #27,D0
-       bne.s     listProg_44
+       bne.s     listProg_46
 ; break;
        bra.s     listProg_18
-listProg_44:
+listProg_46:
 ; }
 ; vStartList = vNextList;
        move.l    -296(A6),D3
@@ -2250,7 +2279,7 @@ delLine_11:
 ; else
 ; {
 ; printText("Syntax Error !");
-       pea       @basic_116.L
+       pea       @basic_119.L
        jsr       _printText
        addq.w    #4,A7
 ; return;
@@ -2269,7 +2298,7 @@ delLine_12:
        bne.s     delLine_14
 ; {
 ; printText("Non-existent line number\r\n\0");
-       pea       @basic_113.L
+       pea       @basic_116.L
        jsr       _printText
        addq.w    #4,A7
 ; return;
@@ -2488,11 +2517,11 @@ editLine_1:
 ; else
 ; {
 ; printText("Syntax Error !");
-       pea       @basic_116.L
+       pea       @basic_119.L
        jsr       (A4)
        addq.w    #4,A7
 ; return;
-       bra       editLine_36
+       bra       editLine_38
 editLine_2:
 ; }
 ; vStartList = findNumberLine(pIni, 0, 0);
@@ -2510,11 +2539,11 @@ editLine_2:
        bne.s     editLine_4
 ; {
 ; printText("Non-existent line number\r\n\0");
-       pea       @basic_113.L
+       pea       @basic_116.L
        jsr       (A4)
        addq.w    #4,A7
 ; return;
-       bra       editLine_36
+       bra       editLine_38
 editLine_4:
 ; }
 ; // Carrega a linha no buffer
@@ -2713,7 +2742,7 @@ editLine_26:
        addq.l    #1,D5
        move.b    #32,0(A0,D0.L)
 editLine_24:
-       bra.s     editLine_15
+       bra.s     editLine_27
 editLine_14:
 ; }
 ; else
@@ -2723,10 +2752,23 @@ editLine_14:
        move.l    D5,D0
        addq.l    #1,D5
        move.b    D6,0(A0,D0.L)
-editLine_15:
+; // Se nao for aspas e o proximo for um token, inclui um espaço
+; if (vToken == 0x22 && *vStartList >=0x80)
+       cmp.b     #34,D6
+       bne.s     editLine_27
+       move.l    D2,A0
+       move.b    (A0),D0
+       and.w     #255,D0
+       cmp.w     #128,D0
+       blo.s     editLine_27
+; vbuf[ix++] = 0x20;            }
+       move.l    (A2),A0
+       move.l    D5,D0
+       addq.l    #1,D5
+       move.b    #32,0(A0,D0.L)
+editLine_27:
        bra       editLine_11
 editLine_13:
-; }
 ; }
 ; }
 ; vbuf[ix] = '\0';
@@ -2742,12 +2784,12 @@ editLine_13:
 ; if (*vbuf != 0x00 && (vRetInput == 0x0D || vRetInput == 0x0A))
        move.l    (A2),A0
        move.b    (A0),D0
-       beq       editLine_27
+       beq       editLine_29
        cmp.b     #13,D7
-       beq.s     editLine_29
+       beq.s     editLine_31
        cmp.b     #10,D7
-       bne       editLine_27
-editLine_29:
+       bne       editLine_29
+editLine_31:
 ; {
 ; vLinhaList[ivv++] = 0x20;
        move.l    D4,D0
@@ -2760,32 +2802,32 @@ editLine_29:
        move.l    D0,D5
 ; for(iz = 0; iz <= ix; iz++)
        clr.l     D3
-editLine_30:
+editLine_32:
        cmp.l     D5,D3
-       bgt.s     editLine_32
+       bgt.s     editLine_34
 ; vLinhaList[ivv++] = vbuf[iz];
        move.l    (A2),A0
        move.l    D4,D0
        addq.l    #1,D4
        move.b    0(A0,D3.L),0(A3,D0.L)
        addq.l    #1,D3
-       bra       editLine_30
-editLine_32:
+       bra       editLine_32
+editLine_34:
 ; vLinhaList[ivv] = 0x00;
        clr.b     0(A3,D4.L)
 ; for(iz = 0; iz <= ivv; iz++)
        clr.l     D3
-editLine_33:
+editLine_35:
        cmp.l     D4,D3
-       bgt.s     editLine_35
+       bgt.s     editLine_37
 ; vbuf[iz] = vLinhaList[iz];
        move.l    (A2),A0
        move.b    0(A3,D3.L),0(A0,D3.L)
        addq.l    #1,D3
-       bra       editLine_33
-editLine_35:
+       bra       editLine_35
+editLine_37:
 ; printText("\r\n\0");
-       pea       @basic_93.L
+       pea       @basic_96.L
        jsr       (A4)
        addq.w    #4,A7
 ; // Apaga a linha atual
@@ -2797,7 +2839,7 @@ editLine_35:
 ; processLine();
        jsr       _processLine
 ; printText("\r\nOK\0");
-       pea       @basic_96.L
+       pea       @basic_99.L
        jsr       (A4)
        addq.w    #4,A7
 ; *vBufReceived = 0x00;
@@ -2807,21 +2849,21 @@ editLine_35:
        move.l    (A2),A0
        clr.b     (A0)
 ; printText("\r\n\0");
-       pea       @basic_93.L
+       pea       @basic_96.L
        jsr       (A4)
        addq.w    #4,A7
-       bra.s     editLine_36
-editLine_27:
+       bra.s     editLine_38
+editLine_29:
 ; }
 ; else if (vRetInput != 0x1B)
        cmp.b     #27,D7
-       beq.s     editLine_36
+       beq.s     editLine_38
 ; {
 ; printText("\r\nAborted !!!\r\n\0");
-       pea       @basic_117.L
+       pea       @basic_120.L
        jsr       (A4)
        addq.w    #4,A7
-editLine_36:
+editLine_38:
        movem.l   (A7)+,D2/D3/D4/D5/D6/D7/A2/A3/A4/A5
        unlk      A6
        rts
@@ -2930,7 +2972,7 @@ runProg_10:
        bne.s     runProg_12
 ; {
 ; printText("Non-existent line number\r\n\0");
-       pea       @basic_113.L
+       pea       @basic_116.L
        jsr       (A3)
        addq.w    #4,A7
 ; return;
@@ -3065,7 +3107,7 @@ runProg_26:
 ; #endif
 ; // mostra mensagem de para subita
 ; printText("\r\nStopped at ");
-       pea       @basic_118.L
+       pea       @basic_121.L
        jsr       (A3)
        addq.w    #4,A7
 ; itoa(vNumLin, sNumLin, 10);
@@ -3080,7 +3122,7 @@ runProg_26:
        jsr       (A3)
        addq.w    #4,A7
 ; printText("\r\n");
-       pea       @basic_93.L
+       pea       @basic_96.L
        jsr       (A3)
        addq.w    #4,A7
 ; // sai do laço
@@ -3106,7 +3148,7 @@ runProg_24:
        beq.s     runProg_28
 ; {
 ; printText("\r\nExecuting at ");
-       pea       @basic_119.L
+       pea       @basic_122.L
        jsr       (A3)
        addq.w    #4,A7
 ; itoa(vNumLin, sNumLin, 10);
@@ -3121,7 +3163,7 @@ runProg_24:
        jsr       (A3)
        addq.w    #4,A7
 ; printText("\r\n");
-       pea       @basic_93.L
+       pea       @basic_96.L
        jsr       (A3)
        addq.w    #4,A7
 runProg_28:
@@ -3319,7 +3361,7 @@ _showErrorMessage:
        lea       _printText.L,A2
 ; char sNumLin [sizeof(short)*8+1];
 ; printText("\r\n");
-       pea       @basic_93.L
+       pea       @basic_96.L
        jsr       (A2)
        addq.w    #4,A7
 ; printText(listError[pError]);
@@ -3341,7 +3383,7 @@ _showErrorMessage:
        jsr       _itoa
        add.w     #12,A7
 ; printText(" at ");
-       pea       @basic_120.L
+       pea       @basic_123.L
        jsr       (A2)
        addq.w    #4,A7
 ; printText(sNumLin);
@@ -3351,7 +3393,7 @@ _showErrorMessage:
 showErrorMessage_1:
 ; }
 ; printText(" !\r\n\0");
-       pea       @basic_121.L
+       pea       @basic_124.L
        jsr       (A2)
        addq.w    #4,A7
 ; *vErroProc = 0;
@@ -3382,213 +3424,225 @@ _executeToken:
 ; switch (pToken)
        move.b    11(A6),D0
        and.l     #255,D0
-       cmp.l     #180,D0
-       beq       executeToken_33
-       bhi       executeToken_64
-       cmp.l     #146,D0
+       cmp.l     #178,D0
+       beq       executeToken_34
+       bhi       executeToken_67
+       cmp.l     #143,D0
        beq       executeToken_18
-       bhi       executeToken_65
+       bhi       executeToken_68
        cmp.l     #135,D0
        beq       executeToken_10
-       bhi       executeToken_66
+       bhi       executeToken_69
        cmp.l     #130,D0
        beq       executeToken_6
-       bhi.s     executeToken_67
+       bhi.s     executeToken_70
        cmp.l     #128,D0
        beq       executeToken_4
-       bhi.s     executeToken_68
+       bhi.s     executeToken_71
        tst.l     D0
        beq       executeToken_3
        bra       executeToken_1
-executeToken_68:
+executeToken_71:
        cmp.l     #129,D0
        beq       executeToken_5
        bra       executeToken_1
-executeToken_67:
+executeToken_70:
        cmp.l     #133,D0
        beq       executeToken_8
-       bhi.s     executeToken_69
+       bhi.s     executeToken_72
        cmp.l     #131,D0
        beq       executeToken_7
        bra       executeToken_1
-executeToken_69:
+executeToken_72:
        cmp.l     #134,D0
        beq       executeToken_9
        bra       executeToken_1
-executeToken_66:
+executeToken_69:
        cmp.l     #139,D0
        beq       executeToken_14
-       bhi.s     executeToken_70
+       bhi.s     executeToken_73
        cmp.l     #137,D0
        beq       executeToken_12
-       bhi.s     executeToken_71
+       bhi.s     executeToken_74
        cmp.l     #136,D0
        beq       executeToken_11
        bra       executeToken_1
-executeToken_71:
+executeToken_74:
        cmp.l     #138,D0
        beq       executeToken_13
        bra       executeToken_1
-executeToken_70:
-       cmp.l     #143,D0
+executeToken_73:
+       cmp.l     #141,D0
        beq       executeToken_16
-       bhi.s     executeToken_72
+       bhi.s     executeToken_75
        cmp.l     #140,D0
        beq       executeToken_15
        bra       executeToken_1
-executeToken_72:
-       cmp.l     #144,D0
+executeToken_75:
+       cmp.l     #142,D0
        beq       executeToken_17
        bra       executeToken_1
-executeToken_65:
-       cmp.l     #154,D0
+executeToken_68:
+       cmp.l     #151,D0
        beq       executeToken_26
-       bhi       executeToken_73
-       cmp.l     #150,D0
-       beq       executeToken_22
-       bhi.s     executeToken_74
-       cmp.l     #148,D0
-       beq       executeToken_20
-       bhi.s     executeToken_75
+       bhi       executeToken_76
        cmp.l     #147,D0
+       beq       executeToken_22
+       bhi.s     executeToken_77
+       cmp.l     #145,D0
+       beq       executeToken_20
+       bhi.s     executeToken_78
+       cmp.l     #144,D0
        beq       executeToken_19
        bra       executeToken_1
-executeToken_75:
-       cmp.l     #149,D0
+executeToken_78:
+       cmp.l     #146,D0
        beq       executeToken_21
        bra       executeToken_1
-executeToken_74:
-       cmp.l     #152,D0
+executeToken_77:
+       cmp.l     #149,D0
        beq       executeToken_24
-       bhi.s     executeToken_76
-       cmp.l     #151,D0
+       bhi.s     executeToken_79
+       cmp.l     #148,D0
        beq       executeToken_23
        bra       executeToken_1
-executeToken_76:
-       cmp.l     #153,D0
+executeToken_79:
+       cmp.l     #150,D0
        beq       executeToken_25
        bra       executeToken_1
-executeToken_73:
-       cmp.l     #177,D0
-       beq       executeToken_30
-       bhi.s     executeToken_77
-       cmp.l     #159,D0
-       beq       executeToken_28
-       bhi.s     executeToken_78
+executeToken_76:
        cmp.l     #158,D0
+       beq       executeToken_30
+       bhi.s     executeToken_80
+       cmp.l     #153,D0
+       beq       executeToken_28
+       bhi.s     executeToken_81
+       cmp.l     #152,D0
        beq       executeToken_27
        bra       executeToken_1
-executeToken_78:
-       cmp.l     #176,D0
+executeToken_81:
+       cmp.l     #154,D0
        beq       executeToken_29
        bra       executeToken_1
-executeToken_77:
-       cmp.l     #179,D0
+executeToken_80:
+       cmp.l     #176,D0
        beq       executeToken_32
-       bhi       executeToken_1
-       cmp.l     #178,D0
+       bhi.s     executeToken_82
+       cmp.l     #159,D0
        beq       executeToken_31
        bra       executeToken_1
-executeToken_64:
-       cmp.l     #225,D0
-       beq       executeToken_48
-       bhi       executeToken_79
-       cmp.l     #205,D0
-       beq       executeToken_41
-       bhi       executeToken_80
-       cmp.l     #185,D0
-       beq       executeToken_37
-       bhi.s     executeToken_81
-       cmp.l     #182,D0
-       beq       executeToken_35
-       bhi.s     executeToken_82
-       cmp.l     #181,D0
-       beq       executeToken_34
-       bra       executeToken_1
 executeToken_82:
-       cmp.l     #184,D0
-       beq       executeToken_36
+       cmp.l     #177,D0
+       beq       executeToken_33
        bra       executeToken_1
-executeToken_81:
-       cmp.l     #187,D0
-       beq       executeToken_39
-       bhi.s     executeToken_83
-       cmp.l     #186,D0
-       beq       executeToken_38
-       bra       executeToken_1
-executeToken_83:
-       cmp.l     #196,D0
-       beq       executeToken_40
-       bra       executeToken_1
-executeToken_80:
-       cmp.l     #220,D0
-       beq       executeToken_45
-       bhi.s     executeToken_84
-       cmp.l     #209,D0
-       beq       executeToken_43
-       bhi.s     executeToken_85
-       cmp.l     #206,D0
-       beq       executeToken_42
-       bra       executeToken_1
-executeToken_85:
-       cmp.l     #219,D0
-       beq       executeToken_44
-       bra       executeToken_1
-executeToken_84:
+executeToken_67:
        cmp.l     #224,D0
-       beq       executeToken_47
-       bhi       executeToken_1
-       cmp.l     #221,D0
-       beq       executeToken_46
-       bra       executeToken_1
-executeToken_79:
-       cmp.l     #233,D0
-       beq       executeToken_56
-       bhi       executeToken_86
-       cmp.l     #229,D0
-       beq       executeToken_52
-       bhi.s     executeToken_87
-       cmp.l     #227,D0
        beq       executeToken_50
-       bhi.s     executeToken_88
-       cmp.l     #226,D0
-       beq       executeToken_49
-       bra       executeToken_1
-executeToken_88:
-       cmp.l     #228,D0
-       beq       executeToken_51
-       bra       executeToken_1
-executeToken_87:
-       cmp.l     #231,D0
-       beq       executeToken_54
-       bhi.s     executeToken_89
-       cmp.l     #230,D0
-       beq       executeToken_53
-       bra       executeToken_1
-executeToken_89:
-       cmp.l     #232,D0
-       beq       executeToken_55
+       bhi       executeToken_83
+       cmp.l     #187,D0
+       beq       executeToken_42
+       bhi       executeToken_84
+       cmp.l     #182,D0
+       beq       executeToken_38
+       bhi.s     executeToken_85
+       cmp.l     #180,D0
+       beq       executeToken_36
+       bhi.s     executeToken_86
+       cmp.l     #179,D0
+       beq       executeToken_35
        bra       executeToken_1
 executeToken_86:
-       cmp.l     #237,D0
-       beq       executeToken_60
+       cmp.l     #181,D0
+       beq       executeToken_37
+       bra       executeToken_1
+executeToken_85:
+       cmp.l     #185,D0
+       beq       executeToken_40
+       bhi.s     executeToken_87
+       cmp.l     #184,D0
+       beq       executeToken_39
+       bra       executeToken_1
+executeToken_87:
+       cmp.l     #186,D0
+       beq       executeToken_41
+       bra       executeToken_1
+executeToken_84:
+       cmp.l     #209,D0
+       beq       executeToken_46
+       bhi.s     executeToken_88
+       cmp.l     #205,D0
+       beq       executeToken_44
+       bhi.s     executeToken_89
+       cmp.l     #196,D0
+       beq       executeToken_43
+       bra       executeToken_1
+executeToken_89:
+       cmp.l     #206,D0
+       beq       executeToken_45
+       bra       executeToken_1
+executeToken_88:
+       cmp.l     #220,D0
+       beq       executeToken_48
        bhi.s     executeToken_90
-       cmp.l     #235,D0
+       cmp.l     #219,D0
+       beq       executeToken_47
+       bra       executeToken_1
+executeToken_90:
+       cmp.l     #221,D0
+       beq       executeToken_49
+       bra       executeToken_1
+executeToken_83:
+       cmp.l     #232,D0
        beq       executeToken_58
-       bhi.s     executeToken_91
-       cmp.l     #234,D0
+       bhi       executeToken_91
+       cmp.l     #228,D0
+       beq       executeToken_54
+       bhi.s     executeToken_92
+       cmp.l     #226,D0
+       beq       executeToken_52
+       bhi.s     executeToken_93
+       cmp.l     #225,D0
+       beq       executeToken_51
+       bra       executeToken_1
+executeToken_93:
+       cmp.l     #227,D0
+       beq       executeToken_53
+       bra       executeToken_1
+executeToken_92:
+       cmp.l     #230,D0
+       beq       executeToken_56
+       bhi.s     executeToken_94
+       cmp.l     #229,D0
+       beq       executeToken_55
+       bra       executeToken_1
+executeToken_94:
+       cmp.l     #231,D0
        beq       executeToken_57
        bra       executeToken_1
 executeToken_91:
        cmp.l     #236,D0
+       beq       executeToken_62
+       bhi.s     executeToken_95
+       cmp.l     #234,D0
+       beq       executeToken_60
+       bhi.s     executeToken_96
+       cmp.l     #233,D0
        beq       executeToken_59
        bra       executeToken_1
-executeToken_90:
-       cmp.l     #239,D0
-       beq       executeToken_62
-       bhi       executeToken_1
-       cmp.l     #238,D0
+executeToken_96:
+       cmp.l     #235,D0
        beq       executeToken_61
+       bra       executeToken_1
+executeToken_95:
+       cmp.l     #238,D0
+       beq       executeToken_64
+       bhi.s     executeToken_97
+       cmp.l     #237,D0
+       beq       executeToken_63
+       bra       executeToken_1
+executeToken_97:
+       cmp.l     #239,D0
+       beq       executeToken_65
        bra       executeToken_1
 executeToken_3:
 ; {
@@ -3596,101 +3650,122 @@ executeToken_3:
 ; vReta = 0;
        clr.b     D2
 ; break;
-       bra       executeToken_102
+       bra       executeToken_108
 executeToken_4:
 ; case 0x80:  // Let
 ; vReta = basLet();
        jsr       _basLet
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
+       bra       executeToken_108
 executeToken_5:
 ; case 0x81:  // Print
 ; vReta = basPrint();
        jsr       _basPrint
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
+       bra       executeToken_108
 executeToken_6:
 ; case 0x82:  // IF
 ; vReta = basIf();
        jsr       _basIf
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
+       bra       executeToken_108
 executeToken_7:
 ; case 0x83:  // THEN - nao faz nada
 ; vReta = 0;
        clr.b     D2
 ; break;
-       bra       executeToken_102
+       bra       executeToken_108
 executeToken_8:
 ; case 0x85:  // FOR
 ; vReta = basFor();
        jsr       _basFor
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
+       bra       executeToken_108
 executeToken_9:
 ; case 0x86:  // TO - nao faz nada
 ; vReta = 0;
        clr.b     D2
 ; break;
-       bra       executeToken_102
+       bra       executeToken_108
 executeToken_10:
 ; case 0x87:  // NEXT
 ; vReta = basNext();
        jsr       _basNext
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
+       bra       executeToken_108
 executeToken_11:
 ; case 0x88:  // STEP - nao faz nada
 ; vReta = 0;
        clr.b     D2
 ; break;
-       bra       executeToken_102
+       bra       executeToken_108
 executeToken_12:
 ; case 0x89:  // GOTO
 ; vReta = basGoto();
        jsr       _basGoto
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
+       bra       executeToken_108
 executeToken_13:
 ; case 0x8A:  // GOSUB
 ; vReta = basGosub();
        jsr       _basGosub
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
+       bra       executeToken_108
 executeToken_14:
 ; case 0x8B:  // RETURN
 ; vReta = basReturn();
        jsr       _basReturn
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
+       bra       executeToken_108
 executeToken_15:
 ; case 0x8C:  // REM - Ignora todas a linha depois dele
 ; vReta = 0;
        clr.b     D2
 ; break;
-       bra       executeToken_102
+       bra       executeToken_108
 executeToken_16:
+; case 0x8D:  // INVERSE
+; vReta = basInverse();
+       jsr       _basInverse
+       move.b    D0,D2
+; break;
+       bra       executeToken_108
+executeToken_17:
+; case 0x8E:  // NORMAL
+; vReta = basNormal();
+       jsr       _basNormal
+       move.b    D0,D2
+; break;
+       bra       executeToken_108
+executeToken_18:
 ; case 0x8F:  // DIM
 ; vReta = basDim();
        jsr       _basDim
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_17:
+       bra       executeToken_108
+executeToken_19:
 ; case 0x90:  // Nao fax nada, soh teste, pode ser retirado
 ; vReta = 0;
        clr.b     D2
 ; break;
-       bra       executeToken_102
-executeToken_18:
+       bra       executeToken_108
+executeToken_20:
+; case 0x91:  // DIM
+; vReta = basOnVar();
+       jsr       _basOnVar
+       move.b    D0,D2
+; break;
+       bra       executeToken_108
+executeToken_21:
 ; case 0x92:  // Input
 ; vReta = basInputGet(250);
        pea       250
@@ -3698,8 +3773,8 @@ executeToken_18:
        addq.w    #4,A7
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_19:
+       bra       executeToken_108
+executeToken_22:
 ; case 0x93:  // Get
 ; vReta = basInputGet(1);
        pea       1
@@ -3707,136 +3782,136 @@ executeToken_19:
        addq.w    #4,A7
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_20:
+       bra       executeToken_108
+executeToken_23:
 ; case 0x94:  // vTAB
 ; vReta = basVtab();
        jsr       _basVtab
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_21:
+       bra       executeToken_108
+executeToken_24:
 ; case 0x95:  // HTAB
 ; vReta = basHtab();
        jsr       _basHtab
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_22:
+       bra       executeToken_108
+executeToken_25:
 ; case 0x96:  // Home
 ; clearScr();
        jsr       _clearScr
 ; break;
-       bra       executeToken_102
-executeToken_23:
-; case 0x97:  // Clear - Clear all variables
+       bra       executeToken_108
+executeToken_26:
+; case 0x97:  // CLEAR - Clear all variables
 ; for (ix = 0; ix < 0x2000; ix++)
        clr.l     D3
-executeToken_92:
+executeToken_98:
        cmp.l     #8192,D3
-       bge.s     executeToken_94
+       bge.s     executeToken_100
 ; *(pStartSimpVar + ix) = 0x00;
        move.l    _pStartSimpVar.L,A0
        clr.b     0(A0,D3.L)
        addq.l    #1,D3
-       bra       executeToken_92
-executeToken_94:
+       bra       executeToken_98
+executeToken_100:
 ; for (ix = 0; ix < 0x6000; ix++)
        clr.l     D3
-executeToken_95:
+executeToken_101:
        cmp.l     #24576,D3
-       bge.s     executeToken_97
+       bge.s     executeToken_103
 ; *(pStartArrayVar + ix) = 0x00;
        move.l    _pStartArrayVar.L,A0
        clr.b     0(A0,D3.L)
        addq.l    #1,D3
-       bra       executeToken_95
-executeToken_97:
+       bra       executeToken_101
+executeToken_103:
 ; for (ix = 0; ix < 0x800; ix++)
        clr.l     D3
-executeToken_98:
+executeToken_104:
        cmp.l     #2048,D3
-       bge.s     executeToken_100
+       bge.s     executeToken_106
 ; *(pForStack + ix) = 0x00;
        move.l    -24(A6),A0
        clr.b     0(A0,D3.L)
        addq.l    #1,D3
-       bra       executeToken_98
-executeToken_100:
+       bra       executeToken_104
+executeToken_106:
 ; vReta = 0;
        clr.b     D2
 ; break;
-       bra       executeToken_102
-executeToken_24:
+       bra       executeToken_108
+executeToken_27:
 ; case 0x98:  // DATA - Ignora toda a linha depois dele, READ vai ler essa linha
 ; vReta = 0;
        clr.b     D2
 ; break;
-       bra       executeToken_102
-executeToken_25:
+       bra       executeToken_108
+executeToken_28:
 ; case 0x99:  // Read
 ; vReta = basRead();
        jsr       _basRead
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_26:
+       bra       executeToken_108
+executeToken_29:
 ; case 0x9A:  // Restore
 ; vReta = basRestore();
        jsr       _basRestore
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_27:
+       bra       executeToken_108
+executeToken_30:
 ; case 0x9E:  // END
 ; vReta = basEnd();
        jsr       _basEnd
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_28:
+       bra       executeToken_108
+executeToken_31:
 ; case 0x9F:  // STOP
 ; vReta = basStop();
        jsr       _basStop
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_29:
+       bra       executeToken_108
+executeToken_32:
 ; case 0xB0:  // TEXT
 ; vReta = basText();
        jsr       _basText
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_30:
+       bra       executeToken_108
+executeToken_33:
 ; case 0xB1:  // GR
 ; vReta = basGr();
        jsr       _basGr
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_31:
+       bra       executeToken_108
+executeToken_34:
 ; case 0xB2:  // HGR
 ; vReta = basHgr();
        jsr       _basHgr
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_32:
+       bra       executeToken_108
+executeToken_35:
 ; case 0xB3:  // COLOR
 ; vReta = basColor();
        jsr       _basColor
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_33:
+       bra       executeToken_108
+executeToken_36:
 ; case 0xB4:  // PLOT
 ; vReta = basPlot();
        jsr       _basPlot
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_34:
+       bra       executeToken_108
+executeToken_37:
 ; case 0xB5:  // HLIN
 ; vReta = basHVlin(1);
        pea       1
@@ -3844,8 +3919,8 @@ executeToken_34:
        addq.w    #4,A7
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_35:
+       bra       executeToken_108
+executeToken_38:
 ; case 0xB6:  // VLIN
 ; vReta = basHVlin(2);
        pea       2
@@ -3853,42 +3928,42 @@ executeToken_35:
        addq.w    #4,A7
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_36:
+       bra       executeToken_108
+executeToken_39:
 ; case 0xB8:  // HCOLOR
 ; vReta = basHcolor();
        jsr       _basHcolor
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_37:
+       bra       executeToken_108
+executeToken_40:
 ; case 0xB9:  // HPLOT
 ; vReta = basHplot();
        jsr       _basHplot
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_38:
+       bra       executeToken_108
+executeToken_41:
 ; case 0xBA:  // AT - Nao faz nada
 ; vReta = 0;
        clr.b     D2
 ; break;
-       bra       executeToken_102
-executeToken_39:
+       bra       executeToken_108
+executeToken_42:
 ; case 0xBB:  // ONERR
 ; vReta = basOnErr();
        jsr       _basOnErr
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_40:
+       bra       executeToken_108
+executeToken_43:
 ; case 0xC4:  // ASC
 ; vReta = basAsc();
        jsr       _basAsc
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_41:
+       bra       executeToken_108
+executeToken_44:
 ; case 0xCD:  // PEEK
 ; vReta = basPeekPoke('R');
        pea       82
@@ -3896,8 +3971,8 @@ executeToken_41:
        addq.w    #4,A7
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_42:
+       bra       executeToken_108
+executeToken_45:
 ; case 0xCE:  // POKE
 ; vReta = basPeekPoke('W');
        pea       87
@@ -3905,57 +3980,57 @@ executeToken_42:
        addq.w    #4,A7
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_43:
+       bra       executeToken_108
+executeToken_46:
 ; case 0xD1:  // RND
 ; vReta = basRnd();
        jsr       _basRnd
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_44:
+       bra       executeToken_108
+executeToken_47:
 ; case 0xDB:  // Len
 ; vReta = basLen();
        jsr       _basLen
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_45:
+       bra       executeToken_108
+executeToken_48:
 ; case 0xDC:  // Val
 ; vReta = basVal();
        jsr       _basVal
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_46:
+       bra       executeToken_108
+executeToken_49:
 ; case 0xDD:  // Str$
 ; vReta = basStr();
        jsr       _basStr
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_47:
+       bra       executeToken_108
+executeToken_50:
 ; case 0xE0:  // SCRN
 ; vReta = basScrn();
        jsr       _basScrn
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_48:
+       bra       executeToken_108
+executeToken_51:
 ; case 0xE1:  // Chr$
 ; vReta = basChr();
        jsr       _basChr
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_49:
+       bra       executeToken_108
+executeToken_52:
 ; case 0xE2:  // Fre(0)
 ; vReta = basFre();
        jsr       _basFre
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_50:
+       bra       executeToken_108
+executeToken_53:
 ; case 0xE3:  // Sqrt
 ; vReta = basTrig(6);
        pea       6
@@ -3963,8 +4038,8 @@ executeToken_50:
        addq.w    #4,A7
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_51:
+       bra       executeToken_108
+executeToken_54:
 ; case 0xE4:  // Sin
 ; vReta = basTrig(1);
        pea       1
@@ -3972,8 +4047,8 @@ executeToken_51:
        addq.w    #4,A7
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_52:
+       bra       executeToken_108
+executeToken_55:
 ; case 0xE5:  // Cos
 ; vReta = basTrig(2);
        pea       2
@@ -3981,8 +4056,8 @@ executeToken_52:
        addq.w    #4,A7
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_53:
+       bra       executeToken_108
+executeToken_56:
 ; case 0xE6:  // Tan
 ; vReta = basTrig(3);
        pea       3
@@ -3990,8 +4065,8 @@ executeToken_53:
        addq.w    #4,A7
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_54:
+       bra       executeToken_108
+executeToken_57:
 ; case 0xE7:  // Log
 ; vReta = basTrig(4);
        pea       4
@@ -3999,8 +4074,8 @@ executeToken_54:
        addq.w    #4,A7
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_55:
+       bra       executeToken_108
+executeToken_58:
 ; case 0xE8:  // Exp
 ; vReta = basTrig(5);
        pea       5
@@ -4008,22 +4083,22 @@ executeToken_55:
        addq.w    #4,A7
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_56:
+       bra       executeToken_108
+executeToken_59:
 ; case 0xE9:  // SPC
 ; vReta = basSpc();
        jsr       _basSpc
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_57:
+       bra       executeToken_108
+executeToken_60:
 ; case 0xEA:  // Tab
 ; vReta = basTab();
        jsr       _basTab
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_58:
+       bra       executeToken_108
+executeToken_61:
 ; case 0xEB:  // Mid$
 ; vReta = basLeftRightMid('M');
        pea       77
@@ -4031,8 +4106,8 @@ executeToken_58:
        addq.w    #4,A7
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_59:
+       bra       executeToken_108
+executeToken_62:
 ; case 0xEC:  // Right$
 ; vReta = basLeftRightMid('R');
        pea       82
@@ -4040,8 +4115,8 @@ executeToken_59:
        addq.w    #4,A7
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_60:
+       bra       executeToken_108
+executeToken_63:
 ; case 0xED:  // Left$
 ; vReta = basLeftRightMid('L');
        pea       76
@@ -4049,28 +4124,28 @@ executeToken_60:
        addq.w    #4,A7
        move.b    D0,D2
 ; break;
-       bra       executeToken_102
-executeToken_61:
+       bra       executeToken_108
+executeToken_64:
 ; case 0xEE:  // INT
 ; vReta = basInt();
        jsr       _basInt
        move.b    D0,D2
 ; break;
-       bra.s     executeToken_102
-executeToken_62:
+       bra.s     executeToken_108
+executeToken_65:
 ; case 0xEF:  // ABS
 ; vReta = basAbs();
        jsr       _basAbs
        move.b    D0,D2
 ; break;
-       bra.s     executeToken_102
+       bra.s     executeToken_108
 executeToken_1:
 ; default:
 ; if (pToken < 0x80)  // variavel sem LET
        move.b    11(A6),D0
        and.w     #255,D0
        cmp.w     #128,D0
-       bhs.s     executeToken_101
+       bhs.s     executeToken_107
 ; {
 ; *pointerRunProg = *pointerRunProg - 1;
        move.l    _pointerRunProg.L,A0
@@ -4078,8 +4153,8 @@ executeToken_1:
 ; vReta = basLet();
        jsr       _basLet
        move.b    D0,D2
-       bra.s     executeToken_102
-executeToken_101:
+       bra.s     executeToken_108
+executeToken_107:
 ; }
 ; else // Nao forem operadores logicos
 ; {
@@ -4088,7 +4163,7 @@ executeToken_101:
        move.w    #14,(A0)
 ; vReta = 14;
        moveq     #14,D2
-executeToken_102:
+executeToken_108:
 ; }
 ; }
 ; #endif
@@ -4236,7 +4311,7 @@ nextToken_9:
        move.b    (A0),D1
        and.l     #255,D1
        move.l    D1,-(A7)
-       pea       @basic_122.L
+       pea       @basic_125.L
        jsr       _strchr
        addq.w    #8,A7
        tst.l     D0
@@ -4324,7 +4399,7 @@ nextToken_16:
        move.l    D2,A0
        move.b    (A0),D0
        and.l     #255,D0
-       lea       @basic_123.L,A0
+       lea       @basic_126.L,A0
        cmp.l     A0,D0
        bne.s     nextToken_21
 ; {
@@ -4771,7 +4846,7 @@ _isdelim:
 ; if (strchr(" ;,+-<>()/*^=:", c) || c==9 || c=='\r' || c==0 || c>=0xF0)
        and.l     #255,D2
        move.l    D2,-(A7)
-       pea       @basic_111.L
+       pea       @basic_114.L
        jsr       _strchr
        addq.w    #8,A7
        tst.l     D0
@@ -4872,13 +4947,13 @@ _basXBasLoad:
 ; unsigned char *vBufptr = vbuf;
        move.l    _vbuf.L,D3
 ; printText("Loading Basic Program...\r\n");
-       pea       @basic_124.L
+       pea       @basic_127.L
        jsr       (A2)
        addq.w    #4,A7
 ; // Carrega programa em outro ponto da memoria
 ; vRet = loadSerialToMem("880000",0);
        clr.l     -(A7)
-       pea       @basic_125.L
+       pea       @basic_128.L
        jsr       _loadSerialToMem
        addq.w    #8,A7
        move.b    D0,D4
@@ -4888,11 +4963,11 @@ _basXBasLoad:
        bne       basXBasLoad_1
 ; {
 ; printText("Done.\r\n");
-       pea       @basic_126.L
+       pea       @basic_129.L
        jsr       (A2)
        addq.w    #4,A7
 ; printText("Processing...\r\n");
-       pea       @basic_127.L
+       pea       @basic_130.L
        jsr       (A2)
        addq.w    #4,A7
 ; while (1)
@@ -4941,7 +5016,7 @@ basXBasLoad_7:
 basXBasLoad_5:
 ; }
 ; printText("Done.\r\n");
-       pea       @basic_126.L
+       pea       @basic_129.L
        jsr       (A2)
        addq.w    #4,A7
        bra.s     basXBasLoad_11
@@ -4981,27 +5056,29 @@ basXBasLoad_11:
 ; {
        xdef      _findVariable
 _findVariable:
-       link      A6,#-440
+       link      A6,#-448
        movem.l   D2/D3/D4/D5/D6/D7/A2/A3/A4/A5,-(A7)
-       lea       _vErroProc.L,A2
-       move.l    8(A6),D5
-       lea       -360(A6),A3
+       lea       _writeLongSerial.L,A2
+       lea       -374(A6),A3
+       lea       _itoa.L,A4
+       move.l    8(A6),D4
+       lea       _vErroProc.L,A5
 ; unsigned char* vLista = pStartSimpVar;
        move.l    _pStartSimpVar.L,D2
 ; unsigned char* vTemp = pStartSimpVar;
-       move.l    _pStartSimpVar.L,A5
+       move.l    _pStartSimpVar.L,-448(A6)
 ; unsigned char* vListaAtu;
 ; long vEnder = 0, vVal = 0, vVal1 = 0, vVal2 = 0, vVal3 = 0, vVal4 = 0;
+       clr.l     -440(A6)
        clr.l     -436(A6)
        clr.l     -432(A6)
        clr.l     -428(A6)
        clr.l     -424(A6)
        clr.l     -420(A6)
-       clr.l     -416(A6)
 ; int ix = 0, iy = 0, iz = 0;
-       clr.l     D4
+       clr.l     D5
+       clr.l     -416(A6)
        clr.l     -412(A6)
-       clr.l     -408(A6)
 ; char vbuffer [sizeof(long)*8+1];
 ; unsigned char sqtdtam[10];
 ; unsigned int vDim[88];
@@ -5010,7 +5087,7 @@ _findVariable:
 ; unsigned char vArray = 0;
        moveq     #0,D7
 ; unsigned long vPosNextVar = 0;
-       move.w    #0,A4
+       clr.l     -12(A6)
 ; unsigned char* vPosValueVar = 0;
        clr.l     D3
 ; unsigned char vTamValue = 4;
@@ -5019,9 +5096,18 @@ _findVariable:
 ; unsigned short iDim = 0;
        clr.w     -2(A6)
 ; // Verifica se eh array (tem parenteses logo depois do nome da variavel)
-; /*writeLongSerial("Aqui 444.666.0-[");
+; writeLongSerial("Aqui 444.666.0-[");
+       pea       @basic_131.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; writeLongSerial(pVariable);
-; writeLongSerial("]\r\n");*/
+       move.l    D4,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
+; writeLongSerial("]\r\n");
+       pea       @basic_132.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; vTempPointer = *pointerRunProg;
        move.l    _pointerRunProg.L,A0
        move.l    (A0),-6(A6)
@@ -5038,7 +5124,7 @@ _findVariable:
 ; nextToken();
        jsr       _nextToken
 ; if (*vErroProc) return 0;
-       move.l    (A2),A0
+       move.l    (A5),A0
        tst.w     (A0)
        beq.s     findVariable_3
        clr.l     D0
@@ -5063,7 +5149,7 @@ findVariable_3:
 findVariable_8:
 ; {
 ; *vErroProc = 15;
-       move.l    (A2),A0
+       move.l    (A5),A0
        move.w    #15,(A0)
 ; return 0;
        clr.l     D0
@@ -5076,7 +5162,7 @@ findVariable_9:
 ; nextToken();
        jsr       _nextToken
 ; if (*vErroProc) return 0;
-       move.l    (A2),A0
+       move.l    (A5),A0
        tst.w     (A0)
        beq.s     findVariable_11
        clr.l     D0
@@ -5088,7 +5174,7 @@ findVariable_11:
        cmp.b     #6,D0
        bne.s     findVariable_13
 ; *vErroProc = 16;
-       move.l    (A2),A0
+       move.l    (A5),A0
        move.w    #16,(A0)
 ; return 0;
        clr.l     D0
@@ -5099,17 +5185,15 @@ findVariable_13:
 ; putback();
        jsr       _putback
 ; getExp(&vDim[ixDim]);
-       move.l    A3,D1
-       move.l    D0,-(A7)
-       move.l    D6,D0
-       lsl.l     #2,D0
-       add.l     D0,D1
-       move.l    (A7)+,D0
-       move.l    D1,-(A7)
+       lea       -364(A6),A0
+       move.l    D6,D1
+       lsl.l     #2,D1
+       add.l     D1,A0
+       move.l    A0,-(A7)
        jsr       _getExp
        addq.w    #4,A7
 ; if (*vErroProc) return 0;
-       move.l    (A2),A0
+       move.l    (A5),A0
        tst.w     (A0)
        beq.s     findVariable_15
        clr.l     D0
@@ -5122,7 +5206,7 @@ findVariable_15:
        bne.s     findVariable_17
 ; {
 ; *vErroProc = 16;
-       move.l    (A2),A0
+       move.l    (A5),A0
        move.w    #16,(A0)
 ; return 0;
        clr.l     D0
@@ -5138,12 +5222,14 @@ findVariable_17:
 ; vDim[ixDim] = fppInt(vDim[ixDim]);
        move.l    D6,D1
        lsl.l     #2,D1
-       move.l    0(A3,D1.L),-(A7)
+       lea       -364(A6),A0
+       move.l    0(A0,D1.L),-(A7)
        jsr       _fppInt
        addq.w    #4,A7
        move.l    D6,D1
        lsl.l     #2,D1
-       move.l    D0,0(A3,D1.L)
+       lea       -364(A6),A0
+       move.l    D0,0(A0,D1.L)
 ; *value_type = '%';
        move.l    _value_type.L,A0
        move.b    #37,(A0)
@@ -5180,7 +5266,7 @@ findVariable_10:
        bge.s     findVariable_23
 ; {
 ; *vErroProc = 21;
-       move.l    (A2),A0
+       move.l    (A5),A0
        move.w    #21,(A0)
 ; return 0;
        clr.l     D0
@@ -5190,7 +5276,7 @@ findVariable_23:
 ; nextToken();
        jsr       _nextToken
 ; if (*vErroProc) return 0;
-       move.l    (A2),A0
+       move.l    (A5),A0
        tst.w     (A0)
        beq.s     findVariable_25
        clr.l     D0
@@ -5204,7 +5290,7 @@ findVariable_25:
        beq.s     findVariable_27
 ; {
 ; *vErroProc = 15;
-       move.l    (A2),A0
+       move.l    (A5),A0
        move.w    #15,(A0)
 ; return 0;
        clr.l     D0
@@ -5227,19 +5313,78 @@ findVariable_30:
 ; while(1)
 findVariable_31:
 ; {
-; /*writeLongSerial("Aqui 444.666.1-[");
+; writeLongSerial("Aqui 444.666.1-[");
+       pea       @basic_133.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; itoa(*(vLista + 3),sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    D2,A0
+       move.b    3(A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
 ; writeLongSerial(sqtdtam);
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
 ; writeLongSerial("]-[");
+       pea       @basic_134.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; itoa(*(vLista + 4),sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    D2,A0
+       move.b    4(A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
 ; writeLongSerial(sqtdtam);
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
 ; writeLongSerial("]-[");
+       pea       @basic_134.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; itoa(*(vLista + 5),sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    D2,A0
+       move.b    5(A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
 ; writeLongSerial(sqtdtam);
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
 ; writeLongSerial("]-[");
+       pea       @basic_134.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; itoa(*(vLista + 6),sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    D2,A0
+       move.b    6(A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
 ; writeLongSerial(sqtdtam);
-; writeLongSerial("]\r\n");*/
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
+; writeLongSerial("]\r\n");
+       pea       @basic_132.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; vPosNextVar  = (((unsigned long)*(vLista + 3) << 24) & 0xFF000000);
        move.l    D2,A0
        move.b    3(A0),D0
@@ -5248,7 +5393,7 @@ findVariable_31:
        lsl.l     #8,D0
        lsl.l     #8,D0
        and.l     #-16777216,D0
-       move.l    D0,A4
+       move.l    D0,-12(A6)
 ; vPosNextVar |= (((unsigned long)*(vLista + 4) << 16) & 0x00FF0000);
        move.l    D2,A0
        move.b    4(A0),D0
@@ -5256,65 +5401,154 @@ findVariable_31:
        lsl.l     #8,D0
        lsl.l     #8,D0
        and.l     #16711680,D0
-       move.l    A4,D1
-       or.l      D0,D1
-       move.l    D1,A4
+       or.l      D0,-12(A6)
 ; vPosNextVar |= (((unsigned long)*(vLista + 5) << 8) & 0x0000FF00);
        move.l    D2,A0
        move.b    5(A0),D0
        and.l     #255,D0
        lsl.l     #8,D0
        and.l     #65280,D0
-       move.l    A4,D1
-       or.l      D0,D1
-       move.l    D1,A4
+       or.l      D0,-12(A6)
 ; vPosNextVar |= ((unsigned long)*(vLista + 6) & 0x000000FF);
        move.l    D2,A0
        move.b    6(A0),D0
        and.l     #255,D0
        and.l     #255,D0
-       move.l    A4,D1
-       or.l      D0,D1
-       move.l    D1,A4
+       or.l      D0,-12(A6)
 ; *value_type = *vLista;
        move.l    D2,A0
        move.l    _value_type.L,A1
        move.b    (A0),(A1)
-; /*writeLongSerial("Aqui 444.666.2-[");
+; writeLongSerial("Aqui 444.666.2-[");
+       pea       @basic_135.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; itoa(vLista,sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    D2,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
 ; writeLongSerial(sqtdtam);
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
 ; writeLongSerial("]-[");
+       pea       @basic_134.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; itoa(vPosNextVar,sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    -12(A6),-(A7)
+       jsr       (A4)
+       add.w     #12,A7
 ; writeLongSerial(sqtdtam);
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
 ; writeLongSerial("]-[");
+       pea       @basic_134.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; itoa(pVariable[0],sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    D4,A0
+       move.b    (A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
 ; writeLongSerial(sqtdtam);
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
 ; writeLongSerial("]-[");
+       pea       @basic_134.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; itoa(pVariable[1],sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    D4,A0
+       move.b    1(A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
 ; writeLongSerial(sqtdtam);
-; writeLongSerial("]\r\n");*/
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
+; writeLongSerial("]\r\n");
+       pea       @basic_132.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; if (*(vLista + 1) == pVariable[0] && *(vLista + 2) ==  pVariable[1])
        move.l    D2,A0
-       move.l    D5,A1
+       move.l    D4,A1
        move.b    1(A0),D0
        cmp.b     (A1),D0
        bne       findVariable_34
        move.l    D2,A0
-       move.l    D5,A1
+       move.l    D4,A1
        move.b    2(A0),D0
        cmp.b     1(A1),D0
        bne       findVariable_34
 ; {
-; /*writeLongSerial("Aqui 444.666.3-[");
+; writeLongSerial("Aqui 444.666.3-[");
+       pea       @basic_136.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; itoa(*(vLista + 1),sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    D2,A0
+       move.b    1(A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
 ; writeLongSerial(sqtdtam);
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
 ; writeLongSerial("]-[");
+       pea       @basic_134.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; itoa(*(vLista + 2),sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    D2,A0
+       move.b    2(A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
 ; writeLongSerial(sqtdtam);
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
 ; writeLongSerial("]-[");
+       pea       @basic_134.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; itoa(ixDim,sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    D6,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
 ; writeLongSerial(sqtdtam);
-; writeLongSerial("]\r\n");*/
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
+; writeLongSerial("]\r\n");
+       pea       @basic_132.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; // Pega endereco da variavel pra delvover
 ; if (vArray)
        tst.b     D7
@@ -5337,7 +5571,7 @@ findVariable_38:
        beq.s     findVariable_40
 ; {
 ; *vErroProc = 21;
-       move.l    (A2),A0
+       move.l    (A5),A0
        move.w    #21,(A0)
 ; return 0;
        clr.l     D0
@@ -5353,28 +5587,29 @@ findVariable_40:
        jsr       LMUL
        move.l    (A7),D0
        addq.w    #8,A7
-       move.l    D0,D4
+       move.l    D0,D5
 findVariable_42:
-       cmp.l     #0,D4
+       cmp.l     #0,D5
        blt       findVariable_44
 ; {
 ; // Verifica tamanho posicao
 ; iDim = ((vLista[ix + 8] << 8) | vLista[ix + 9]);
        move.l    D2,A0
-       move.l    D4,A1
+       move.l    D5,A1
        move.b    8(A1,A0.L),D0
        and.w     #255,D0
        lsl.w     #8,D0
        move.l    D2,A0
-       move.l    D4,A1
+       move.l    D5,A1
        move.b    9(A1,A0.L),D1
        and.w     #255,D1
        or.w      D1,D0
        move.w    D0,-2(A6)
 ; if ((vDim[ix] + 1) > iDim)
-       move.l    D4,D0
+       move.l    D5,D0
        lsl.l     #2,D0
-       move.l    0(A3,D0.L),D0
+       lea       -364(A6),A0
+       move.l    0(A0,D0.L),D0
        addq.l    #1,D0
        move.w    -2(A6),D1
        and.l     #65535,D1
@@ -5382,7 +5617,7 @@ findVariable_42:
        bls.s     findVariable_45
 ; {
 ; *vErroProc = 21;
-       move.l    (A2),A0
+       move.l    (A5),A0
        move.w    #21,(A0)
 ; return 0;
        clr.l     D0
@@ -5395,11 +5630,12 @@ findVariable_45:
        tst.b     (A0)
        bne.s     findVariable_47
 ; vPosValueVar = vDim[ix] * vTamValue;
-       move.l    D4,D0
+       move.l    D5,D0
        lsl.l     #2,D0
+       lea       -364(A6),A0
        move.b    -7(A6),D1
        and.l     #255,D1
-       move.l    0(A3,D0.L),-(A7)
+       move.l    0(A0,D0.L),-(A7)
        move.l    D1,-(A7)
        jsr       ULMUL
        move.l    (A7),D0
@@ -5409,28 +5645,70 @@ findVariable_45:
 findVariable_47:
 ; else
 ; vPosValueVar = vPosValueVar * vDim[ix];
-       move.l    D4,D0
+       move.l    D5,D0
        lsl.l     #2,D0
+       lea       -364(A6),A0
        move.l    D3,-(A7)
-       move.l    0(A3,D0.L),-(A7)
+       move.l    0(A0,D0.L),-(A7)
        jsr       ULMUL
        move.l    (A7),D3
        addq.w    #8,A7
 findVariable_48:
-       subq.l    #2,D4
+       subq.l    #2,D5
        bra       findVariable_42
 findVariable_44:
 ; }
-; /*writeLongSerial("Aqui 444.666.4-[");
+; writeLongSerial("Aqui 444.666.4-[");
+       pea       @basic_137.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; itoa(vLista,sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    D2,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
 ; writeLongSerial(sqtdtam);
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
 ; writeLongSerial("]-[");
+       pea       @basic_134.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; itoa((ixDim * 2),sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    D6,-(A7)
+       pea       2
+       jsr       LMUL
+       move.l    (A7),D1
+       addq.w    #8,A7
+       move.l    D1,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
 ; writeLongSerial(sqtdtam);
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
 ; writeLongSerial("]-[");
+       pea       @basic_134.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; itoa(vPosValueVar,sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    D3,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
 ; writeLongSerial(sqtdtam);
-; writeLongSerial("]\r\n");*/
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
+; writeLongSerial("]\r\n");
+       pea       @basic_132.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; vPosValueVar = vLista + 8 + (ixDim * 2) + vPosValueVar;
        move.l    D2,D0
        addq.l    #8,D0
@@ -5443,7 +5721,7 @@ findVariable_44:
        add.l     D3,D0
        move.l    D0,D3
 ; vEnder = vPosValueVar;
-       move.l    D3,-436(A6)
+       move.l    D3,-440(A6)
        bra.s     findVariable_37
 findVariable_36:
 ; }
@@ -5454,7 +5732,7 @@ findVariable_36:
        addq.l    #3,D0
        move.l    D0,D3
 ; vEnder = vLista;
-       move.l    D2,-436(A6)
+       move.l    D2,-440(A6)
 findVariable_37:
 ; }
 ; // Pelo tipo da variavel, ja retorna na variavel de nome o conteudo da variavel
@@ -5472,7 +5750,7 @@ findVariable_37:
        lsl.l     #8,D0
        lsl.l     #8,D0
        and.l     #-16777216,D0
-       move.l    D0,A5
+       move.l    D0,-448(A6)
 ; vTemp |= (((unsigned long)*(vPosValueVar + 2) << 16) & 0x00FF0000);
        move.l    D3,A0
        move.b    2(A0),D0
@@ -5480,56 +5758,51 @@ findVariable_37:
        lsl.l     #8,D0
        lsl.l     #8,D0
        and.l     #16711680,D0
-       move.l    A5,D1
-       or.l      D0,D1
-       move.l    D1,A5
+       or.l      D0,-448(A6)
 ; vTemp |= (((unsigned long)*(vPosValueVar + 3) << 8) & 0x0000FF00);
        move.l    D3,A0
        move.b    3(A0),D0
        and.l     #255,D0
        lsl.l     #8,D0
        and.l     #65280,D0
-       move.l    A5,D1
-       or.l      D0,D1
-       move.l    D1,A5
+       or.l      D0,-448(A6)
 ; vTemp |= ((unsigned long)*(vPosValueVar + 4) & 0x000000FF);
        move.l    D3,A0
        move.b    4(A0),D0
        and.l     #255,D0
        and.l     #255,D0
-       move.l    A5,D1
-       or.l      D0,D1
-       move.l    D1,A5
+       or.l      D0,-448(A6)
 ; iy = *vPosValueVar;
        move.l    D3,A0
        move.b    (A0),D0
        and.l     #255,D0
-       move.l    D0,-412(A6)
+       move.l    D0,-416(A6)
 ; iz = 0;
-       clr.l     -408(A6)
+       clr.l     -412(A6)
 ; for (ix = 0; ix < iy; ix++)
-       clr.l     D4
+       clr.l     D5
 findVariable_51:
-       cmp.l     -412(A6),D4
+       cmp.l     -416(A6),D5
        bge.s     findVariable_53
 ; {
 ; pVariable[iz++] = *(vTemp + ix); // Numero gerado
-       move.l    D5,A0
-       move.l    -408(A6),D0
-       addq.l    #1,-408(A6)
-       move.b    0(A5,D4.L),0(A0,D0.L)
+       move.l    -448(A6),A0
+       move.l    D4,A1
+       move.l    -412(A6),D0
+       addq.l    #1,-412(A6)
+       move.b    0(A0,D5.L),0(A1,D0.L)
 ; pVariable[iz] = 0x00;
-       move.l    D5,A0
-       move.l    -408(A6),D0
+       move.l    D4,A0
+       move.l    -412(A6),D0
        clr.b     0(A0,D0.L)
-       addq.l    #1,D4
+       addq.l    #1,D5
        bra       findVariable_51
 findVariable_53:
 ; }
 ; pVariable[iz++] = 0x00;
-       move.l    D5,A0
-       move.l    -408(A6),D0
-       addq.l    #1,-408(A6)
+       move.l    D4,A0
+       move.l    -412(A6),D0
+       addq.l    #1,-412(A6)
        clr.b     0(A0,D0.L)
        bra       findVariable_50
 findVariable_49:
@@ -5544,27 +5817,27 @@ findVariable_49:
 findVariable_54:
 ; pVariable[0] = *(vPosValueVar);
        move.l    D3,A0
-       move.l    D5,A1
+       move.l    D4,A1
        move.b    (A0),(A1)
 ; pVariable[1] = *(vPosValueVar + 1);
        move.l    D3,A0
-       move.l    D5,A1
+       move.l    D4,A1
        move.b    1(A0),1(A1)
 ; pVariable[2] = *(vPosValueVar + 2);
        move.l    D3,A0
-       move.l    D5,A1
+       move.l    D4,A1
        move.b    2(A0),2(A1)
 ; pVariable[3] = *(vPosValueVar + 3);
        move.l    D3,A0
-       move.l    D5,A1
+       move.l    D4,A1
        move.b    3(A0),3(A1)
 ; pVariable[4] = 0x00;
-       move.l    D5,A0
+       move.l    D4,A0
        clr.b     4(A0)
 findVariable_50:
 ; }
 ; return vEnder;
-       move.l    -436(A6),D0
+       move.l    -440(A6),D0
        bra       findVariable_5
 findVariable_34:
 ; }
@@ -5572,7 +5845,7 @@ findVariable_34:
        tst.b     D7
        beq.s     findVariable_56
 ; vLista = vPosNextVar;
-       move.l    A4,D2
+       move.l    -12(A6),D2
        bra.s     findVariable_57
 findVariable_56:
 ; else
@@ -5686,12 +5959,16 @@ _createVariable:
        xdef      _updateVariable
 _updateVariable:
        link      A6,#-116
-       movem.l   D2/D3/D4/D5/D6/D7,-(A7)
+       movem.l   D2/D3/D4/D5/D6/D7/A2/A3/A4/A5,-(A7)
+       lea       _writeLongSerial.L,A2
+       lea       -80(A6),A3
        move.l    12(A6),D4
+       lea       _itoa.L,A4
+       lea       _nextAddrString.L,A5
 ; int vNumVal = 0;
-       clr.l     D6
-; int ix, iz = 0;
        clr.l     D5
+; int ix, iz = 0;
+       clr.l     D6
 ; char vbuffer [sizeof(long)*8+1];
 ; unsigned char* vNextSimpVar;
 ; unsigned char* vNextString;
@@ -5701,6 +5978,55 @@ _updateVariable:
 ; *atuVarAddr = pVariable;
        move.l    _atuVarAddr.L,A0
        move.l    8(A6),(A0)
+; writeLongSerial("Aqui 333.666.0-[");
+       pea       @basic_138.L
+       jsr       (A2)
+       addq.w    #4,A7
+; itoa(pVariable,sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    8(A6),-(A7)
+       jsr       (A4)
+       add.w     #12,A7
+; writeLongSerial(sqtdtam);
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
+; writeLongSerial("]-[");
+       pea       @basic_134.L
+       jsr       (A2)
+       addq.w    #4,A7
+; itoa(pValor,sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    D4,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
+; writeLongSerial(sqtdtam);
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
+; writeLongSerial("]-[");
+       pea       @basic_134.L
+       jsr       (A2)
+       addq.w    #4,A7
+; itoa(pType,sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.b    19(A6),D1
+       ext.w     D1
+       ext.l     D1
+       move.l    D1,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
+; writeLongSerial(sqtdtam);
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
+; writeLongSerial("]\r\n");
+       pea       @basic_132.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; if (pType == '#' || pType == '%')   // Real ou Inteiro
        move.b    19(A6),D0
        cmp.b     #35,D0
@@ -5747,13 +6073,13 @@ updateVariable_1:
        move.l    D4,-(A7)
        jsr       _strlen
        addq.w    #4,A7
-       move.l    D0,D5
+       move.l    D0,D6
 ; // Se for o mesmo tamanho ou menor, usa a mesma posicao
 ; if (*vNextSimpVar <= iz && pOper)
        move.l    D2,A0
        move.b    (A0),D0
        and.l     #255,D0
-       cmp.l     D5,D0
+       cmp.l     D6,D0
        bhi       updateVariable_6
        move.b    23(A6),D0
        ext.w     D0
@@ -5796,15 +6122,15 @@ updateVariable_6:
 ; }
 ; else
 ; vNextString = *nextAddrString;
-       move.l    _nextAddrString.L,A0
+       move.l    (A5),A0
        move.l    (A0),D3
 updateVariable_7:
 ; vNumVal = vNextString;
-       move.l    D3,D6
+       move.l    D3,D5
 ; for (ix = 0; ix < iz; ix++)
        moveq     #0,D7
 updateVariable_8:
-       cmp.l     D5,D7
+       cmp.l     D6,D7
        bge.s     updateVariable_10
 ; {
 ; *vNextString++ = pValor[ix];
@@ -5816,11 +6142,57 @@ updateVariable_8:
        bra       updateVariable_8
 updateVariable_10:
 ; }
+; writeLongSerial("Aqui 333.666.1-[");
+       pea       @basic_139.L
+       jsr       (A2)
+       addq.w    #4,A7
+; itoa(nextAddrString,sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    (A5),-(A7)
+       jsr       (A4)
+       add.w     #12,A7
+; writeLongSerial(sqtdtam);
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
+; writeLongSerial("]-[");
+       pea       @basic_134.L
+       jsr       (A2)
+       addq.w    #4,A7
+; itoa(vNextString,sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    D3,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
+; writeLongSerial(sqtdtam);
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
+; writeLongSerial("]-[");
+       pea       @basic_134.L
+       jsr       (A2)
+       addq.w    #4,A7
+; itoa(vNumVal,sqtdtam,16);
+       pea       16
+       move.l    A3,-(A7)
+       move.l    D5,-(A7)
+       jsr       (A4)
+       add.w     #12,A7
+; writeLongSerial(sqtdtam);
+       move.l    A3,-(A7)
+       jsr       (A2)
+       addq.w    #4,A7
+; writeLongSerial("]\r\n");
+       pea       @basic_132.L
+       jsr       (A2)
+       addq.w    #4,A7
 ; if (*vNextSimpVar > iz || !pOper)
        move.l    D2,A0
        move.b    (A0),D0
        and.l     #255,D0
-       cmp.l     D5,D0
+       cmp.l     D6,D0
        bhi.s     updateVariable_13
        tst.b     23(A6)
        bne.s     updateVariable_14
@@ -5835,15 +6207,15 @@ updateVariable_15:
        beq.s     updateVariable_11
 updateVariable_13:
 ; *nextAddrString = vNextString;
-       move.l    _nextAddrString.L,A0
+       move.l    (A5),A0
        move.l    D3,(A0)
 updateVariable_11:
 ; *vNextSimpVar++ = iz;
        move.l    D2,A0
        addq.l    #1,D2
-       move.b    D5,(A0)
+       move.b    D6,(A0)
 ; *vNextSimpVar++ = ((vNumVal & 0xFF000000) >>24);
-       move.l    D6,D0
+       move.l    D5,D0
        and.l     #-16777216,D0
        lsr.l     #8,D0
        lsr.l     #8,D0
@@ -5852,7 +6224,7 @@ updateVariable_11:
        addq.l    #1,D2
        move.b    D0,(A0)
 ; *vNextSimpVar++ = ((vNumVal & 0x00FF0000) >>16);
-       move.l    D6,D0
+       move.l    D5,D0
        and.l     #16711680,D0
        asr.l     #8,D0
        asr.l     #8,D0
@@ -5860,14 +6232,14 @@ updateVariable_11:
        addq.l    #1,D2
        move.b    D0,(A0)
 ; *vNextSimpVar++ = ((vNumVal & 0x0000FF00) >>8);
-       move.l    D6,D0
+       move.l    D5,D0
        and.l     #65280,D0
        asr.l     #8,D0
        move.l    D2,A0
        addq.l    #1,D2
        move.b    D0,(A0)
 ; *vNextSimpVar++ = (vNumVal & 0x000000FF);
-       move.l    D6,D0
+       move.l    D5,D0
        and.l     #255,D0
        move.l    D2,A0
        addq.l    #1,D2
@@ -5880,7 +6252,7 @@ updateVariable_2:
 ; *(vNextSimpVar + 4) = 0x00;*/
 ; return 0;
        clr.b     D0
-       movem.l   (A7)+,D2/D3/D4/D5/D6/D7
+       movem.l   (A7)+,D2/D3/D4/D5/D6/D7/A2/A3/A4/A5
        unlk      A6
        rts
 ; }
@@ -9557,7 +9929,7 @@ basPrint_39:
        cmp.b     #44,D3
        beq.s     basPrint_40
 ; printText("\r\n");
-       pea       @basic_93.L
+       pea       @basic_96.L
        jsr       _printText
        addq.w    #4,A7
 basPrint_40:
@@ -10570,7 +10942,7 @@ basFre_17:
 ; }
 ; // Calcula Quantidade de Memoria e printa na tela
 ; printText("Memory Free for: \r\n\0");
-       pea       @basic_128.L
+       pea       @basic_140.L
        jsr       (A2)
        addq.w    #4,A7
 ; vTotal = (pStartArrayVar - pStartSimpVar) + (pStartStack - pStartString);
@@ -10587,7 +10959,7 @@ basFre_17:
        jsr       (A5)
        add.w     #12,A7
 ; printText("     Variables: \0");
-       pea       @basic_129.L
+       pea       @basic_141.L
        jsr       (A2)
        addq.w    #4,A7
 ; printText(vbuffer);
@@ -10595,7 +10967,7 @@ basFre_17:
        jsr       (A2)
        addq.w    #4,A7
 ; printText("Bytes\r\n\0");
-       pea       @basic_130.L
+       pea       @basic_142.L
        jsr       (A2)
        addq.w    #4,A7
 ; vTotal = pStartProg - pStartArrayVar;
@@ -10609,7 +10981,7 @@ basFre_17:
        jsr       (A5)
        add.w     #12,A7
 ; printText("        Arrays: \0");
-       pea       @basic_131.L
+       pea       @basic_143.L
        jsr       (A2)
        addq.w    #4,A7
 ; printText(vbuffer);
@@ -10617,7 +10989,7 @@ basFre_17:
        jsr       (A2)
        addq.w    #4,A7
 ; printText("Bytes\r\n\0");
-       pea       @basic_130.L
+       pea       @basic_142.L
        jsr       (A2)
        addq.w    #4,A7
 ; vTotal = pStartString - *nextAddrLine;
@@ -10632,7 +11004,7 @@ basFre_17:
        jsr       (A5)
        add.w     #12,A7
 ; printText("       Program: \0");
-       pea       @basic_132.L
+       pea       @basic_144.L
        jsr       (A2)
        addq.w    #4,A7
 ; printText(vbuffer);
@@ -10640,7 +11012,7 @@ basFre_17:
        jsr       (A2)
        addq.w    #4,A7
 ; printText("Bytes\r\n\0");
-       pea       @basic_130.L
+       pea       @basic_142.L
        jsr       (A2)
        addq.w    #4,A7
 ; return 0;
@@ -12573,7 +12945,7 @@ basInputGet_11:
 basInputGet_13:
 ; vTemTexto = 1;
        moveq     #1,D4
-       bra       basInputGet_48
+       bra       basInputGet_50
 basInputGet_9:
 ; }
 ; else { /* is expression */
@@ -12779,7 +13151,7 @@ basInputGet_34:
        clr.b     (A3)
 basInputGet_35:
 ; printText("\r\n");
-       pea       @basic_93.L
+       pea       @basic_96.L
        jsr       _printText
        addq.w    #4,A7
 basInputGet_24:
@@ -12840,6 +13212,12 @@ basInputGet_43:
        move.b    D0,3(A3)
 basInputGet_40:
 ; }
+; if (*pointerRunProg != 0x28)  // se eh array, tem parenteses
+       move.l    _pointerRunProg.L,A0
+       move.l    (A0),D0
+       cmp.l     #40,D0
+       beq       basInputGet_46
+; {
 ; // assign the value
 ; vRetFV = findVariable(varName);
        move.l    (A4),-(A7)
@@ -12849,7 +13227,7 @@ basInputGet_40:
 ; // Se nao existe variavel e inicio sentenca, cria variavel e atribui o valor
 ; if (!vRetFV)
        tst.l     D7
-       bne.s     basInputGet_46
+       bne.s     basInputGet_48
 ; createVariable(varName, answer, varTipo);
        ext.w     D2
        ext.l     D2
@@ -12858,8 +13236,8 @@ basInputGet_40:
        move.l    (A4),-(A7)
        jsr       _createVariable
        add.w     #12,A7
-       bra.s     basInputGet_47
-basInputGet_46:
+       bra.s     basInputGet_49
+basInputGet_48:
 ; else // se ja existe, altera
 ; updateVariable((vRetFV + 3), answer, varTipo, 1);
        pea       1
@@ -12872,7 +13250,23 @@ basInputGet_46:
        move.l    D1,-(A7)
        jsr       _updateVariable
        add.w     #16,A7
+basInputGet_49:
+       bra.s     basInputGet_47
+basInputGet_46:
+; }
+; else
+; {
+; updateVariable(vRetFV, answer, varTipo, 1);
+       pea       1
+       ext.w     D2
+       ext.l     D2
+       move.l    D2,-(A7)
+       move.l    A3,-(A7)
+       move.l    D7,-(A7)
+       jsr       _updateVariable
+       add.w     #16,A7
 basInputGet_47:
+; }
 ; vTemTexto=2;
        moveq     #2,D4
 ; nextToken();
@@ -12880,47 +13274,31 @@ basInputGet_47:
 ; if (*vErroProc) return 0;
        move.l    (A5),A0
        tst.w     (A0)
-       beq.s     basInputGet_48
+       beq.s     basInputGet_50
        clr.l     D0
        bra       basInputGet_5
-basInputGet_48:
+basInputGet_50:
 ; }
 ; last_delim = *token;
        move.l    (A2),A0
        move.b    (A0),-5(A6)
 ; if (vTemTexto==1 && *token==';')
        cmp.b     #1,D4
-       bne.s     basInputGet_50
-       move.l    (A2),A0
-       move.b    (A0),D0
-       cmp.b     #59,D0
-       bne.s     basInputGet_50
-       bra       basInputGet_56
-basInputGet_50:
-; /* do nothing */;
-; else if (vTemTexto==1 && *token!=';')
-       cmp.b     #1,D4
        bne.s     basInputGet_52
        move.l    (A2),A0
        move.b    (A0),D0
        cmp.b     #59,D0
-       beq.s     basInputGet_52
-; {
-; *vErroProc = 14;
-       move.l    (A5),A0
-       move.w    #14,(A0)
-; return 0;
-       clr.l     D0
-       bra       basInputGet_5
+       bne.s     basInputGet_52
+       bra       basInputGet_58
 basInputGet_52:
-; }
-; else if (vTemTexto!=1 && *token==';')
+; /* do nothing */;
+; else if (vTemTexto==1 && *token!=';')
        cmp.b     #1,D4
-       beq.s     basInputGet_54
+       bne.s     basInputGet_54
        move.l    (A2),A0
        move.b    (A0),D0
        cmp.b     #59,D0
-       bne.s     basInputGet_54
+       beq.s     basInputGet_54
 ; {
 ; *vErroProc = 14;
        move.l    (A5),A0
@@ -12930,21 +13308,37 @@ basInputGet_52:
        bra       basInputGet_5
 basInputGet_54:
 ; }
+; else if (vTemTexto!=1 && *token==';')
+       cmp.b     #1,D4
+       beq.s     basInputGet_56
+       move.l    (A2),A0
+       move.b    (A0),D0
+       cmp.b     #59,D0
+       bne.s     basInputGet_56
+; {
+; *vErroProc = 14;
+       move.l    (A5),A0
+       move.w    #14,(A0)
+; return 0;
+       clr.l     D0
+       bra       basInputGet_5
+basInputGet_56:
+; }
 ; else if (*tok!=EOL && *tok!=FINISHED && *token!=':')
        move.l    _tok.L,A0
        move.b    (A0),D0
        and.w     #255,D0
        cmp.w     #226,D0
-       beq.s     basInputGet_56
+       beq.s     basInputGet_58
        move.l    _tok.L,A0
        move.b    (A0),D0
        and.w     #255,D0
        cmp.w     #224,D0
-       beq.s     basInputGet_56
+       beq.s     basInputGet_58
        move.l    (A2),A0
        move.b    (A0),D0
        cmp.b     #58,D0
-       beq.s     basInputGet_56
+       beq.s     basInputGet_58
 ; {
 ; *vErroProc = 14;
        move.l    (A5),A0
@@ -12952,7 +13346,7 @@ basInputGet_54:
 ; return 0;
        clr.l     D0
        bra.s     basInputGet_5
-basInputGet_56:
+basInputGet_58:
        move.l    (A2),A0
        move.b    (A0),D0
        cmp.b     #59,D0
@@ -13861,6 +14255,362 @@ basNext_5:
        movem.l   (A7)+,D2/D3/D4/D5/D6/D7/A2/A3/A4/A5
        unlk      A6
        rts
+; }
+; //--------------------------------------------------------------------------------------
+; // Salta para uma linha se erro
+; // Syntaxe:
+; //          ON <VAR> GOSUB <num.linha 1>,<num.linha 2>,...,,<num.linha n>
+; //          ON <VAR> GOTO <num.linha 1>,<num.linha 2>,...,<num.linha n>
+; //--------------------------------------------------------------------------------------
+; int basOnVar(void)
+; {
+       xdef      _basOnVar
+_basOnVar:
+       link      A6,#-12
+       movem.l   D2/D3/D4/A2/A3/A4/A5,-(A7)
+       lea       _vErroProc.L,A2
+       lea       _value_type.L,A3
+       lea       _nextToken.L,A4
+       lea       _pointerRunProg.L,A5
+; unsigned char* vNextAddrGoto;
+; unsigned int vNumLin = 0;
+       clr.l     -12(A6)
+; unsigned char *vTempPointer;
+; unsigned int vSalto;
+; unsigned int iSalto = 0;
+       clr.l     -4(A6)
+; unsigned int ix;
+; vTempPointer = *pointerRunProg;
+       move.l    (A5),A0
+       move.l    (A0),D3
+; if (isalphas(*vTempPointer))
+       move.l    D3,A0
+       move.b    (A0),D1
+       and.l     #255,D1
+       move.l    D1,-(A7)
+       jsr       _isalphas
+       addq.w    #4,A7
+       tst.l     D0
+       beq       basOnVar_1
+; {
+; // procura pela variavel no forStack
+; nextToken();
+       jsr       (A4)
+; if (*vErroProc) return 0;
+       move.l    (A2),A0
+       tst.w     (A0)
+       beq.s     basOnVar_3
+       clr.l     D0
+       bra       basOnVar_5
+basOnVar_3:
+; if (*token_type != VARIABLE)
+       move.l    _token_type.L,A0
+       move.b    (A0),D0
+       cmp.b     #2,D0
+       beq.s     basOnVar_6
+; {
+; *vErroProc = 4;
+       move.l    (A2),A0
+       move.w    #4,(A0)
+; return 0;
+       clr.l     D0
+       bra       basOnVar_5
+basOnVar_6:
+; }
+; putback();
+       jsr       _putback
+; getExp(&iSalto);
+       pea       -4(A6)
+       jsr       _getExp
+       addq.w    #4,A7
+; if (*vErroProc) return 0;
+       move.l    (A2),A0
+       tst.w     (A0)
+       beq.s     basOnVar_8
+       clr.l     D0
+       bra       basOnVar_5
+basOnVar_8:
+; if (*value_type != '%')
+       move.l    (A3),A0
+       move.b    (A0),D0
+       cmp.b     #37,D0
+       beq.s     basOnVar_10
+; {
+; *vErroProc = 16;
+       move.l    (A2),A0
+       move.w    #16,(A0)
+; return 0;
+       clr.l     D0
+       bra       basOnVar_5
+basOnVar_10:
+; }
+; if (iSalto == 0 || iSalto > 255)
+       move.l    -4(A6),D0
+       beq.s     basOnVar_14
+       move.l    -4(A6),D0
+       cmp.l     #255,D0
+       bls.s     basOnVar_12
+basOnVar_14:
+; {
+; *vErroProc = 5;
+       move.l    (A2),A0
+       move.w    #5,(A0)
+; return 0;
+       clr.l     D0
+       bra       basOnVar_5
+basOnVar_12:
+       bra.s     basOnVar_2
+basOnVar_1:
+; }
+; }
+; else
+; {
+; *vErroProc = 4;
+       move.l    (A2),A0
+       move.w    #4,(A0)
+; return 0;
+       clr.l     D0
+       bra       basOnVar_5
+basOnVar_2:
+; }
+; vTempPointer = *pointerRunProg;
+       move.l    (A5),A0
+       move.l    (A0),D3
+; // Se nao for goto ou gosub, erro
+; if (*vTempPointer != 0x89 && *vTempPointer != 0x8A)
+       move.l    D3,A0
+       move.b    (A0),D0
+       and.w     #255,D0
+       cmp.w     #137,D0
+       beq.s     basOnVar_15
+       move.l    D3,A0
+       move.b    (A0),D0
+       and.w     #255,D0
+       cmp.w     #138,D0
+       beq.s     basOnVar_15
+; {
+; *vErroProc = 14;
+       move.l    (A2),A0
+       move.w    #14,(A0)
+; return 0;
+       clr.l     D0
+       bra       basOnVar_5
+basOnVar_15:
+; }
+; vSalto = *vTempPointer;
+       move.l    D3,A0
+       move.b    (A0),D0
+       and.l     #255,D0
+       move.l    D0,-8(A6)
+; ix = 0;
+       clr.l     D4
+; *pointerRunProg = *pointerRunProg + 1;
+       move.l    (A5),A0
+       addq.l    #1,(A0)
+; while (1)
+basOnVar_17:
+; {
+; getExp(&vNumLin); // get target value
+       pea       -12(A6)
+       jsr       _getExp
+       addq.w    #4,A7
+; if (*value_type == '$' || *value_type == '#') {
+       move.l    (A3),A0
+       move.b    (A0),D0
+       cmp.b     #36,D0
+       beq.s     basOnVar_22
+       move.l    (A3),A0
+       move.b    (A0),D0
+       cmp.b     #35,D0
+       bne.s     basOnVar_20
+basOnVar_22:
+; *vErroProc = 16;
+       move.l    (A2),A0
+       move.w    #16,(A0)
+; return 0;
+       clr.l     D0
+       bra       basOnVar_5
+basOnVar_20:
+; }
+; ix++;
+       addq.l    #1,D4
+; if (ix == iSalto)
+       cmp.l     -4(A6),D4
+       bne.s     basOnVar_23
+; break;
+       bra       basOnVar_19
+basOnVar_23:
+; nextToken();
+       jsr       (A4)
+; if (*vErroProc) return 0;
+       move.l    (A2),A0
+       tst.w     (A0)
+       beq.s     basOnVar_25
+       clr.l     D0
+       bra       basOnVar_5
+basOnVar_25:
+; // Deve ser uma virgula
+; if (*token!=',')
+       move.l    _token.L,A0
+       move.b    (A0),D0
+       cmp.b     #44,D0
+       beq.s     basOnVar_27
+; {
+; *vErroProc = 18;
+       move.l    (A2),A0
+       move.w    #18,(A0)
+; return 0;
+       clr.l     D0
+       bra       basOnVar_5
+basOnVar_27:
+; }
+; nextToken();
+       jsr       (A4)
+; if (*vErroProc) return 0;
+       move.l    (A2),A0
+       tst.w     (A0)
+       beq.s     basOnVar_29
+       clr.l     D0
+       bra       basOnVar_5
+basOnVar_29:
+; putback();
+       jsr       _putback
+       bra       basOnVar_17
+basOnVar_19:
+; }
+; if (ix == 0 || ix > iSalto)
+       tst.l     D4
+       beq.s     basOnVar_33
+       cmp.l     -4(A6),D4
+       bls.s     basOnVar_31
+basOnVar_33:
+; {
+; *vErroProc = 14;
+       move.l    (A2),A0
+       move.w    #14,(A0)
+; return 0;
+       clr.l     D0
+       bra       basOnVar_5
+basOnVar_31:
+; }
+; vNextAddrGoto = findNumberLine(vNumLin, 0, 0);
+       clr.l     -(A7)
+       clr.l     -(A7)
+       move.l    -12(A6),D1
+       and.l     #65535,D1
+       move.l    D1,-(A7)
+       jsr       _findNumberLine
+       add.w     #12,A7
+       move.l    D0,D2
+; if (vSalto == 0x89)
+       move.l    -8(A6),D0
+       cmp.l     #137,D0
+       bne       basOnVar_34
+; {
+; // GOTO
+; if (vNextAddrGoto > 0)
+       cmp.l     #0,D2
+       bls       basOnVar_36
+; {
+; if ((unsigned int)(((unsigned int)*(vNextAddrGoto + 3) << 8) | *(vNextAddrGoto + 4)) == vNumLin)
+       move.l    D2,A0
+       move.b    3(A0),D0
+       and.l     #255,D0
+       lsl.l     #8,D0
+       move.l    D2,A0
+       move.b    4(A0),D1
+       and.l     #255,D1
+       or.l      D1,D0
+       cmp.l     -12(A6),D0
+       bne.s     basOnVar_38
+; {
+; *changedPointer = vNextAddrGoto;
+       move.l    _changedPointer.L,A0
+       move.l    D2,(A0)
+; return 0;
+       clr.l     D0
+       bra       basOnVar_5
+basOnVar_38:
+; }
+; else
+; {
+; *vErroProc = 7;
+       move.l    (A2),A0
+       move.w    #7,(A0)
+; return 0;
+       clr.l     D0
+       bra       basOnVar_5
+basOnVar_36:
+; }
+; }
+; else
+; {
+; *vErroProc = 7;
+       move.l    (A2),A0
+       move.w    #7,(A0)
+; return 0;
+       clr.l     D0
+       bra       basOnVar_5
+basOnVar_34:
+; }
+; }
+; else
+; {
+; // GOSUB
+; if (vNextAddrGoto > 0)
+       cmp.l     #0,D2
+       bls       basOnVar_40
+; {
+; if ((unsigned int)(((unsigned int)*(vNextAddrGoto + 3) << 8) | *(vNextAddrGoto + 4)) == vNumLin)
+       move.l    D2,A0
+       move.b    3(A0),D0
+       and.l     #255,D0
+       lsl.l     #8,D0
+       move.l    D2,A0
+       move.b    4(A0),D1
+       and.l     #255,D1
+       or.l      D1,D0
+       cmp.l     -12(A6),D0
+       bne.s     basOnVar_42
+; {
+; gosubPush(*nextAddr);
+       move.l    _nextAddr.L,A0
+       move.l    (A0),-(A7)
+       jsr       _gosubPush
+       addq.w    #4,A7
+; *changedPointer = vNextAddrGoto;
+       move.l    _changedPointer.L,A0
+       move.l    D2,(A0)
+; return 0;
+       clr.l     D0
+       bra.s     basOnVar_5
+basOnVar_42:
+; }
+; else
+; {
+; *vErroProc = 7;
+       move.l    (A2),A0
+       move.w    #7,(A0)
+; return 0;
+       clr.l     D0
+       bra.s     basOnVar_5
+basOnVar_40:
+; }
+; }
+; else
+; {
+; *vErroProc = 7;
+       move.l    (A2),A0
+       move.w    #7,(A0)
+; return 0;
+       clr.l     D0
+basOnVar_5:
+       movem.l   (A7)+,D2/D3/D4/A2/A3/A4/A5
+       unlk      A6
+       rts
+; }
+; }
+; return 0;
 ; }
 ; //--------------------------------------------------------------------------------------
 ; // Salta para uma linha se erro
@@ -15444,14 +16194,12 @@ _basText:
 ; //--------------------------------------------------------------------------------------
 ; // Low Resolution Screen Mode (64x48)
 ; // Syntaxe:
-; //          TEXT
+; //          GR
 ; //--------------------------------------------------------------------------------------
 ; int basGr(void)
 ; {
        xdef      _basGr
 _basGr:
-       link      A6,#-12
-; unsigned char sqtdtam[10];
 ; vdp_init(VDP_MODE_MULTICOLOR, 0, 0, 0);
        clr.l     -(A7)
        clr.l     -(A7)
@@ -15461,13 +16209,12 @@ _basGr:
        add.w     #16,A7
 ; return 0;
        clr.l     D0
-       unlk      A6
        rts
 ; }
 ; //--------------------------------------------------------------------------------------
 ; // High Resolution Screen Mode (256x192)
 ; // Syntaxe:
-; //          TEXT
+; //          HGR
 ; //--------------------------------------------------------------------------------------
 ; int basHgr(void)
 ; {
@@ -15484,6 +16231,50 @@ _basHgr:
        pea       1
        jsr       _vdp_set_bdcolor
        addq.w    #4,A7
+; return 0;
+       clr.l     D0
+       rts
+; }
+; //--------------------------------------------------------------------------------------
+; // Inverte as Cores de tela (COR FRENTE <> COR NORMAL)
+; // Syntaxe:
+; //          INVERSE
+; //
+; //    **********************************************************************************
+; //    ** SOMENTE PARA COMPATIBILIDADE, NO TMS91xx E TMS99xx NAO FUNCIONA COR POR CHAR **
+; //    **********************************************************************************
+; //--------------------------------------------------------------------------------------
+; int basInverse(void)
+; {
+       xdef      _basInverse
+_basInverse:
+; /*    unsigned char vTempCor;
+; *fgcolorAnt = *fgcolor;
+; *bgcolorAnt = *bgcolor;
+; vTempCor = *fgcolor;
+; *fgcolor = *bgcolor;
+; *bgcolor = vTempCor;
+; vdp_textcolor(*fgcolor,*bgcolor);*/
+; return 0;
+       clr.l     D0
+       rts
+; }
+; //--------------------------------------------------------------------------------------
+; // Volta as cores de tela as cores iniciais
+; // Syntaxe:
+; //          NORMAL
+; //
+; //    **********************************************************************************
+; //    ** SOMENTE PARA COMPATIBILIDADE, NO TMS91xx E TMS99xx NAO FUNCIONA COR POR CHAR **
+; //    **********************************************************************************
+; //--------------------------------------------------------------------------------------
+; int basNormal(void)
+; {
+       xdef      _basNormal
+_basNormal:
+; /*    *fgcolor = *fgcolorAnt;
+; *bgcolor = *bgcolorAnt;
+; vdp_textcolor(*fgcolor,*bgcolor);*/
 ; return 0;
        clr.l     D0
        rts
@@ -17743,236 +18534,268 @@ _basRestore:
 @basic_39:
        dc.b      82,69,77,0
 @basic_40:
-       dc.b      68,73,77,0
+       dc.b      73,78,86,69,82,83,69,0
 @basic_41:
-       dc.b      73,78,80,85,84,0
+       dc.b      78,79,82,77,65,76,0
 @basic_42:
-       dc.b      71,69,84,0
+       dc.b      68,73,77,0
 @basic_43:
-       dc.b      86,84,65,66,0
+       dc.b      79,78,0
 @basic_44:
-       dc.b      72,84,65,66,0
+       dc.b      73,78,80,85,84,0
 @basic_45:
-       dc.b      72,79,77,69,0
+       dc.b      71,69,84,0
 @basic_46:
-       dc.b      67,76,69,65,82,0
+       dc.b      86,84,65,66,0
 @basic_47:
-       dc.b      68,65,84,65,0
+       dc.b      72,84,65,66,0
 @basic_48:
-       dc.b      82,69,65,68,0
+       dc.b      72,79,77,69,0
 @basic_49:
-       dc.b      82,69,83,84,79,82,69,0
+       dc.b      67,76,69,65,82,0
 @basic_50:
-       dc.b      69,78,68,0
+       dc.b      68,65,84,65,0
 @basic_51:
-       dc.b      83,84,79,80,0
+       dc.b      82,69,65,68,0
 @basic_52:
-       dc.b      84,69,88,84,0
+       dc.b      82,69,83,84,79,82,69,0
 @basic_53:
-       dc.b      71,82,0
+       dc.b      69,78,68,0
 @basic_54:
-       dc.b      72,71,82,0
+       dc.b      83,84,79,80,0
 @basic_55:
-       dc.b      67,79,76,79,82,0
+       dc.b      84,69,88,84,0
 @basic_56:
-       dc.b      80,76,79,84,0
+       dc.b      71,82,0
 @basic_57:
-       dc.b      72,76,73,78,0
+       dc.b      72,71,82,0
 @basic_58:
-       dc.b      86,76,73,78,0
+       dc.b      67,79,76,79,82,0
 @basic_59:
-       dc.b      72,67,79,76,79,82,0
+       dc.b      80,76,79,84,0
 @basic_60:
-       dc.b      72,80,76,79,84,0
+       dc.b      72,76,73,78,0
 @basic_61:
-       dc.b      65,84,0
+       dc.b      86,76,73,78,0
 @basic_62:
-       dc.b      79,78,69,82,82,0
+       dc.b      72,67,79,76,79,82,0
 @basic_63:
-       dc.b      65,83,67,0
+       dc.b      72,80,76,79,84,0
 @basic_64:
-       dc.b      80,69,69,75,0
+       dc.b      65,84,0
 @basic_65:
-       dc.b      80,79,75,69,0
+       dc.b      79,78,69,82,82,0
 @basic_66:
-       dc.b      82,78,68,0
+       dc.b      65,83,67,0
 @basic_67:
-       dc.b      76,69,78,0
+       dc.b      80,69,69,75,0
 @basic_68:
-       dc.b      86,65,76,0
+       dc.b      80,79,75,69,0
 @basic_69:
-       dc.b      83,84,82,36,0
+       dc.b      82,78,68,0
 @basic_70:
-       dc.b      83,67,82,78,0
+       dc.b      76,69,78,0
 @basic_71:
-       dc.b      67,72,82,36,0
+       dc.b      86,65,76,0
 @basic_72:
-       dc.b      70,82,69,0
+       dc.b      83,84,82,36,0
 @basic_73:
-       dc.b      83,81,82,84,0
+       dc.b      83,67,82,78,0
 @basic_74:
-       dc.b      83,73,78,0
+       dc.b      67,72,82,36,0
 @basic_75:
-       dc.b      67,79,83,0
+       dc.b      70,82,69,0
 @basic_76:
-       dc.b      84,65,78,0
+       dc.b      83,81,82,84,0
 @basic_77:
-       dc.b      76,79,71,0
+       dc.b      83,73,78,0
 @basic_78:
-       dc.b      69,88,80,0
+       dc.b      67,79,83,0
 @basic_79:
-       dc.b      83,80,67,0
+       dc.b      84,65,78,0
 @basic_80:
-       dc.b      84,65,66,0
+       dc.b      76,79,71,0
 @basic_81:
-       dc.b      77,73,68,36,0
+       dc.b      69,88,80,0
 @basic_82:
-       dc.b      82,73,71,72,84,36,0
+       dc.b      83,80,67,0
 @basic_83:
-       dc.b      76,69,70,84,36,0
+       dc.b      84,65,66,0
 @basic_84:
-       dc.b      73,78,84,0
+       dc.b      77,73,68,36,0
 @basic_85:
-       dc.b      65,66,83,0
+       dc.b      82,73,71,72,84,36,0
 @basic_86:
-       dc.b      65,78,68,0
+       dc.b      76,69,70,84,36,0
 @basic_87:
-       dc.b      79,82,0
+       dc.b      73,78,84,0
 @basic_88:
-       dc.b      62,61,0
+       dc.b      65,66,83,0
 @basic_89:
-       dc.b      60,61,0
+       dc.b      65,78,68,0
 @basic_90:
-       dc.b      60,62,0
+       dc.b      79,82,0
 @basic_91:
-       dc.b      78,79,84,0
+       dc.b      62,61,0
 @basic_92:
+       dc.b      60,61,0
+@basic_93:
+       dc.b      60,62,0
+@basic_94:
+       dc.b      78,79,84,0
+@basic_95:
        dc.b      77,77,83,74,45,66,65,83,73,67,32,118,49,46,48
        dc.b      101,0
-@basic_93:
+@basic_96:
        dc.b      13,10,0
-@basic_94:
+@basic_97:
        dc.b      85,116,105,108,105,116,121,32,40,99,41,32,50
        dc.b      48,50,50,45,50,48,50,52,13,10,0
-@basic_95:
-       dc.b      79,75,13,10,0
-@basic_96:
-       dc.b      13,10,79,75,0
-@basic_97:
-       dc.b      78,69,87,0
 @basic_98:
-       dc.b      69,68,73,84,0
+       dc.b      79,75,13,10,0
 @basic_99:
-       dc.b      76,73,83,84,0
+       dc.b      13,10,79,75,0
 @basic_100:
-       dc.b      76,73,83,84,80,0
+       dc.b      78,69,87,0
 @basic_101:
-       dc.b      82,85,78,0
+       dc.b      69,68,73,84,0
 @basic_102:
-       dc.b      68,69,76,0
+       dc.b      76,73,83,84,0
 @basic_103:
-       dc.b      88,76,79,65,68,0
+       dc.b      76,73,83,84,80,0
 @basic_104:
-       dc.b      84,73,77,69,82,0
+       dc.b      82,85,78,0
 @basic_105:
-       dc.b      84,105,109,101,114,58,32,0
+       dc.b      68,69,76,0
 @basic_106:
-       dc.b      109,115,13,10,0
+       dc.b      88,76,79,65,68,0
 @basic_107:
-       dc.b      84,82,65,67,69,0
+       dc.b      84,73,77,69,82,0
 @basic_108:
-       dc.b      78,79,84,82,65,67,69,0
+       dc.b      84,105,109,101,114,58,32,0
 @basic_109:
-       dc.b      81,85,73,84,0
+       dc.b      109,115,13,10,0
 @basic_110:
-       dc.b      32,0
+       dc.b      84,82,65,67,69,0
 @basic_111:
-       dc.b      32,59,44,43,45,60,62,40,41,47,42,94,61,58,0
+       dc.b      78,79,84,82,65,67,69,0
 @basic_112:
+       dc.b      81,85,73,84,0
+@basic_113:
+       dc.b      32,0
+@basic_114:
+       dc.b      32,59,44,43,45,60,62,40,41,47,42,94,61,58,0
+@basic_115:
        dc.b      76,105,110,101,32,110,117,109,98,101,114,32
        dc.b      97,108,114,101,97,100,121,32,101,120,105,115
        dc.b      116,115,13,10,0
-@basic_113:
+@basic_116:
        dc.b      78,111,110,45,101,120,105,115,116,101,110,116
        dc.b      32,108,105,110,101,32,110,117,109,98,101,114
        dc.b      13,10,0
-@basic_114:
+@basic_117:
        dc.b      112,114,101,115,115,32,97,110,121,32,107,101
        dc.b      121,32,116,111,32,99,111,110,116,105,110,117
        dc.b      101,0
-@basic_115:
+@basic_118:
        dc.b      64,0
-@basic_116:
+@basic_119:
        dc.b      83,121,110,116,97,120,32,69,114,114,111,114
        dc.b      32,33,0
-@basic_117:
+@basic_120:
        dc.b      13,10,65,98,111,114,116,101,100,32,33,33,33
        dc.b      13,10,0
-@basic_118:
+@basic_121:
        dc.b      13,10,83,116,111,112,112,101,100,32,97,116,32
        dc.b      0
-@basic_119:
+@basic_122:
        dc.b      13,10,69,120,101,99,117,116,105,110,103,32,97
        dc.b      116,32,0
-@basic_120:
-       dc.b      32,97,116,32,0
-@basic_121:
-       dc.b      32,33,13,10,0
-@basic_122:
-       dc.b      43,45,42,94,47,61,59,58,44,62,60,0
 @basic_123:
-       dc.b      58,0
+       dc.b      32,97,116,32,0
 @basic_124:
+       dc.b      32,33,13,10,0
+@basic_125:
+       dc.b      43,45,42,94,47,61,59,58,44,62,60,0
+@basic_126:
+       dc.b      58,0
+@basic_127:
        dc.b      76,111,97,100,105,110,103,32,66,97,115,105,99
        dc.b      32,80,114,111,103,114,97,109,46,46,46,13,10
        dc.b      0
-@basic_125:
+@basic_128:
        dc.b      56,56,48,48,48,48,0
-@basic_126:
+@basic_129:
        dc.b      68,111,110,101,46,13,10,0
-@basic_127:
+@basic_130:
        dc.b      80,114,111,99,101,115,115,105,110,103,46,46
        dc.b      46,13,10,0
-@basic_128:
+@basic_131:
+       dc.b      65,113,117,105,32,52,52,52,46,54,54,54,46,48
+       dc.b      45,91,0
+@basic_132:
+       dc.b      93,13,10,0
+@basic_133:
+       dc.b      65,113,117,105,32,52,52,52,46,54,54,54,46,49
+       dc.b      45,91,0
+@basic_134:
+       dc.b      93,45,91,0
+@basic_135:
+       dc.b      65,113,117,105,32,52,52,52,46,54,54,54,46,50
+       dc.b      45,91,0
+@basic_136:
+       dc.b      65,113,117,105,32,52,52,52,46,54,54,54,46,51
+       dc.b      45,91,0
+@basic_137:
+       dc.b      65,113,117,105,32,52,52,52,46,54,54,54,46,52
+       dc.b      45,91,0
+@basic_138:
+       dc.b      65,113,117,105,32,51,51,51,46,54,54,54,46,48
+       dc.b      45,91,0
+@basic_139:
+       dc.b      65,113,117,105,32,51,51,51,46,54,54,54,46,49
+       dc.b      45,91,0
+@basic_140:
        dc.b      77,101,109,111,114,121,32,70,114,101,101,32
        dc.b      102,111,114,58,32,13,10,0
-@basic_129:
+@basic_141:
        dc.b      32,32,32,32,32,86,97,114,105,97,98,108,101,115
        dc.b      58,32,0
-@basic_130:
+@basic_142:
        dc.b      66,121,116,101,115,13,10,0
-@basic_131:
+@basic_143:
        dc.b      32,32,32,32,32,32,32,32,65,114,114,97,121,115
        dc.b      58,32,0
-@basic_132:
+@basic_144:
        dc.b      32,32,32,32,32,32,32,80,114,111,103,114,97,109
        dc.b      58,32,0
        xdef      _keywords_count
 _keywords_count:
-       dc.l      64
+       dc.l      67
 @basic_keywords:
        dc.l      @basic_28,128,@basic_29,129,@basic_30,130
        dc.l      @basic_31,131,@basic_32,133,@basic_33,134
        dc.l      @basic_34,135,@basic_35,136,@basic_36,137
        dc.l      @basic_37,138,@basic_38,139,@basic_39,140
-       dc.l      @basic_40,143,@basic_41,146,@basic_42,147
-       dc.l      @basic_43,148,@basic_44,149,@basic_45,150
-       dc.l      @basic_46,151,@basic_47,152,@basic_48,153
-       dc.l      @basic_49,154,@basic_50,158,@basic_51,159
-       dc.l      @basic_52,176,@basic_53,177,@basic_54,178
-       dc.l      @basic_55,179,@basic_56,180,@basic_57,181
-       dc.l      @basic_58,182,@basic_59,184,@basic_60,185
-       dc.l      @basic_61,186,@basic_62,187,@basic_63,196
-       dc.l      @basic_64,205,@basic_65,206,@basic_66,209
-       dc.l      @basic_67,219,@basic_68,220,@basic_69,221
-       dc.l      @basic_70,224,@basic_71,225,@basic_72,226
-       dc.l      @basic_73,227,@basic_74,228,@basic_75,229
-       dc.l      @basic_76,230,@basic_77,231,@basic_78,232
-       dc.l      @basic_79,233,@basic_80,234,@basic_81,235
-       dc.l      @basic_82,236,@basic_83,237,@basic_84,238
-       dc.l      @basic_85,239,@basic_86,243,@basic_87,244
-       dc.l      @basic_88,245,@basic_89,246,@basic_90,247
-       dc.l      @basic_91,248
+       dc.l      @basic_40,141,@basic_41,142,@basic_42,143
+       dc.l      @basic_43,145,@basic_44,146,@basic_45,147
+       dc.l      @basic_46,148,@basic_47,149,@basic_48,150
+       dc.l      @basic_49,151,@basic_50,152,@basic_51,153
+       dc.l      @basic_52,154,@basic_53,158,@basic_54,159
+       dc.l      @basic_55,176,@basic_56,177,@basic_57,178
+       dc.l      @basic_58,179,@basic_59,180,@basic_60,181
+       dc.l      @basic_61,182,@basic_62,184,@basic_63,185
+       dc.l      @basic_64,186,@basic_65,187,@basic_66,196
+       dc.l      @basic_67,205,@basic_68,206,@basic_69,209
+       dc.l      @basic_70,219,@basic_71,220,@basic_72,221
+       dc.l      @basic_73,224,@basic_74,225,@basic_75,226
+       dc.l      @basic_76,227,@basic_77,228,@basic_78,229
+       dc.l      @basic_79,230,@basic_80,231,@basic_81,232
+       dc.l      @basic_82,233,@basic_83,234,@basic_84,235
+       dc.l      @basic_85,236,@basic_86,237,@basic_87,238
+       dc.l      @basic_88,239,@basic_89,243,@basic_90,244
+       dc.l      @basic_91,245,@basic_92,246,@basic_93,247
+       dc.l      @basic_94,248
        xdef      _operandsWithTokens
 _operandsWithTokens:
        dc.b      43,45,42,47,94,62,61,60,0
@@ -18055,6 +18878,12 @@ _sprite_pattern_table:
        xdef      _vdpMaxRows
 _vdpMaxRows:
        dc.l      6363206
+       xdef      _fgcolorAnt
+_fgcolorAnt:
+       dc.l      6363208
+       xdef      _bgcolorAnt
+_bgcolorAnt:
+       dc.l      6363210
        xdef      _kbdKeyPntr
 _kbdKeyPntr:
        dc.l      6331163
@@ -18551,6 +19380,7 @@ _onErrGoto:
        xref      _FPP_ABS
        xref      _FPP_SINH
        xref      _FPP_MUL
+       xref      _writeLongSerial
        xref      _toupper
        xref      _strchr
        xref      _printText
